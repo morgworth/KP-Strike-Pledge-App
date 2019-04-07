@@ -1,7 +1,7 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import ContactForm
+from .forms import PledgeForm, ValidateForm
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -11,20 +11,18 @@ import hashlib
 
 def emailView(request):
     if request.method == 'GET':
-        form = ContactForm()
+        form = PledgeForm()
     else:
-        form = ContactForm(request.POST)
+        form = PledgeForm(request.POST)
         if form.is_valid():
             subject = 'Please validate your email to count it with the pledges.'
-            union = form.cleaned_data['union']
             email = form.cleaned_data['email']
 			
             if 'kaiserpermanente.com' not in email:
                 return redirect('invalid')
 			
-            
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
-            validate_link = 'http://localhost:8000/validate/?u={u}&e={e}'.format(e=hashed_email, u=union)
+            validate_link = 'http://localhost:8000/validate/?&e={e}'.format(e=hashed_email)
             message = 'Please click the following link to validate your email: \n' + validate_link
             try:
                 send_mail(subject, message, 'admin@example.com', [email])
@@ -39,15 +37,30 @@ def successView(request):
 def invalidEmailView(request):
     return HttpResponse('Invalid email. Email must be from Kaiser Permanente.')
 
-@api_view(['GET'])
 def validateView(request):
-    email_hash = request.GET['e']
-    union = request.GET['u']
-    #pledge, created = Pledge.objects.update_or_create(email_hash=email_hash, union=union)
-    try:
-        pledge = Pledge.objects.get(email_hash=email_hash)
-        pledge.union=union
-        pledge.save()
-    except Pledge.DoesNotExist:
-        Pledge.objects.create(email_hash=email_hash, union=union)
-    return HttpResponse('Your pledge has been counted! Solidarity!')
+    if request.method == 'GET':
+        email_hash = request.GET['e']
+        form = ValidateForm(initial={'email_hash': email_hash})
+    else:
+        form = ValidateForm(request.POST)
+        if form.is_valid():
+            email_hash = form.cleaned_data['email_hash']
+            seiu_member = form.cleaned_data['SEIU_member']
+            region = form.cleaned_data['Kaiser_region']
+            pers_email = form.cleaned_data['personal_email']
+            pers_phone = form.cleaned_data['personal_phone']
+            try:
+                pledge = Pledge.objects.get(email_hash=email_hash)
+                pledge.seiu_member = seiu_member
+                pledge.region = region
+                pledge.pers_email = pers_email
+                pledge.pers_phone = pers_phone
+                pledge.save()
+            except Pledge.DoesNotExist:
+                Pledge.objects.create(email_hash = email_hash,
+                                      seiu_member = seiu_member, 
+									  region = region, 
+									  pers_email = pers_email, 
+									  pers_phone = pers_phone)
+            return redirect('email')				
+    return render(request, "contact.html", {'form': form})

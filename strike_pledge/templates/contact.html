@@ -1,0 +1,10 @@
+<h1>If you would like to stay connected with further news and updates on the strike, please fill out this contact form:</h1>
+<h2>(None of the fields are required, but you still have to press submit to count your pledge.)</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Count your Pledge!</button>
+    </div>
+</form>
+<p align="center" style="position:absolute;bottom:0;width:100%;">This website is run by workers and is not affiliated in any way with Kaiser Permanente.</p>
