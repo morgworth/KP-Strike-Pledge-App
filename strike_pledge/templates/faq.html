@@ -83,6 +83,7 @@ function closeNav() {
   .sidebar a {font-size: 18px;}
 }
 </style>
+{% load static %}
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
@@ -94,6 +95,7 @@ function closeNav() {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">&#9776;</button> 
+  <img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" align="right" style="width:50px;height:50px">
 <h1>FAQ</h1>
 <div class="faqdiv">
 Q: What is a ULP strike?<br>
@@ -126,6 +128,6 @@ starting at the time they should have been reinstated."</i><br><br>
 Q: How much did CEO Bernard Tyson earn in 2017?<br>
 A: Bernard Tyson gave himself a 60% raise, earning $16 million.
 </div>
-<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white;">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
+<p style="position:absolute;bottom:0;width:100%;background-color:white;">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
 </div>
 </body>

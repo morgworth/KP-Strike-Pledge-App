@@ -78,6 +78,7 @@ function closeNav() {
   .sidebar a {font-size: 18px;}
 }
 </style>
+{% load static %}
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
@@ -89,6 +90,7 @@ function closeNav() {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">&#9776;</button> 
+  <a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" align="right" style="width:50px;height:50px"></a>
   <h1 align="center">Pledge to join the 2019 KP strike</h1>
 <h3 align="center">(5 days in Oct/Nov)</h3>
 <form method="post" align="center">
@@ -104,6 +106,6 @@ function closeNav() {
 <p align="center">
 <a align="center" href="https://twitter.com/StrikeKp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@StrikeKp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
-<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
+<p style="position:absolute;bottom:0;width:100%;background-color:white">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
 </div>
 </body>

@@ -78,6 +78,7 @@ function closeNav() {
   .sidebar a {font-size: 18px;}
 }
 </style>
+{% load static %}
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
@@ -89,6 +90,8 @@ function closeNav() {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">&#9776;</button> 
+  <img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" align="right" style="width:50px;height:50px">
+
 <h1 align="center">Almost done!</h1>
 <h2 align="center">Complete the following fields to confirm your pledge:</h2>
 <form method="post">
@@ -104,6 +107,6 @@ function closeNav() {
     </div>
 	</div>
 </form>
-<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white;">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
+<p style="position:absolute;bottom:0;width:100%;background-color:white;">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
 </div>
 </body>
