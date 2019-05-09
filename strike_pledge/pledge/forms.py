@@ -2,15 +2,19 @@
 from django import forms
 
 class PledgeForm(forms.Form):
-    email = forms.EmailField(required=True)
+    email = forms.CharField(required=True)
 	
 class ValidateForm(forms.Form):
     email_hash = forms.CharField(max_length=200, widget=forms.HiddenInput())
-    SEIU_member = forms.BooleanField(required=False)
-    personal_email=forms.EmailField(required=False, initial='')
-    personal_phone = forms.CharField(max_length=20, required=False, initial='')
+    union_list = (
+        ('none', 'Union / Non-union'),
+        ('yes', 'Union'),
+        ('no', 'Non-union')
+    )
+    union_member = forms.ChoiceField(choices=union_list, required=False)
+    personal_email=forms.EmailField(required=False, initial='', widget=forms.TextInput(attrs={'placeholder':'Personal email address'}))
     region_list = (
-        ('none', 'Not Specified'),
+        ('none', 'KP Region'),
         ('norcal', 'Northern California'),
         ('socal', 'Southern California'),
         ('colorado', 'Colorado'),
@@ -22,4 +26,5 @@ class ValidateForm(forms.Form):
         ('oregon', 'Oregon'),
         ('washington', 'Washington State')
     )
-    Kaiser_region = forms.ChoiceField(choices=region_list, required=False)
+    kaiser_region = forms.ChoiceField(choices=region_list, required=False)
+    tweet = forms.CharField(max_length=280, required=False, initial='', widget=forms.Textarea(attrs={'placeholder':'Why are you going on strike? (optional)'}))
