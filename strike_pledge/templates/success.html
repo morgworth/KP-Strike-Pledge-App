@@ -89,21 +89,15 @@ function closeNav() {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">&#9776;</button> 
-  <h1 align="center">Pledge to join the 2019 KP strike</h1>
+<h1 align="center">Pledge to join the 2019 KP strike</h1>
 <h3 align="center">(5 days in Oct/Nov)</h3>
-<form method="post" align="center">
-    {% csrf_token %}
-    <div align="center">{{ form.email }}  @kp.org</div>
-    <div class="form-actions" align="center">
-	  <br>
-      <button type="submit" align="center">Count me in!</button>
-    </div>
-</form>
+<p align="center">Great! Now, just open our email and follow the link to confirm your pledge.</p>
+<br>
 <h1 align="center" style="color:red;font-size:75px">{{ count }}</h1>
 <h2 align="center">KP employees are ready to strike</h2>
 <p align="center">
 <a align="center" href="https://twitter.com/StrikeKp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@StrikeKp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
-<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
+<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white;">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
 </div>
 </body>

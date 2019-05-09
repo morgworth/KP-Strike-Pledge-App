@@ -13,6 +13,12 @@ function closeNav() {
 }
 </script>
 <style>
+
+.faqdiv {
+  height: 60%;
+  overflow: auto;
+}
+
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
@@ -69,7 +75,6 @@ function closeNav() {
 #main {
   transition: margin-left .5s; /* If you want a transition effect */
   padding: 20px;
-  overflow: auto;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -89,21 +94,38 @@ function closeNav() {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">&#9776;</button> 
-  <h1 align="center">Pledge to join the 2019 KP strike</h1>
-<h3 align="center">(5 days in Oct/Nov)</h3>
-<form method="post" align="center">
-    {% csrf_token %}
-    <div align="center">{{ form.email }}  @kp.org</div>
-    <div class="form-actions" align="center">
-	  <br>
-      <button type="submit" align="center">Count me in!</button>
-    </div>
-</form>
-<h1 align="center" style="color:red;font-size:75px">{{ count }}</h1>
-<h2 align="center">KP employees are ready to strike</h2>
-<p align="center">
-<a align="center" href="https://twitter.com/StrikeKp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@StrikeKp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</p>
-<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
+<h1>FAQ</h1>
+<div class="faqdiv">
+Q: What is a ULP strike?<br>
+A: A strike for the sole purpose of protesting an Unfair Labor Practice (ULP)
+committed by the employer. Unfair Labor Practices are listed and defined in
+Section 8 of the National Labor Relations Act (NLRA).<br><br>
+Q: What is an economic strike and how is it different than a ULP strike?<br>
+A: The purpose of an economic strike is to win an economic concession from the
+employer (e.g., higher wages or better working conditions). Employees who
+engage in an economic strike have weaker right to (job) reinstatement.<br><br>
+Q: Can I join the strike?<br>
+A: Yes, if you're a non-union employee OR if you're a union employee whose union
+contract (local agreement) has expired. You can join the strike even if you donʼt
+belong to a Coalition union. Click here to see when your union contract expires.<br><br>
+Q: Do I have to notify my manager in advance of the strike?<br>
+A: Yes, as a healthcare worker, you must notify your manager at least 10 days in
+advance of the strike.<br><br>
+Q: Can Kaiser Permanente fire or discipline me for going on strike?<br>
+A: No, Kaiser Permanente is prohibited from retaliating against you for exercising
+your right to participate in a ULP strike. From the NLRB's Basic Guide to the
+National Labor Relations Act (NLRA):<br>
+<i>"Such [ULP] strikers can be neither discharged nor permanently replaced.
+When the strike ends, unfair labor practice strikers, absent serious
+misconduct on their part, are entitled to have their jobs back even if
+employees hired to do their work have to be discharged. If the Board finds that
+economic strikers or unfair labor practice strikers who have made an
+unconditional request for reinstatement have been unlawfully denied
+reinstatement by their employer, the Board may award such strikers backpay
+starting at the time they should have been reinstated."</i><br><br>
+Q: How much did CEO Bernard Tyson earn in 2017?<br>
+A: Bernard Tyson gave himself a 60% raise, earning $16 million.
+</div>
+<p align="center" style="position:absolute;bottom:0;width:100%;background-color:white;">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
 </div>
 </body>
