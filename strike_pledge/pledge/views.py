@@ -9,6 +9,7 @@ from pledge.models import Pledge
 from pledge.serializers import PledgeSerializer
 import hashlib
 import twitter
+import pdb
 
 def emailView(request):
     if request.method == 'GET':
@@ -36,35 +37,35 @@ def validateView(request):
     if request.method == 'GET':
         email_hash = request.GET['e']
         form = ValidateForm(initial={'email_hash': email_hash})
-    else:
+    elif request.method == 'POST':
         form = ValidateForm(request.POST)
         if form.is_valid():
             email_hash = form.cleaned_data['email_hash']
-            seiu_member = form.cleaned_data['SEIU_member']
-            region = form.cleaned_data['Kaiser_region']
+            union_member = form.cleaned_data['union_member']
+            region = form.cleaned_data['kaiser_region']
             pers_email = form.cleaned_data['personal_email']
-            pers_phone = form.cleaned_data['personal_phone']
             tweet = form.cleaned_data['tweet']
             if tweet != '':
                 api = twitter.Api(consumer_key='8nzLUS0rK3WKxe3lKaWkO6SXS',
 								  consumer_secret='UxrSothiwP1jWibu4ElXHAXtzhBlSWRCJuPbTrxrfu9h0JBYYZ',
 								  access_token_key='1117328256473026561-PjDxLe616snf93kFbjCAdDkHM8aHNQ',
 								  access_token_secret='j2Cw2DZ4LFBsEnYDMXHrTsgeFys3fPupZcdOUpSJzVQzK')
-                api.PostUpdate(tweet[0:280])
+                try:
+                    api.PostUpdate(tweet[0:280])
+                except Exception:
+                    print('')
             try:
                 pledge = Pledge.objects.get(email_hash=email_hash)
-                pledge.seiu_member = seiu_member
+                pledge.union_member = union_member
                 pledge.region = region
                 pledge.pers_email = pers_email
-                pledge.pers_phone = pers_phone
                 pledge.message = tweet
                 pledge.save()
             except Pledge.DoesNotExist:
                 Pledge.objects.create(email_hash = email_hash,
-                                      seiu_member = seiu_member, 
+                                      union_member = union_member, 
 									  region = region, 
 									  pers_email = pers_email, 
-									  pers_phone = pers_phone,
                                       message = tweet)
             return redirect('email')				
     return render(request, "contact.html", {'form': form})
