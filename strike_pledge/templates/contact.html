@@ -89,7 +89,7 @@ function closeNav() {
 </div>
 
 <div id="main">
-  <button class="openbtn" onclick="openNav()">&#9776;</button> 
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
   <a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" align="right" style="width:50px;height:50px"></a>
 
 <h1 align="center">Almost done!</h1>
@@ -97,18 +97,18 @@ function closeNav() {
 <form action={% url "validate" %} method="post">
     {% csrf_token %} <br><br>
  	<div align="center">
-<!--     {{ form.union_member }} <br><br>
-    {{ form.kaiser_region }} <br><br>
-    {{ form.personal_email }} <i>optional</i> <br><br>
+<!--{{ form.kaiser_region }} <br><br>
+    {{ form.union_member }} <br><br>
     {{ form.tweet }} <br>
-    Note: this comment will be posted anonymously on twitter @kpstrike2019 <br><br> -->
-	{{ form.as_p }}
+    Note: this comment will be posted anonymously on twitter @kpstrike2019 <br><br>
+    {{ form.personal_email }} <i>optional</i> <br><br> -->
+  {{ form.as_p }}
 	Note: this comment will be posted anonymously on twitter @kpstrike2019 <br><br>
     <div class="form-actions">
       <button type="submit">Count your Pledge!</button>
     </div>
 	</div>
 </form>
-<p align="center">DISCLAIMER: kpstrike.org is in no way affiliated with Kaiser Permanente. KP is a registered trademark of Kaiser Foundation Health Plan, Inc.</p>
+<p align="center">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
 </div>
 </body>
