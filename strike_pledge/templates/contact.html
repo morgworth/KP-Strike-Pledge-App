@@ -97,13 +97,13 @@ function closeNav() {
 <form action={% url "validate" %} method="post">
     {% csrf_token %} <br><br>
  	<div align="center">
-<!--{{ form.kaiser_region }} <br><br>
-    {{ form.union_member }} <br><br>
+<!--     {{ form.union_member }} <br><br>
+    {{ form.kaiser_region }} <br><br>
+    {{ form.personal_email }} <i>optional</i> <br><br>
     {{ form.tweet }} <br>
-    Note: this comment will be posted anonymously on twitter @kpstrike2019 <br><br>
-    {{ form.personal_email }} <i>optional</i> <br><br> -->
-  {{ form.as_p }}
-	Note: this comment will be posted anonymously on twitter @kpstrike2019 <br><br>
+    Note: this comment will be posted anonymously on twitter @kpstrike2019 <br><br> -->
+	{{ form.as_p }}
+	This comment will be posted anonymously on twitter @kpstrike2019 <br><br>
     <div class="form-actions">
       <button type="submit">Count your Pledge!</button>
     </div>
