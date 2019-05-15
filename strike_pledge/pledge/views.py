@@ -9,7 +9,6 @@ from pledge.models import Pledge
 from pledge.serializers import PledgeSerializer
 import hashlib
 import twitter
-import pdb
 
 def emailView(request):
     if request.method == 'GET':
@@ -20,12 +19,14 @@ def emailView(request):
             subject = 'Please validate your email to count it with the pledges.'
             email = form.cleaned_data['email'] + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
-            validate_link = 'http://localhost:8000/validate/?&e={e}'.format(e=hashed_email)
+            validate_link = 'http://localhost:8000/validate/?u={u}&e={e}'.format(u=form.cleaned_data['email'],e=hashed_email)
             message = 'Please click the following link to validate your email: \n' + validate_link
             try:
-                send_mail(subject, message, 'admin@example.com', [email])
+                send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
+            except Exception:
+                print('')
             return redirect('success')
     return render(request, "email.html", {'form': form, 'count': Pledge.objects.all().count})
 

@@ -121,4 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@kaiserstrike.org'
+EMAIL_HOST_PASSWORD = '93600eacd3becfe4aa0ba5b8fb329397-4a62b8e8-db40089d'
+EMAIL_USE_TLS = True
