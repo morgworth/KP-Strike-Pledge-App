@@ -22,12 +22,15 @@ def emailView(request):
             validate_link = 'http://localhost:8000/validate/?u={u}&e={e}'.format(u=form.cleaned_data['email'],e=hashed_email)
             message = 'Please click the following link to validate your email: \n' + validate_link
             try:
-                send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            except Exception:
-                print('')
-            return redirect('success')
+                Pledge.objects.get(email_hash=hashed_email)
+            except Pledge.DoesNotExist:
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success')
     return render(request, "email.html", {'form': form, 'count': Pledge.objects.all().count})
 
 def successView(request):
