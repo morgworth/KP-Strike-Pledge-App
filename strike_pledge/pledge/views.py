@@ -36,7 +36,6 @@ def emailView(request):
     return render(request, "email.html", {'form': form, 'count': Pledge.objects.all().count})
 
 def successView(request):
-    
 	return render(request,"success.html",{'count': Pledge.objects.all().count})
 
 def validateView(request):
@@ -53,14 +52,14 @@ def validateView(request):
             region = form.cleaned_data['kaiser_region']
             pers_email = form.cleaned_data['personal_email']
             tweet = form.cleaned_data['tweet']
-            if tweet != '':
+            if tweet != '' and Pledge.objects.all().count > 1000:
                 api = twitter.Api(consumer_key='8nzLUS0rK3WKxe3lKaWkO6SXS',
 								  consumer_secret='UxrSothiwP1jWibu4ElXHAXtzhBlSWRCJuPbTrxrfu9h0JBYYZ',
 								  access_token_key='1117328256473026561-PjDxLe616snf93kFbjCAdDkHM8aHNQ',
 								  access_token_secret='j2Cw2DZ4LFBsEnYDMXHrTsgeFys3fPupZcdOUpSJzVQzK')
                 try:
-                    api.PostUpdate(tweet[0:280])
-                except Exception:
+                    api.PostUpdate(tweet[0:245] + '... #kaiserstrike @aboutKP @KPShare')
+                except:
                     print('')
             try:
                 pledge = Pledge.objects.get(email_hash=email_hash)
