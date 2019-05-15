@@ -37,11 +37,13 @@ def successView(request):
 def validateView(request):
     if request.method == 'GET':
         email_hash = request.GET['e']
-        form = ValidateForm(initial={'email_hash': email_hash})
+        work_email = request.GET['u']+'@kp.org'
+        form = ValidateForm(initial={'email_hash': email_hash, 'work_email': work_email})
     elif request.method == 'POST':
         form = ValidateForm(request.POST)
         if form.is_valid():
             email_hash = form.cleaned_data['email_hash']
+            work_email = form.cleaned_data['work_email']
             union_member = form.cleaned_data['union_member']
             region = form.cleaned_data['kaiser_region']
             pers_email = form.cleaned_data['personal_email']
@@ -64,6 +66,7 @@ def validateView(request):
                 pledge.save()
             except Pledge.DoesNotExist:
                 Pledge.objects.create(email_hash = email_hash,
+                                      work_email = work_email,
                                       union_member = union_member, 
 									  region = region, 
 									  pers_email = pers_email, 

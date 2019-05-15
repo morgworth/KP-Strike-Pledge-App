@@ -6,6 +6,7 @@ class PledgeForm(forms.Form):
 	
 class ValidateForm(forms.Form):
     email_hash = forms.CharField(max_length=200, widget=forms.HiddenInput(), label='')
+    work_email = forms.CharField(max_length=200, widget=forms.HiddenInput(), label='')
     union_list = (
         ('none', 'Union / Non-union'),
         ('yes', 'Union'),
