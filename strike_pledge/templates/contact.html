@@ -98,12 +98,13 @@ function closeNav() {
     {% csrf_token %} <br><br>
  	<div align="center">
 	{{ form.as_p }}
-    This comment will be posted anonymously on twitter @kpstrike2019 <br><br>
+    This comment will be posted anonymously on twitter @kpstrike2019. <br>
+	Some useful handles and hashtags to include: @KPThrive, @aboutKP, @KPShare, @BernardJTyson, @DrRichardIsaacs, #KaiserGreed, #KaiserStrike <br><br>
     <div class="form-actions">
       <button type="submit">Count your Pledge!</button>
     </div>
 	</div>
 </form>
-<p align="center">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+<p align="center">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc. (<a href={% url 'terms' %}>Terms</a>) (<a href={% url 'privacy' %}>Privacy</a>)</p>
 </div>
 </body>

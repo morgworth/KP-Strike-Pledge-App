@@ -20,7 +20,9 @@ def emailView(request):
             email = form.cleaned_data['email'] + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'http://localhost:8000/validate/?u={u}&e={e}'.format(u=form.cleaned_data['email'],e=hashed_email)
-            message = 'Please click the following link to validate your email: \n' + validate_link
+            message = 'You or your co-worker indicated you\'d like to join the 2019 Kaiser strike in Oct/Nov. Please click the following link to finalize your strike pledge: \n' + validate_link
+            message += '\n\n Tech Workers Coalition \n'
+            message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
@@ -82,3 +84,9 @@ def aboutView(request):
 
 def faqView(request):
     return render(request, "faq.html")
+
+def termsView(request):
+    return render(request, "terms.html")
+
+def privacyView(request):
+    return render(request, "privacy.html")
