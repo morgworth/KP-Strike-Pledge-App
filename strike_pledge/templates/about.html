@@ -1,23 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
-<title>Kaiser Strike - About</title>
-<meta name="description" content="About the Kaiser Strike">
-<script>
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
-</script>
+{% load static %}
+<script src="{% static "/scripts.js" %}"></script>
 <style>
 /* The sidebar menu */
 .sidebar {
@@ -84,14 +69,12 @@ function closeNav() {
   .sidebar a {font-size: 18px;}
 }
 </style>
-{% load static %}
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href={% url 'email' %}>Home</a>
   <a href={% url 'about' %}>About</a>
-  <a href={% url 'faq' %}>FAQ</a>
 </div>
 
 <div id="main">

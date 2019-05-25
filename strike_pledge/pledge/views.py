@@ -53,10 +53,10 @@ def validateView(request):
             pers_email = form.cleaned_data['personal_email']
             tweet = form.cleaned_data['tweet']
             if tweet != '' and Pledge.objects.all().count > 1000:
-                api = twitter.Api(consumer_key='8nzLUS0rK3WKxe3lKaWkO6SXS',
-								  consumer_secret='UxrSothiwP1jWibu4ElXHAXtzhBlSWRCJuPbTrxrfu9h0JBYYZ',
-								  access_token_key='1117328256473026561-PjDxLe616snf93kFbjCAdDkHM8aHNQ',
-								  access_token_secret='j2Cw2DZ4LFBsEnYDMXHrTsgeFys3fPupZcdOUpSJzVQzK')
+                api = twitter.Api(consumer_key=os.environ['consumer_key'],
+								  consumer_secret=os.environ['consumer_secret'],
+								  access_token_key=os.environ['access_token_key'],
+								  access_token_secret=os.environ['access_token_secret'])
                 try:
                     api.PostUpdate(tweet[0:245] + '... #kaiserstrike @aboutKP @KPShare')
                 except:
