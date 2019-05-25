@@ -126,3 +126,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'postmaster@kaiserstrike.org'
 EMAIL_HOST_PASSWORD = '93600eacd3becfe4aa0ba5b8fb329397-4a62b8e8-db40089d'
 EMAIL_USE_TLS = True
+
+#twitter credentials
+os.environ['consumer_key'] = '8nzLUS0rK3WKxe3lKaWkO6SXS'
+os.environ['consumer_secret'] = 'UxrSothiwP1jWibu4ElXHAXtzhBlSWRCJuPbTrxrfu9h0JBYYZ'
+os.environ['access_token_key'] = '1117328256473026561-PjDxLe616snf93kFbjCAdDkHM8aHNQ'
+os.environ['access_token_secret'] = 'j2Cw2DZ4LFBsEnYDMXHrTsgeFys3fPupZcdOUpSJzVQzK'
