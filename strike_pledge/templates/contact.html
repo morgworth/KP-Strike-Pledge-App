@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 {% load static %}
 <script src="{% static "/scripts.js" %}"></script>
 <style>
@@ -87,7 +88,7 @@
     {% csrf_token %} <br><br>
  	<div align="center">
 	{{ form.as_p }}
-    This comment will be posted anonymously on twitter @kpstrike2019. <br><br>
+    This comment will be posted <b>anonymously</b> on twitter @kpstrike2019. <br><br>
     <div class="form-actions">
       <button type="submit">Count your Pledge!</button>
     </div>

@@ -16,11 +16,11 @@ def emailView(request):
     else:
         form = PledgeForm(request.POST)
         if form.is_valid():
-            subject = 'Please validate your email to count it with the pledges.'
+            subject = 'Confirm your strike pledge'
             email = form.cleaned_data['email'] + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'http://localhost:8000/validate/?u={u}&e={e}'.format(u=form.cleaned_data['email'],e=hashed_email)
-            message = 'You or your co-worker indicated you\'d like to join the 2019 Kaiser strike in Oct/Nov. Please click the following link to finalize your strike pledge: \n' + validate_link
+            message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, in Oct/Nov 2019. Please click the following link to confirm your strike pledge: \n' + validate_link
             message += '\n\n Tech Workers Coalition \n'
             message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.'
             try:
@@ -71,11 +71,11 @@ def validateView(request):
             except Pledge.DoesNotExist:
                 Pledge.objects.create(email_hash = email_hash,
                                       work_email = work_email,
-                                      union_member = union_member, 
-									  region = region, 
-									  pers_email = pers_email, 
+                                      union_member = union_member,
+									  region = region,
+									  pers_email = pers_email,
                                       message = tweet)
-            return redirect('email')				
+            return redirect('email')
     return render(request, "contact.html", {'form': form})
 
 def aboutView(request):
