@@ -19,7 +19,7 @@ def emailView(request):
             subject = 'Confirm your strike pledge'
             email = form.cleaned_data['email'] + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
-            validate_link = 'http://localhost:8000/validate/?u={u}&e={e}'.format(u=form.cleaned_data['email'],e=hashed_email)
+            validate_link = 'http://www.kaiserstrike.org/validate/?u={u}&e={e}'.format(u=form.cleaned_data['email'],e=hashed_email)
             message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, in Oct/Nov 2019. Please click the following link to confirm your strike pledge: \n' + validate_link
             message += '\n\n Tech Workers Coalition \n'
             message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.'
