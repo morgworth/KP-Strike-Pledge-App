@@ -25,7 +25,7 @@ SECRET_KEY = 'x6bdt-_n(ucp8&!**k#eqplu6^15e*frjsypjd5!#z$i!^4#g7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://kpstrike.us-west-2.elasticbeanstalk.com/']
+ALLOWED_HOSTS = ['kpstrike.us-west-2.elasticbeanstalk.com/']
 
 
 # Application definition
