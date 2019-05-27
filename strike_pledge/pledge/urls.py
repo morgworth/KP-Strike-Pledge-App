@@ -4,7 +4,7 @@ from django.urls import path
 from .views import emailView, successView, validateView, aboutView, termsView, privacyView
 
 urlpatterns = [
-    path('email/', emailView, name='email'),
+    path('/', emailView, name='email'),
     path('success/', successView, name='success'),
     path('validate/', validateView, name='validate'),
 	path('about/', aboutView, name='about'),
