@@ -22,7 +22,7 @@ class ValidateForm(forms.Form):
     )
     kaiser_region = forms.ChoiceField(choices=region_list, required=True, label='')
     union_list = (
-        ('none', 'SEIU-UHW member?'),
+        ('none', 'Member of a Coalition union?'),
         ('yes', 'Yes'),
         ('no', 'No (sympathy striker)')
     )
