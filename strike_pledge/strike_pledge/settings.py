@@ -136,8 +136,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "www", "static")
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@kaiserstrike.org'
-EMAIL_HOST_PASSWORD = '93600eacd3becfe4aa0ba5b8fb329397-4a62b8e8-db40089d'
+EMAIL_HOST_USER = 'postmaster@mail.kaiserstrike.org'
+EMAIL_HOST_PASSWORD = '74b8c76767a5ec0c5e01ca275daba058-39bc661a-1157a5d3'
 EMAIL_USE_TLS = True
 
 #twitter credentials
