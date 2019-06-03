@@ -1,156 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
-<script src="{% static "/scripts.js" %}"></script>
-<style>
+<link rel="stylesheet" href="/static/w3.css">
 
-.privdiv {
-  height: 60%;
-  overflow: auto;
-}
-
-/* The sidebar menu */
-.sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-}
-
-/* The sidebar links */
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* The button used to open the sidebar */
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s; /* If you want a transition effect */
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
- .body:link {
-    color: #E6141B; }
- .body:visited {
-    color: #E6141B; }
- .body:hover {
-    color: #212121; }
- .body:focus {
-    color: #212121; }
- .body:active {
-    color: #E6141B; }
-</style>
+<head>
+  <title>Privacy</title>
+  <meta name="description" content="Privacy Policy">
 </head>
+
 <body>
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href={% url 'email' %}>Home</a>
-  <a href={% url 'about' %}>About</a>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card w3-right-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+  </div>
 </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">&#9776;</button>
-  <a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" align="right" style="width:50px;height:50px"></a>
-<h1>Privacy</h1>
-<div class="privdiv">
-Updated May 27, 2019
-<h4>SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?</h4>
-We may use your email address to send you updates related to the strike.
-<h4>SECTION 2 - CONSENT</h4>
-When you provide us with personal information, you imply that you consent to our
-collecting it and using it for that specific reason only. If we ask for your personal
-information for a secondary reason, we will either ask you directly for your express
-consent, or provide you with an opportunity to say “no”.<br><br>
-If after you opt-in, you change your mind, you may withdraw your consent for us to
-contact you, for the continued collection, use or disclosure of your information, at
-any time, by contacting us at optout(at)mail(period)kaiserstrike(period)org.
-<h4>SECTION 3 - DISCLOSURE</h4>
-We will not disclose your personal information unless you violate our Terms of Service or
-we are required to do so by law.
-<h4>SECTION 4 - THIRD-PARTY SERVICES</h4>
-In general, the third-party providers used by us will only collect, use and disclose
-your information to the extent necessary to allow them to perform the services
-they provide to us. However, certain third-party service providers have their own
-privacy policies with respect to the information we are required to provide to them.
-For these providers, we recommend that you read their privacy policies so you can
-understand the manner in which they handle your personal information. In
-particular, remember that certain providers may be located in a different
-jurisdiction than either you or us. So if you elect to proceed with a transaction that
-involves the services of a third-party service provider, your information may
-become subject to the laws of the jurisdiction(s) in which that service provider or
-its facilities are located. Once you leave our website or are redirected to a third-
-party website or application, you are no longer governed by this Privacy Policy or
-our websiteʼs Terms of Service.<br><br>
-When you click on links on our website, they may direct you away from our site.
-We are not responsible for the privacy practices of other sites and we encourage you
-to read their privacy statements.
-<h4>SECTION 5 - SECURITY</h4>
-We take reasonable precautions to ensure your personal information is not
-inappropriately lost, misused, accessed, or disclosed.
-<h4>SECTION 6 - AGE OF CONSENT</h4>
-By using this site, you represent that you are at least the age of majority in your
-state, or that you are the age of majority in your state and you have given us your
-consent to allow any of your minor dependents to use this site.
-<h4>SECTION 7 - CHANGES TO THIS PRIVACY POLICY</h4>
-We reserve the right to modify this privacy policy at any time, so please review it
-frequently. Changes and clarifications will take effect immediately upon their
-posting to this page. If we make material changes to this policy, we will notify
-you here that it has been updated, so that you are aware of what information we
-collect, how we use it, and under what circumstances, if any, we use and/or
-disclose it.
-<h4>QUESTIONS AND CONTACT INFORMATION</h4>
-If you would like us to delete any personal information we have about you, contact
-us at optout(at)mail(period)kaiserstrike(period)org. For all other questions and concerns, please contact us
-at inquiries(at)mail(period)kaiserstrike(period)org.
+<!-- First Grid -->
+<div class="w3-container w3-white w3-left" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Privacy</h1><br><br>
+  <p class="w3-margin">Updated May 27, 2019</p>
+  <h3 class="w3-margin">SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?</h3>
+  <p class="w3-margin">We may use your email address to send you updates related to the strike.</p>
+  <h3 class="w3-margin">SECTION 2 - CONSENT</h3>
+  <p class="w3-margin">When you provide us with personal information, you imply that you consent to our
+  collecting it and using it for that specific reason only. If we ask for your personal
+  information for a secondary reason, we will either ask you directly for your express
+  consent, or provide you with an opportunity to say “no”.<br><br>
+  If after you opt-in, you change your mind, you may withdraw your consent for us to
+  contact you, for the continued collection, use or disclosure of your information, at
+  any time, by contacting us at optout(at)mail(period)kaiserstrike(period)org.</p>
+  <h3 class="w3-margin">SECTION 3 - DISCLOSURE</h3>
+  <p class="w3-margin">We will not disclose your personal information unless you violate our Terms of Service or
+  we are required to do so by law.</p>
+  <h3 class="w3-margin">SECTION 4 - THIRD-PARTY SERVICES</h3>
+  <p class="w3-margin">In general, the third-party providers used by us will only collect, use and disclose
+  your information to the extent necessary to allow them to perform the services
+  they provide to us. However, certain third-party service providers have their own
+  privacy policies with respect to the information we are required to provide to them.
+  For these providers, we recommend that you read their privacy policies so you can
+  understand the manner in which they handle your personal information. In
+  particular, remember that certain providers may be located in a different
+  jurisdiction than either you or us. So if you elect to proceed with a transaction that
+  involves the services of a third-party service provider, your information may
+  become subject to the laws of the jurisdiction(s) in which that service provider or
+  its facilities are located. Once you leave our website or are redirected to a third-
+  party website or application, you are no longer governed by this Privacy Policy or
+  our websiteʼs Terms of Service.<br><br>
+  When you click on links on our website, they may direct you away from our site.
+  We are not responsible for the privacy practices of other sites and we encourage you
+  to read their privacy statements.</p>
+  <h3 class="w3-margin">SECTION 5 - SECURITY</h3>
+  <p class="w3-margin">We take reasonable precautions to ensure your personal information is not
+  inappropriately lost, misused, accessed, or disclosed.</p>
+  <h3 class="w3-margin">SECTION 6 - AGE OF CONSENT</h3>
+  <p class="w3-margin">By using this site, you represent that you are at least the age of majority in your
+  state, or that you are the age of majority in your state and you have given us your
+  consent to allow any of your minor dependents to use this site.</p>
+  <h3 class="w3-margin">SECTION 7 - CHANGES TO THIS PRIVACY POLICY</h3>
+  <p class="w3-margin">We reserve the right to modify this privacy policy at any time, so please review it
+  frequently. Changes and clarifications will take effect immediately upon their
+  posting to this page. If we make material changes to this policy, we will notify
+  you here that it has been updated, so that you are aware of what information we
+  collect, how we use it, and under what circumstances, if any, we use and/or
+  disclose it.</p>
+  <h3 class="w3-margin">QUESTIONS AND CONTACT INFORMATION</h3>
+  <p class="w3-margin">If you would like us to delete any personal information we have about you, contact
+  us at optout(at)mail(period)kaiserstrike(period)org. For all other questions and concerns, please contact us
+  at inquiries(at)mail(period)kaiserstrike(period)org.</p>
 </div>
-<br><br><br>
-<p align="center">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc. (<a href={% url 'terms' %} class="body">Terms</a>) (<a href={% url 'privacy' %} class="body">Privacy</a>)</p>
-</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center">
+  <p><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
+  <p>DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+</footer>
+
+<script>
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
 </body>
 </html>

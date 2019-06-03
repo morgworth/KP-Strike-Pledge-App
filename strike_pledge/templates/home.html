@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="/static/w3.css">
 
 <head>
-  <title>FAQ</title>
-  <meta name="description" content="FAQ">
+  <title>Home</title>
+  <meta name="description" content="Join the Kaiser strike">
 </head>
 
 <body>
@@ -16,27 +16,33 @@
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">FAQ</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href={% url 'email' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-black">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">FAQ</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
   </div>
 </div>
 
 <!-- First Grid -->
-<div class="w3-container w3-white w3-left" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">FAQ</h1><br><br>
-  <h3 class="w3-margin">Can I be disciplined for using this website?</h3>
-  <p class="w3-margin">You cannot be disciplined for engaging in concerted activities for mutual aid or protection, but we recommend against accessing this website on paid work time.</p>
+<div class="w3-container w3-white w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Help get Kaiser back on track</h1>
+  <p class="w3-xlarge">Join the largest Kaiser strike ever (5 days in Oct/Nov 2019)</p>
+  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Count me in!</button>
 </div>
 
+<!-- Second Grid -->
+<div class="w3-container w3-white w3-center" style="padding:128px 16px">
+  <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
+  <p class="w3-xlarge">Kaiser employees are ready to strike</p>
+  <a align="center" href="https://twitter.com/kpstrike2019?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kpstrike2019</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center">

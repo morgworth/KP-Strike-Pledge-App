@@ -1,112 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
-<script src="{% static "/scripts.js" %}"></script>
-<style>
-/* The sidebar menu */
-.sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-}
+<link rel="stylesheet" href="/static/w3.css">
 
-/* The sidebar links */
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* The button used to open the sidebar */
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s; /* If you want a transition effect */
-  padding: 20px;
-  overflow: auto;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
- .body:link {
-    color: #E6141B; }
- .body:visited {
-    color: #E6141B; }
- .body:hover {
-    color: #212121; }
- .body:focus {
-    color: #212121; }
- .body:active {
-    color: #E6141B; }
-</style>
+<head>
+  <title>Confirm your pledge</title>
 </head>
+
 <body>
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href={% url 'email' %}>Home</a>
-  <a href={% url 'about' %}>About</a>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card w3-right-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+  </div>
 </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">&#9776;</button>
-  <a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" align="right" style="width:50px;height:50px"></a>
-
-<h1 align="center">Almost done!</h1>
-<h2 align="center">Complete the following fields to confirm your pledge:</h2>
-<form action={% url "validate" %} method="post">
-    {% csrf_token %} <br><br>
- 	<div align="center">
-	{{ form.as_p }}
-    This comment will be posted <b>anonymously</b> on twitter @kpstrike2019. <br><br>
-    <div class="form-actions">
-      <button type="submit">Count your Pledge!</button>
-    </div>
-	</div>
-</form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<p align="center">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc. (<a href={% url 'terms' %} class="body">Terms</a>) (<a href={% url 'privacy' %} class="body">Privacy</a>)</p>
+<!-- First Grid -->
+<div class="w3-container w3-white w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Almost done!</h1>
+  <p class="w3-xlarge">Complete the following fields to confirm your pledge:</p>
+  <br><br>
+  <form action={% url "validate" %} method="post">
+      {% csrf_token %} <br><br>
+   	<div class="w3-center">
+  	{{ form.as_p }}
+      This comment will be posted <b>anonymously</b> on twitter @kaiserpstrike19. <br><br>
+      <div class="form-actions">
+        <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Confirm your pledge!</button>
+      </div>
+  	</div>
+  </form>
 </div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center">
+  <p><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
+  <p>DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+</footer>
+
+<script>
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
 </body>
 </html>
