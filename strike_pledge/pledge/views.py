@@ -91,3 +91,6 @@ def termsView(request):
 
 def privacyView(request):
     return render(request, "privacy.html")
+
+def homeView(request):
+    return render(request, "home.html", {'count': Pledge.objects.all().count})
