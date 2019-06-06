@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import emailView, successView, validateView, aboutView, termsView, privacyView
+from .views import emailView, successView, validateView, aboutView, termsView, privacyView, faqView
 
 urlpatterns = [
     path('', emailView, name='email'),
@@ -10,4 +10,5 @@ urlpatterns = [
 	path('about/', aboutView, name='about'),
     path('terms/', termsView, name='terms'),
 	path('privacy/', privacyView, name='privacy'),
+    path('faq/', faqView, name='faq'),
 ]
