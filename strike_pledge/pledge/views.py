@@ -21,9 +21,11 @@ def emailView(request):
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'https://kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, in Oct/Nov 2019. Please click the following link to confirm your strike pledge: \n' + validate_link
-            message += '\n\n Tech Workers Coalition \n'
-            message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.'
+            message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019. Please click the following link to confirm your strike pledge:\n' + validate_link
+            message += '\n\nTech Workers Coalition\n'
+            message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.\n'
+            message += '\n\nhttps://techworkerscoalition.org'
+
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
