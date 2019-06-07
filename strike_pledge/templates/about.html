@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>About</title>
 <meta charset="UTF-8">
+<meta name="description" content="About the Kaiser strike">
 <meta name="robots" content="index,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
-<link rel="stylesheet" href="/static/w3.css">
-
-<head>
-  <title>About</title>
-  <meta name="description" content="About the Kaiser strike">
-</head>
 
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
@@ -24,9 +20,9 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
-    <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">About</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
   </div>
 </div>
 
@@ -47,6 +43,7 @@
   <p class="w3-margin">A coalition of tech workers, labor organizers, community organizers, and friends
   working in solidarity with existing movements towards social justice, workers'
   rights, and economic inclusion.</p>
+  <br><br><br><br><br><br>
 </div>
 
 

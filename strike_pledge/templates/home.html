@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Home</title>
 <meta charset="UTF-8">
+<meta name="description" content="Join the Kaiser strike">
 <meta name="robots" content="index,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
-<link rel="stylesheet" href="/static/w3.css">
-
-<head>
-  <title>Home</title>
-  <meta name="description" content="Join the Kaiser strike">
-</head>
 
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
@@ -24,9 +20,9 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-black">Home</a>
-    <a href={% url 'about' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
   </div>
 </div>
 
@@ -40,10 +36,10 @@
 </div>
 
 <!-- Second Grid -->
-<div class="w3-container w3-white w3-center" style="padding:128px 16px">
+<div class="w3-container w3-white w3-center" style="padding:24px 16px">
   <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
   <p class="w3-xlarge">Kaiser employees have pledged to join the strike</p>
-  <a align="center" href="https://twitter.com/kpstrike2019?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kpstrike2019</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a align="center" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 <!-- Footer -->
