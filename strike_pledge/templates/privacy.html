@@ -8,6 +8,11 @@
 {% load static %}
 <link rel="stylesheet" href="/static/w3.css">
 <link rel="stylesheet" href="/static/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<style>
+.w3-bar {font-family: "Montserrat", sans-serif}
+</style>
 
 <body>
 
@@ -21,7 +26,7 @@
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
@@ -84,10 +89,10 @@
 
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center">
-  <p><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
-  <p>DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-  <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+<footer class="w3-container w3-padding-64">
+  <p class="w3-center"><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
+  <p class="w3-margin">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
 
 <script>

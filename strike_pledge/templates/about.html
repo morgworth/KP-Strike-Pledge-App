@@ -8,6 +8,11 @@
 {% load static %}
 <link rel="stylesheet" href="/static/w3.css">
 <link rel="stylesheet" href="/static/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<style>
+.w3-bar {font-family: "Montserrat", sans-serif}
+</style>
 
 <body>
 
@@ -21,7 +26,7 @@
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
@@ -31,8 +36,7 @@
 <!-- First Grid -->
 <div class="w3-container w3-white w3-left" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">About</h1>
-  <p class="w3-margin">Tell Kaiser to put patients, employees, and communities <i>before profits and executives</i><br><br>
-  Join the largest Kaiser strike ever<br><br>
+  <p class="w3-margin">Tell Kaiser to put patients, employees, and communities <i>before</i> profits and executives<br><br>
   Members of the <a href="https://www.unioncoalition.org" class="w3-text-red">Coalition of KP Unions</a>
   are planning a 5-day strike in Oct/Nov 2019. Originally, the strike was planned
   to protest Kaiser's refusal (for 12+ months) to meet and bargain with the Coalition, which
@@ -41,20 +45,16 @@
   <a href="http://www.seiu-uhw.org/wp-content/blogs.dir/166/files/2018/12/NLRB-Complaint-Against-Kaiser_12-28-2018_CPT.32-CA-220268.pdf" class="w3-text-red">formal complaint against Kaiser</a>
   for refusing to meet and bargain with the Coalition. The NLRB set a trial date for March 19, 2019,
   but the trial has been postponed until August 2019, at Kaiser's request.</p><br>
-  <h4 class="w3-margin"><b>Tech Workers Coalition</b></h4>
-  <p class="w3-margin">A coalition of tech workers, labor organizers, community organizers, and friends
-  working in solidarity with existing movements towards social justice, workers'
-  rights, and economic inclusion.</p>
   <br><br><br><br><br><br>
 </div>
 
-
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center">
-  <p><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
-  <p>DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-  <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+<footer class="w3-container w3-padding-64">
+  <p class="w3-center"><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
+  <p class="w3-margin">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
+
 <script>
 
 // Used to toggle the menu on small screens when clicking on the menu button
