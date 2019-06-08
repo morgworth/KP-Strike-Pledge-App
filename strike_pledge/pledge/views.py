@@ -29,7 +29,7 @@ def emailView(request):
 
             try:
                 Pledge.objects.get(email_hash=hashed_email)
-				send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
+                send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
             except Pledge.DoesNotExist:
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
