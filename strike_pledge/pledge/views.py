@@ -51,9 +51,9 @@ def validateView(request):
     elif request.method == 'POST':
         form = ValidateForm(request.POST)
         if form.is_valid():
+            email_hash = form.cleaned_data['email_hash']
+            work_email = form.cleaned_data['work_email']
             if email_hash == hashlib.sha1(work_email.lower().encode()).hexdigest():
-                email_hash = form.cleaned_data['email_hash']
-                work_email = form.cleaned_data['work_email']
                 union_member = form.cleaned_data['union_member']
                 region = form.cleaned_data['kaiser_region']
                 pers_email = form.cleaned_data['personal_email']
