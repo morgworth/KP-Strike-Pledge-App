@@ -58,7 +58,7 @@ def validateView(request):
                 region = form.cleaned_data['kaiser_region']
                 pers_email = form.cleaned_data['personal_email']
                 tweet = form.cleaned_data['tweet']
-				count = Pledge.objects.all().count
+                count = Pledge.objects.all().count
                 if tweet != '' and count > 1000:
                     api = twitter.Api(consumer_key=os.environ['consumer_key'],
 								  consumer_secret=os.environ['consumer_secret'],
