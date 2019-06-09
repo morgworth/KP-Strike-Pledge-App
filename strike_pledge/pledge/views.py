@@ -21,12 +21,12 @@ def emailView(request):
             username = form.cleaned_data['email']
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
-            validate_link = 'https://kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019. Please click the following link to confirm your strike pledge:\n' + urllib.parse.quote_plus(validate_link)
+            validate_link = 'kaiserstrike[dot]org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
+            message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019. Please go to the following link to confirm your strike pledge:\n' + validate_link
+            message += '\n\n(replace [dot] with .)'
             message += '\n\nTech Workers Coalition\n'
             message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.\n'
             message += '\n\nhttps://techworkerscoalition.org'
-
             try:
                 Pledge.objects.get(email_hash=hashed_email)
                 send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
@@ -51,14 +51,15 @@ def validateView(request):
     elif request.method == 'POST':
         form = ValidateForm(request.POST)
         if form.is_valid():
+            email_hash = form.cleaned_data['email_hash']
+            work_email = form.cleaned_data['work_email']
             if email_hash == hashlib.sha1(work_email.lower().encode()).hexdigest():
-                email_hash = form.cleaned_data['email_hash']
-                work_email = form.cleaned_data['work_email']
                 union_member = form.cleaned_data['union_member']
                 region = form.cleaned_data['kaiser_region']
                 pers_email = form.cleaned_data['personal_email']
                 tweet = form.cleaned_data['tweet']
-                if tweet != '' and Pledge.objects.all().count > 1000:
+                count = Pledge.objects.all().count()
+                if tweet != '' and count > 1000:
                     api = twitter.Api(consumer_key=os.environ['consumer_key'],
 								  consumer_secret=os.environ['consumer_secret'],
 								  access_token_key=os.environ['access_token_key'],
