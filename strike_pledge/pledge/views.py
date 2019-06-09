@@ -23,7 +23,7 @@ def emailView(request):
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike[dot]org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019. Please click the following link to confirm your strike pledge:\n' + validate_link
-            message += '(replace [dot] with .)'
+            message += '\n\n(replace [dot] with .)'
             message += '\n\nTech Workers Coalition\n'
             message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.\n'
             message += '\n\nhttps://techworkerscoalition.org'
