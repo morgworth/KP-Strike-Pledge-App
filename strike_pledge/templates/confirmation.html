@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Success</title>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card w3-right-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">About</a>
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Home</a>
+
+
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+  </div>
+</div>
+
+<!-- First Grid -->
+<div class="w3-container w3-white w3-center" style="padding:128px 16px">
+  <p class="w3-xlarge">Thank you. Your pledge has been confirmed.</p><br><br><br>
+  <a align="center" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-12">
+  <p class="w3-center"><a href="https://techworkerscoalition.org/"><img src="{% static "/twclogo.jpg" %}" alt="Tech Workers Coalition" style="width:50px;height:50px"></a></p>
+  <p class="w3-margin">DISCLAIMER: kaiserstrike.org is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+</footer>
+
+<script>
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+</body>
+</html>
