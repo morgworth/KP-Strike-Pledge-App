@@ -82,7 +82,7 @@ def validateView(request):
 									  region = region,
 									  pers_email = pers_email,
                                       message = tweet)
-                return redirect('email')
+                return redirect('confirm')
     return render(request, "contact.html", {'form': form})
 
 def aboutView(request):
@@ -99,3 +99,6 @@ def privacyView(request):
 
 def homeView(request):
     return render(request, "home.html", {'count': Pledge.objects.all().count})
+
+def confirmView(request):
+    return render(request, "confirmation.html")
