@@ -22,11 +22,12 @@ def emailView(request):
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike[dot]org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'You or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019. Please go to the following link to confirm your strike pledge:\n' + validate_link
-            message += '\n\n(replace [dot] with .)'
-            message += '\n\nTech Workers Coalition\n'
+            message = 'Hello!\n\nYou or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019.\n\n'
+            message += 'To confirm your strike pledge, please copy-paste this link into your browser address bar:\n\n'
+            message += '(IMPT: replace "[dot]" with "." -->)     ' + validate_link
+            message += '\n\n\n\n\nFrom,\n\n'
+            message += 'The Tech Workers Coalition\n\n'
             message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.\n'
-            message += '\n\nhttps://techworkerscoalition.org'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
                 send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
@@ -65,7 +66,7 @@ def validateView(request):
 								  access_token_key=os.environ['access_token_key'],
 								  access_token_secret=os.environ['access_token_secret'])
                     try:
-                        api.PostUpdate(tweet[0:245] + '... #kaiserstrike @aboutKP @KPShare')
+                        api.PostUpdate(tweet[0:245] + '... #kaiserstrike @aboutKP @kpthrive')
                     except:
                         print('')
                 try:
