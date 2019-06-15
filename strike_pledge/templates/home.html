@@ -18,7 +18,6 @@
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-black">Home</a>
-
   </div>
 
   <!-- Navbar on small screens -->
@@ -31,16 +30,19 @@
 
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:64px 16px">
-  <h1 class="w3-margin w3-jumbo">Join the largest Kaiser strike ever</h1>
+  <h1 class="w3-margin w3-jumbo">Want Kaiser to remain a <b>best place to work</b>, and <b>to receive care</b>?</h1><br><br><br>
+  <p class="w3-margin">Sometimes, as <a href="https://www.lmpartnership.org/videos/how-our-partnership-came-to-be">Kaiser's own history demonstrates</a>
+  ...that requires going on strike.</p><br>
+  <p class="w3-margin w3-xlarge">Are you ready to go on strike?</p><br><br>
   <form>
-  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Count me in!</button>
+  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Yes, count me in!</button>
   </form>
 </div>
 
 <!-- Second Grid -->
 <div class="w3-container w3-white w3-center" style="padding:24px 16px">
   <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
-  <p class="w3-xlarge">Kaiser employees have pledged to join the strike</p>
+  <p class="w3-xlarge">Kaiser employees are ready to go on strike</p>
   <a align="center" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
