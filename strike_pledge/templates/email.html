@@ -30,15 +30,16 @@
 
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:64px 16px">
-  <p class="w3-xlarge">Enter your Kaiser email address</p>
-  <p>(We'll send you an email to confirm you're a Kaiser employee)</p>
+  <h1 class="w3-margin w3-jumbo">Great!</h1>
+  <p class="w3-xlarge">Now, simply enter your Kaiser email address:</p>
+  <p>(Note: you <b>MUST</b> open the link in our email to finalize your strike pledge)</p>
     <form method="post" align="center">
       {% csrf_token %}
       <div align="center">{{ form.email }}  @kp.org</div>
       <div class="form-actions" align="center">
   	  <br>
       </div>
-	  <button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">Email me to confirm</button>
+	  <button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">E-mail me!</button>
     </form>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
