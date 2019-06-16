@@ -22,12 +22,11 @@ def emailView(request):
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike[dot]org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'Hello!\n\nYou or your co-worker indicated you\'d like to join the largest Kaiser strike ever, a 5-day strike in Oct/Nov 2019.\n\n'
-            message += 'To confirm your strike pledge, please copy-paste this link into your browser address bar:\n\n'
-            message += '(IMPT: replace "[dot]" with "." -->)     ' + validate_link
+            message = 'Hello!\n\nYou or your co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
+            message += 'To finalize strike pledge, please copy-paste this link into your browser address bar:\n\n'
+            message += '(IMPT: replace "[dot]" with "." -->)    ' + validate_link
             message += '\n\n\n\n\nFrom,\n\n'
-            message += 'The Tech Workers Coalition\n\n'
-            message += 'A coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers\' rights, and economic inclusion.\n'
+            message += 'Your friends at kaiserstrike.org'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
                 send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
