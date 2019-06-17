@@ -102,3 +102,6 @@ def homeView(request):
 
 def confirmView(request):
     return render(request, "confirmation.html")
+
+def unionView(request):
+    return render(request, "unions.html")

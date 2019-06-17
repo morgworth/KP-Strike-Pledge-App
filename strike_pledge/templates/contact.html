@@ -37,7 +37,13 @@
   <form action={% url "validate" %} method="post">
       {% csrf_token %} <br><br>
    	<div class="w3-center">
-  	{{ form.as_p }}
+  	<!--{{ form.as_p }} -->
+	<p>
+		{{form.kaiser_region}}<br><br>
+		{{form.union_member}} <a href={% url 'union' %} class="w3-text-red">(Not sure?)</a><br><br>
+		{{form.tweet}}<br><br>
+		{{form.personal_email}}<br><br>
+	</p>
       Your comment will be tweeted <b>anonymously</b> from @kaiserstrike19, along with #kaiserstrike, @aboutKP, and @kpthrive<br><br>
       <div class="form-actions">
         <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Finalize my pledge!</button>
