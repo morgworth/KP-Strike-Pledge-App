@@ -38,10 +38,10 @@ def emailView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "email.html", {'form': form, 'count': Pledge.objects.all().count})
+    return render(request, "email.html", {'form': form})
 
 def successView(request):
-	return render(request,"success.html",{'count': Pledge.objects.all().count})
+	return render(request,"success.html")
 
 def validateView(request):
     if request.method == 'GET':
@@ -98,7 +98,10 @@ def privacyView(request):
     return render(request, "privacy.html")
 
 def homeView(request):
-    return render(request, "home.html", {'count': Pledge.objects.all().count})
+    count = Pledge.objects.all().count
+    if count < 1000:
+        count = '< 1000'
+    return render(request, "home.html", {'count': count})
 
 def confirmView(request):
     return render(request, "confirmation.html")
