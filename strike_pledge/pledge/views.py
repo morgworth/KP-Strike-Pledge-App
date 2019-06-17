@@ -98,7 +98,7 @@ def privacyView(request):
     return render(request, "privacy.html")
 
 def homeView(request):
-    count = Pledge.objects.all().count
+    count = Pledge.objects.all().count()
     if count < 1000:
         count = '< 1000'
     return render(request, "home.html", {'count': count})
