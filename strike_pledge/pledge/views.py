@@ -10,6 +10,7 @@ from pledge.serializers import PledgeSerializer
 import hashlib
 import twitter
 import urllib
+import os
 
 def emailView(request):
     if request.method == 'GET':
