@@ -52,7 +52,7 @@
 		{{form.personal_email.errors}}
 		{{form.personal_email}}<br><br>
 	</p> -->
-	
+
 	<tr><th></th><td><select name="kaiser_region" id="id_kaiser_region">
   <option value="none">Kaiser Region</option>
 
@@ -88,7 +88,7 @@
 <tr><th></th><td><textarea name="tweet" cols="40" rows="10" placeholder="Why are you joining the strike? (optional)" maxlength="245" id="id_tweet">
 </textarea></td></tr><br><br>
 <tr><th></th><td><input type="text" name="personal_email" placeholder="Personal email (optional)" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr><br><br>
-	
+
       Your comment will be tweeted <b>anonymously</b> from @kaiserstrike19, along with #kaiserstrike, @aboutKP, and @kpthrive<br><br>
       <div class="form-actions">
         <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Finalize my pledge!</button>
@@ -101,7 +101,7 @@
 <!-- Footer -->
 <footer class="w3-container w3-padding-12">
   <p class="w3-center"><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-  <p class="w3-margin">This website was made by the <a href="https://techworkerscoalition.org" class="w3-text-red">Tech Workers Coalition</a> at the request of, and with input from, Kaiser employees. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p class="w3-margin">This website was made by the Tech Workers Coalition at the request of, and with input from, Kaiser employees. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
   <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
 
