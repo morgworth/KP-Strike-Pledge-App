@@ -83,7 +83,7 @@ def validateView(request):
 									  pers_email = pers_email,
                                       message = tweet)
                 return redirect('confirm')
-    return render(request, "contact.html", {'form': form})
+    return render(request, "contact.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email })
 
 def aboutView(request):
     return render(request, "about.html")
