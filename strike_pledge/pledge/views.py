@@ -1,7 +1,7 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import PledgeForm, ValidateForm
+from .forms import PledgeForm, ValidateForm, ReferralForm
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -23,13 +23,12 @@ def emailView(request):
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
-            message += 'To finalize strike pledge, please copy-paste this link into your browser address bar:\n\n'
+            message += 'To finalize your strike pledge, please go to this link:\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your friends at kaiserstrike.org'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
-                send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
             except Pledge.DoesNotExist:
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
@@ -103,7 +102,43 @@ def homeView(request):
     return render(request, "home.html", {'count': count})
 
 def confirmView(request):
-    return render(request, "confirmation.html")
+    if request.method == 'GET':
+        form = ReferralForm
+    else:
+        form = ReferralForm(request.POST)
+        if form.is_valid():
+            email1 = form.cleaned_data['email1'] + '@kp.org'
+            email2 = form.cleaned_data['email2'] + '@kp.org'
+            email3 = form.cleaned_data['email3'] + '@kp.org'
+            subject = 'Pledge to strike!'
+            message = 'Hello!\n\nYour co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
+            message += 'To pledge to strike, please go to this link:\n\n'
+            message += 'https://kaiserstrike.org'
+            message += '\n\n\n\n\nFrom,\n\n'
+            message += 'Your friends at kaiserstrike.org'
+            if email1 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email1], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email2 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email3 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('home')
+    return render(request, "confirmation.html", {'form':form})
 
 def unionView(request):
     return render(request, "unions.html")

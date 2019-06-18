@@ -31,12 +31,24 @@
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:100px 16px">
   <p class="w3-jumbo">Your pledge has been confirmed.</p>
-  <p>If you entered a comment, it will be tweeted from @kaiserstrike19 shortly.</p><br><br><br>
+  <p>Fill out the form below with Kaiser email addresses of any co-workers who also may be interested. Please don't include '@kp.org':</p>
+  <form method="post">
+	{% csrf_token %}
+	<div align="center">{{ form.email1 }}@kp.org<br><br></div>
+	<div align="center">{{ form.email2 }}@kp.org<br><br></div>
+	<div align="center">{{ form.email3 }}@kp.org<br><br></div>
+	<div class="form-actions" align="center">
+  	<br>
+    </div>
+	<button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">Count them in!</button>
+  </form>
+  <br><br><br>
+  <p>If you entered a comment, it will be tweeted from @kaiserstrike19 shortly.</p>
+  <p class="w3-center"><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 </div>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-12">
-  <p class="w3-center"><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
   <p class="w3-margin">This website was made by the <a href="https://techworkerscoalition.org" class="w3-text-red">Tech Workers Coalition</a> at the request of, and with input from, Kaiser employees. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
   <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
