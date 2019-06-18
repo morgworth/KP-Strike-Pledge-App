@@ -21,10 +21,10 @@ def emailView(request):
             username = form.cleaned_data['email']
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
-            validate_link = 'kaiserstrike[dot]org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
+            validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
             message += 'To finalize strike pledge, please copy-paste this link into your browser address bar:\n\n'
-            message += '(IMPT: replace "[dot]" with "." -->)    ' + validate_link
+            message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your friends at kaiserstrike.org'
             try:
@@ -58,8 +58,7 @@ def validateView(request):
                 region = form.cleaned_data['kaiser_region']
                 pers_email = form.cleaned_data['personal_email']
                 tweet = form.cleaned_data['tweet']
-                count = Pledge.objects.all().count()
-                if tweet != '' and count > 1000:
+                if tweet != '':
                     api = twitter.Api(consumer_key=os.environ['consumer_key'],
 								  consumer_secret=os.environ['consumer_secret'],
 								  access_token_key=os.environ['access_token_key'],
