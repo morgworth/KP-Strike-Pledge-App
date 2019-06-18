@@ -110,12 +110,12 @@ def confirmView(request):
             email1 = form.cleaned_data['email1'] + '@kp.org'
             email2 = form.cleaned_data['email2'] + '@kp.org'
             email3 = form.cleaned_data['email3'] + '@kp.org'
-            subject = 'Pledge to strike!'
-            message = 'Hello!\n\nYour co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
-            message += 'To pledge to strike, please go to this link:\n\n'
+            subject = 'Make a digital strike pledge'
+            message = 'Hello!\n\nYou or your co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Click on this link to make a digital strike pledge and tweet at Kaiser (anonymously):\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
-            message += 'Your friends at kaiserstrike.org'
+            message += 'Your co-workers and friends at kaiserstrike.org'
             if email1 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email1], fail_silently=True)
