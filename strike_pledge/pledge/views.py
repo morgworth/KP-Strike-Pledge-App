@@ -22,11 +22,11 @@ def emailView(request):
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'Hello!\n\nYou or your co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
-            message += 'To finalize your strike pledge, please go to this link:\n\n'
+            message = 'Hello!\n\nYou or your co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Click on this link to make a digital strike pledge and tweet at Kaiser (anonymously):\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
-            message += 'Your friends at kaiserstrike.org'
+            message += 'Your co-workers and friends at kaiserstrike.org'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
