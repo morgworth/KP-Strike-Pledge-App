@@ -21,10 +21,10 @@ def emailView(request):
             username = form.cleaned_data['email']
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
-            validate_link = 'kaiserstrike[dot]org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
+            validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want Kaiser to remain a best place to work, and to receive care.\n\n'
             message += 'To finalize strike pledge, please copy-paste this link into your browser address bar:\n\n'
-            message += '(IMPT: replace "[dot]" with "." -->)    ' + validate_link
+            message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your friends at kaiserstrike.org'
             try:
