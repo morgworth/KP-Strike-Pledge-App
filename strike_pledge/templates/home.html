@@ -30,18 +30,17 @@
 
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:100px 16px">
-  <h1 class="w3-margin w3-jumbo">Make a digital strike pledge</h1>
-  <p class="w3-xlarge">And tweet at Kaiser. Anonymously.</p><br><br>
+  <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
+  <p class="w3-xlarge">Kaiser employees have pledged to join the Oct/Nov 2019 strike</p>
   <form>
-  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Count my pledge!</button>
+  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Count me in!</button>
   </form>
 </div>
 
 <!-- Second Grid -->
-<div class="w3-container w3-white w3-center" style="padding:24px 16px">
-  <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
-  <p class="w3-xlarge">Kaiser employees have pledged to join the Oct/Nov 2019 strike</p>
-  <br><br><br><br><br><br><br>
+<div class="w3-container w3-white w3-center" style="padding:100px 16px">
+  <h1 class="w3-margin w3-xlarge">Make a digital strike pledge and tweet at Kaiser</h1>
+  <h1 class="w3-xlarge">Anonymously</h1><br><br>
 </div>
 
 <!-- Footer -->
