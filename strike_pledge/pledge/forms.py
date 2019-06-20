@@ -2,7 +2,7 @@
 from django import forms
 
 class PledgeForm(forms.Form):
-    email = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'firstname.(initial).lastname','size':30}))
+    email = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'firstname.(initial).lastname','size':25}))
 
 class ValidateForm(forms.Form):
     email_hash = forms.CharField(max_length=200, widget=forms.HiddenInput(), label='')
