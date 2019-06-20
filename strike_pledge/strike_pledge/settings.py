@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x6bdt-_n(ucp8&!**k#eqplu6^15e*frjsypjd5!#z$i!^4#g7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['kpstrike.us-west-2.elasticbeanstalk.com','kaiserstrike.org', 'localhost']
 
