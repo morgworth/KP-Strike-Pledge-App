@@ -27,7 +27,7 @@ def emailView(request):
             message += 'Click on this link to make a digital strike pledge and tweet at Kaiser (anonymously):\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
-            message += 'Your co-workers and friends at kaiserstrike.org'
+            message += 'Your co-workers and friends at kaiserstrike(dot)org'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
@@ -116,7 +116,7 @@ def confirmView(request):
             message += 'Click on this link to make a digital strike pledge and tweet at Kaiser (anonymously):\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
-            message += 'Your co-workers and friends at kaiserstrike.org'
+            message += 'Your co-workers and friends at kaiserstrike(dot)org'
             if email1 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email1], fail_silently=True)
