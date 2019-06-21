@@ -9,6 +9,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% load static %}
 
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
 <body>
 
 <!-- Navbar -->
@@ -40,7 +57,8 @@
 
 <!-- Second Grid -->
 <div class="w3-container w3-white w3-center" style="padding:100px 16px">
-    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">For my family and the current families and future families of Kaiser.... <a href="https://twitter.com/hashtag/kaiserstrike?src=hash&amp;ref_src=twsrc%5Etfw">#kaiserstrike</a> <a href="https://twitter.com/aboutKP?ref_src=twsrc%5Etfw">@aboutKP</a> <a href="https://twitter.com/kpthrive?ref_src=twsrc%5Etfw">@kpthrive</a></p>&mdash; kaiser strike (@kaiserstrike19) <a href="https://twitter.com/kaiserstrike19status1142114963156156417?ref_src=twsrc%5Etfw">June 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-lang="en" data-width="600" data-height="100" data-tweet-limit="1" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
+  <br><br><br><br>
 </div>
 
 <!-- Footer -->
