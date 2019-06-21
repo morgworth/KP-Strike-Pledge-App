@@ -31,7 +31,8 @@
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:100px 16px">
   <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
-  <p class="w3-xlarge">Kaiser employees have pledged to join the Oct/Nov 2019 strike</p>
+  <p class="w3-xlarge">Kaiser employees have made a digital strike pledge</p>
+  <p class=>(to join the Oct/Nov 2019 strike)</p>
   <form>
   <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Count me in!</button>
   </form>
@@ -39,13 +40,11 @@
 
 <!-- Second Grid -->
 <div class="w3-container w3-white w3-center" style="padding:100px 16px">
-  <h1 class="w3-margin w3-xlarge">Make a digital strike pledge and tweet at Kaiser</h1>
-  <h1 class="w3-xlarge">Anonymously</h1><br><br>
+    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">For my family and the current families and future families of Kaiser.... <a href="https://twitter.com/hashtag/kaiserstrike?src=hash&amp;ref_src=twsrc%5Etfw">#kaiserstrike</a> <a href="https://twitter.com/aboutKP?ref_src=twsrc%5Etfw">@aboutKP</a> <a href="https://twitter.com/kpthrive?ref_src=twsrc%5Etfw">@kpthrive</a></p>&mdash; kaiser strike (@kaiserstrike19) <a href="https://twitter.com/kaiserstrike19status1142114963156156417?ref_src=twsrc%5Etfw">June 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-12">
-  <p class="w3-center"><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
   <p class="w3-margin">This website was made by the Tech Workers Coalition at the request of, and with input from, Kaiser employees. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
   <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
