@@ -65,7 +65,7 @@ def validateView(request):
 								  access_token_key=os.environ['access_token_key'],
 								  access_token_secret=os.environ['access_token_secret'])
                     try:
-                        api.PostUpdate(tweet[0:245] + '... #kaiserstrike @aboutKP @kpthrive')
+                        api.PostUpdate(tweet[0:225] + '...#kaiserstrike #wearekaiserworkers @aboutKP @kpthrive')
                     except:
                         print('')
                 try:
