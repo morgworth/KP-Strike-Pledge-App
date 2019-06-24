@@ -29,8 +29,7 @@ def emailView(request):
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
             try:
-                #Pledge.objects.get(email_hash=hashed_email)
-                send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
+                Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
