@@ -24,7 +24,7 @@ def emailView(request):
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Click on this link to make a digital strike pledge and tweet at Kaiser (anonymously):\n\n'
+            message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -114,7 +114,7 @@ def confirmView(request):
             email3 = form.cleaned_data['email3'] + '@kp.org'
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYou or your co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Click on this link to make a digital strike pledge and tweet at Kaiser (anonymously):\n\n'
+            message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
