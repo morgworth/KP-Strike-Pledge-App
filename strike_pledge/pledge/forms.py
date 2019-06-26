@@ -27,7 +27,7 @@ class ValidateForm(forms.Form):
         ('no', 'No (sympathy striker)')
     )
     union_member = forms.ChoiceField(choices=union_list, required=True, label='')
-    tweet = forms.CharField(max_length=225, required=False, initial='', label='', widget=forms.Textarea(attrs={'placeholder':'Why are you joining the strike? (optional)'}))
+    tweet = forms.CharField(max_length=235, required=False, initial='', label='', widget=forms.Textarea(attrs={'placeholder':'Why are you making a strike pledge? (optional)'}))
     personal_email=forms.EmailField(required=False, label='', initial='', widget=forms.TextInput(attrs={'placeholder':'Personal email (optional)'}))
 
 class ReferralForm(forms.Form):
