@@ -11,6 +11,15 @@
 
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
@@ -31,26 +40,27 @@
 <!-- First Grid -->
 <div class="w3-container w3-white w3-left" style="padding:100px 16px">
   <h1 class="w3-margin w3-jumbo">FAQ</h1>
-  <h3 class="w3-margin">Who made this website?</h3>
+  <h3 class="w3-margin"><b>When is the strike?</b></h3>
+  <p class="w3-margin">The strike will take place on or after Oct 1, 2019.</p>
+  <h3 class="w3-margin"><b>Can I be disciplined for using this website?</b></h3>
+  <p class="w3-margin">The National Labor Relations Act <a href="https://www.nlrb.gov/sites/default/files/attachments/basic-page/node-3024/basicguide.pdf" class="w3-text-red">protects concerted activities for mutual aid or protection</a>, but we recommend against using this website on paid work time.</p>
+  <h3 class="w3-margin"><b>Who made this website</b>?</h3>
   <p class="w3-margin">This website was made by the Tech Workers Coalition (TWC) at the request of,
   and with input from, Kaiser employees. TWC is a coalition of tech workers, labor organizers,
   community organizers, and friends working in solidarity with existing movements towards social justice,
   workers' rights, and economic inclusion. For more info about TWC, <a href="https://techworkerscoalition.org" class="w3-text-red">click here</a>.</p>
-  <h3 class="w3-margin">When is the strike?</h3>
-  <p class="w3-margin">The strike will take place on or after Oct 1, 2019.</p>
-  <h3 class="w3-margin">Can I be disciplined for using this website?</h3>
-  <p class="w3-margin">The National Labor Relations Act <a href="https://www.nlrb.gov/sites/default/files/attachments/basic-page/node-3024/basicguide.pdf" class="w3-text-red">protects concerted activities for mutual aid or protection</a>, but we recommend against using this website on paid work time.</p>
-  <h3 class="w3-margin">What if I have another question?</h3>
+  <h3 class="w3-margin"><b>What if I have another question?</b></h3>
   <p class="w3-margin">E-mail us at inquiries (at) mail (period) kaiserstrike (period) org.</p>
   <br><br><br><br><br><br><br><br><br>
 </div>
 
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-12">
-  <p class="w3-center"><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-  <p class="w3-margin">This website was made by the Tech Workers Coalition at the request of, and with input from, Kaiser employees. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-  <p class="w3-center"><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+<footer class="w3-container w3-center w3-padding-12">
+  <div class="fb-share-button" data-href="https://kaiserstrike.org" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaiserstrike.org%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+  <div><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a></div>
+  <p>This website is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+  <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
 
 <script>
