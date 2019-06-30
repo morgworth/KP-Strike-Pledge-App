@@ -111,6 +111,8 @@ def confirmView(request):
             email1 = form.cleaned_data['email1'] + '@kp.org'
             email2 = form.cleaned_data['email2'] + '@kp.org'
             email3 = form.cleaned_data['email3'] + '@kp.org'
+            email4 = form.cleaned_data['email4'] + '@kp.org'
+            email5 = form.cleaned_data['email5'] + '@kp.org'
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYou or your co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
@@ -134,6 +136,20 @@ def confirmView(request):
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email4 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email5 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
