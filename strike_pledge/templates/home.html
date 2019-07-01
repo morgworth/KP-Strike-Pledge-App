@@ -45,6 +45,8 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+
+<!-- Load script for Twitter timeline -->
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
@@ -93,13 +95,13 @@
 <!-- Second Grid -->
 <div class="w3-container w3-white w3-center" style="padding:50px 16px">
   <a class="twitter-timeline" data-lang="en" data-link-color="#F44336" data-width="400" data-height="150" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
-  <br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
   <div class="fb-share-button" data-href="https://kaiserstrike.org" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaiserstrike.org%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-  <br><br><div><a href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@kaiserstrike19</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+  <br><br><div><a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="https://kaiserstrike.org" data-hashtags="kaiserstrike">Tweet</a>
   <p>This website is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
   <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
