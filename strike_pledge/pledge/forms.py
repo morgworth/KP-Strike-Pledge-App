@@ -31,8 +31,8 @@ class ValidateForm(forms.Form):
     personal_email=forms.EmailField(required=False, label='', initial='', widget=forms.TextInput(attrs={'placeholder':'Personal email (optional)'}))
 
 class ReferralForm(forms.Form):
-    email1 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'first.(initial).last','size':22}))
-    email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'first.(initial).last','size':22}))
-    email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'first.(initial).last','size':22}))
-    email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'first.(initial).last','size':22}))
-    email5 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'first.(initial).last','size':22}))
+    email1 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
+    email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
+    email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email5 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
