@@ -60,8 +60,8 @@
 </div>
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:100px 16px">
-  <h1 class="w3-margin w3-jumbo">Almost done!</h1>
-  <p class="w3-xlarge">Complete the following fields to finalize your digital strike pledge:</p>
+  <h1 class="w3-margin w3-jumbo">Step 2 of 2:</h1>
+  <p class="w3-xlarge">Complete the following fields:</p>
   <br><br>
   <form action={% url "validate" %} method="post">
       {% csrf_token %} <br><br>
@@ -83,9 +83,9 @@
 	</p> -->
 
 	<tr><th></th><td><select name="kaiser_region" id="id_kaiser_region">
-  <option value="none">Kaiser Region</option>
+  <option value="none" selected>Kaiser Region</option>
 
-  <option value="norcal" selected>California - Northern</option>
+  <option value="norcal">California - Northern</option>
 
   <option value="socal">California - Southern</option>
 
@@ -107,24 +107,23 @@
 
 </select></td></tr><br><br>
 <tr><th></th><td><select name="union_member" id="id_union_member"> <br><br>
-  <option value="none">Member of a Coalition union?</option>
+  <option value="none" selected>Member of a Coalition union?</option>
 
-  <option value="yes" selected>Yes</option>
+  <option value="yes">Yes</option>
 
   <option value="no">No (sympathy striker)</option>
 
 </select>(<a href={% url 'union' %} class="w3-text-red">Not sure?</a>)</td></tr><br><br>
-<tr><th></th><td><textarea name="tweet" cols="40" rows="10" placeholder="Why are you joining the strike? (optional)" maxlength="245" id="id_tweet">
+<tr><th></th><td><textarea name="tweet" cols="40" rows="7" placeholder="Why are you joining the strike? (optional) Feel free to tweet at our CEOs by adding '@BernardJTyson' or ''@DrRichardIsaacs'" maxlength="235" id="id_tweet">
 </textarea></td></tr><br><br>
-<tr><th></th><td><input type="text" name="personal_email" placeholder="Personal email (optional)" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr><br><br>
+<tr><th></th><td><input type="text" size="30" name="personal_email" placeholder="Personal email (optional)" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr><br><br>
 
-      Your comment will be tweeted <b>anonymously</b> from @kaiserstrike19, along with "...#kaiserstrike #wearekaiserworkers @aboutKP". If you'd like to address our CEOs, add "@DrRichardIsaacs" and/or "@BernardJTyson". <br><br>
       <div class="form-actions">
-        <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Finalize my pledge!</button>
+        <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Count my pledge!</button>
       </div>
   	</div>
-  </form>
-  <br><br><br><br><br><br><br><br><br><br><br>
+  </form><br><br><br>
+  Your comment will be tweeted <b>anonymously</b> from @kaiserstrike19, along with "...#kaiserstrike #wearekaiserworkers @aboutKP".
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
