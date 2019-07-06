@@ -36,3 +36,7 @@ class ReferralForm(forms.Form):
     email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
     email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
     email5 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
+
+class HelpForm(forms.Form):
+    question = forms.CharField(max_length=300, required=True, initial='', label='', widget=forms.Textarea())
+    home_email = forms.EmailField(required=True, label='', initial='', widget=forms.TextInput(attrs={'size':22}))

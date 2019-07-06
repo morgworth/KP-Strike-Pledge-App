@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>kaiserstrike.org - Coalition Unions</title>
+<title>kaiserstrike.org - Help</title>
 <meta charset="UTF-8">
+<meta name="description" content="Help">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url"           content="https://kaiserstrike.org">
@@ -23,7 +24,6 @@
       version          : 'v3.3'
     });
   };
-
   (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -31,7 +31,6 @@
   js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
 <div class="fb-customerchat"
   attribution=setup_tool
   page_id="842621092777234"
@@ -53,7 +52,7 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-black">Help</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Home</a>
@@ -68,27 +67,16 @@
 </div>
 <!-- First Grid -->
 <div class="w3-container w3-white w3-left" style="padding:100px 16px">
-  <h1 class="w3-margin w3-jumbo">Coalition Unions</h1><br><br>
-  <h3 class="w3-margin">California - Northern</h3>
-  <p class="w3-margin">International Federation of Professional and Technical Engineers (IFPTE) Local 20</p>
-  <p class="w3-margin">Office and Professional Employees International Union (OPEIU) Local 29</p>
-  <p class="w3-margin">Service Employees International Union–United Healthcare Workers West (SEIU-UHW)</p>
-  <h3 class="w3-margin">California - Southern</h3>
-  <p class="w3-margin">Office and Professional Employees International Union (OPEIU) Local 30</p>
-  <p class="w3-margin">Service Employees International Union (SEIU) Local 121RN</p>
-  <p class="w3-margin">Service Employees International Union–United Healthcare Workers West (SEIU-UHW)</p>
-  <h3 class="w3-margin">Colorado</h3>
-  <p class="w3-margin">Service Employees International Union (SEIU) Local 105</p>
-  <h3 class="w3-margin">Hawaii</h3>
-  <p class="w3-margin">Office and Professional Employees International Union (OPEIU) Local 50/Hawaii Nurses Association</p>
-  <h3 class="w3-margin">Mid-Atlantic States</h3>
-  <p class="w3-margin">Office and Professional Employees International Union (OPEIU) Local 2</p>
-  <h3 class="w3-margin">Northwest</h3>
-  <p class="w3-margin">Service Employees International Union (SEIU) Local 49</p>
-  <h3 class="w3-margin">Washington</h3>
-  <p class="w3-margin">Office and Professional Employees International Union (OPEIU) Local 8</p>
-  <p class="w3-margin">Service Employees International Union (SEIU) 1199NW</p>
-  <br><br><br><br><br><br><br><br><br>
+  <h1 class="w3-margin w3-jumbo">Help</h1>
+  <h3 class="w3-margin"><b>Submit a question here:</b></h3>
+  <p class="w3-margin">(For a faster response, try the chat window at the bottom-right of the screen)</p>
+  <form method="post" align="center">
+    {% csrf_token %}
+    <div align="center">{{ form.question }}</div>
+    <div class="form-actions" align="center"></div><br>
+    <button type="submit" class="w3-button w3-center w3-black w3-padding-large w3-large w3-margin-top">Submit</button>
+  </form>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
