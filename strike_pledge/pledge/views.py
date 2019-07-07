@@ -172,7 +172,8 @@ def helpView(request):
             body = form.cleaned_data['question']
             user_email = form.cleaned_data['home_email']
             reply_to = (user_email)
-            email = EmailMessage(to, subject, body, reply_to)
+            from_email = 'noreply <noreply@kaiserstrike.org>'
+            email = EmailMessage(to, subject, body, reply_to, from_email)
             try:
                 email.send(fail_silently=True)
             except BadHeaderError:
