@@ -155,7 +155,62 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('home')
+                return redirect('confirm2')
+    return render(request, "confirmation.html", {'form':form})
+
+def confirm2View(request):
+    if request.method == 'GET':
+        form = ReferralForm()
+    else:
+        form = ReferralForm(request.POST)
+        if form.is_valid():
+            email1 = form.cleaned_data['email1']
+            email2 = form.cleaned_data['email2']
+            email3 = form.cleaned_data['email3']
+            email4 = form.cleaned_data['email4']
+            email5 = form.cleaned_data['email5']
+            subject = 'Make a digital strike pledge'
+            message = 'Hello!\n\nYour co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
+            message += 'https://kaiserstrike.org'
+            message += '\n\n\n\n\nFrom,\n\n'
+            message += 'Your co-workers and friends at kaiserstrike(dot)org'
+            if email1 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email1], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email2 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email3 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email4 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+            if email5 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('confirm2')
     return render(request, "confirmation2.html", {'form':form})
 
 def unionView(request):

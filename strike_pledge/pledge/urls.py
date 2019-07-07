@@ -13,6 +13,7 @@ urlpatterns = [
     path('faq/', faqView, name='faq'),
 	path('', homeView, name='home'),
 	path('confirm/', confirmView, name='confirm'),
+    path('confirm2/', confirm2View, name='confirm2'),
 	path('union/', unionView, name='union'),
     path('help/', helpView, name='help'),
     path('helpsuccess/', helpsuccessView, name='helpsuccess'),
