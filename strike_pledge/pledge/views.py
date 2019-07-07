@@ -105,7 +105,7 @@ def homeView(request):
 
 def confirmView(request):
     if request.method == 'GET':
-        form = ReferralForm
+        form = ReferralForm()
     else:
         form = ReferralForm(request.POST)
         if form.is_valid():
@@ -156,7 +156,7 @@ def confirmView(request):
                 except Exception:
                     print('')
                 return redirect('home')
-    return render(request, "confirmation.html", {'form':form})
+    return render(request, "confirmation2.html", {'form':form})
 
 def unionView(request):
     return render(request, "unions.html")
