@@ -2,7 +2,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.core.mail import EmailMessage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import PledgeForm, ValidateForm, ReferralForm
+from .forms import PledgeForm, ValidateForm, ReferralForm, HelpForm
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -222,13 +222,12 @@ def helpView(request):
     else:
         form = HelpForm(request.POST)
         if form.is_valid():
-            to = ('inquiries.kaiserstrike@protonmail.com')
             subject = 'Question from kaiserstrike.org Help page'
             body = form.cleaned_data['question']
-            user_email = form.cleaned_data['home_email']
-            reply_to = (user_email)
-            from_email = 'noreply <noreply@kaiserstrike.org>'
-            email = EmailMessage(to, subject, body, reply_to, from_email)
+            from_email = 'noreply@kaiserstrike.org'
+            to = ('inquiries.kaiserstrike@protonmail.com')
+            home_email = (form.cleaned_data['home_email'])
+            email = EmailMessage(subject, body, from_email, to, reply_to=home_email)
             try:
                 email.send(fail_silently=True)
             except BadHeaderError:
@@ -239,4 +238,4 @@ def helpView(request):
     return render(request, "help.html", {'form': form})
 
 def helpsuccessView(request):
-    return render(request, "helpsuccess.html")    
+    return render(request, "helpsuccess.html")
