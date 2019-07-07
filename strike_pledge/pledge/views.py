@@ -217,9 +217,6 @@ def unionView(request):
     return render(request, "unions.html")
 
 def helpView(request):
-    return render(request, "help.html")
-
-def helpsuccessView(request):
     if request.method == 'GET':
         form = HelpForm()
     else:
@@ -240,3 +237,6 @@ def helpsuccessView(request):
                 print('')
             return redirect('helpsuccess')
     return render(request, "help.html", {'form': form})
+
+def helpsuccessView(request):
+    return render(request, "helpsuccess.html")    
