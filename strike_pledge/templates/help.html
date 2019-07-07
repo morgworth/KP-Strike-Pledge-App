@@ -70,14 +70,14 @@
   <h1 class="w3-margin w3-jumbo">Help</h1>
   <h3 class="w3-margin"><b>Submit a question here:</b></h3>
   <p class="w3-margin">(For a faster response, try the chat window at the bottom-right of the screen)</p>
-  <form method="post">
+  <form class="w3-margin" method="post">
     {% csrf_token %}
-    <div>{{ form.question }}</div><br>
-    <div>{{ form.home_email }}</div>
-    <div class="form-actions"></div><br>
-    The help form is down temporarily. Come back soon.
+    <div class="w3-margin">{{ form.question }}</div><br>
+    <div class="w3-margin">{{ form.home_email }}</div>
+    <div class="form-actions w3-margin"></div><br>
+    <p class="w3-margin">The help form is down temporarily. Come back soon.</p>
   </form>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
