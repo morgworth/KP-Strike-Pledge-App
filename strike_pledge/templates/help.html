@@ -70,12 +70,12 @@
   <h1 class="w3-margin w3-jumbo">Help</h1>
   <h3 class="w3-margin"><b>Submit a question here:</b></h3>
   <p class="w3-margin">(For a faster response, try the chat window at the bottom-right of the screen)</p>
-  <form method="post" align="center">
+  <form method="post">
     {% csrf_token %}
-    <div align="center">{{ form.question }}</div><br>
-    <div align="center">{{ form.home_email }}</div>
-    <div class="form-actions" align="center"></div><br>
-    <button type="submit" class="w3-button w3-center w3-black w3-padding-large w3-large w3-margin-top">Submit</button>
+    <div>{{ form.question }}</div><br>
+    <div>{{ form.home_email }}</div>
+    <div class="form-actions"></div><br>
+    <button type="submit" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Submit</button>
   </form>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
