@@ -162,6 +162,9 @@ def unionView(request):
     return render(request, "unions.html")
 
 def helpView(request):
+    return render(request, "help.html")
+
+def helpsuccessView(request):
     if request.method == 'GET':
         form = HelpForm()
     else:
