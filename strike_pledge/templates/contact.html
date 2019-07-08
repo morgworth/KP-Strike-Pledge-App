@@ -133,7 +133,12 @@
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
-    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a> <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-text="I support the #kaiserstrike @aboutKP" data-url="https://kaiserstrike.org" data-size="large">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a><style media="screen" type="text/css">
+        .fb_iframe_widget span
+        {
+            vertical-align: baseline !important;
+        }
+        </style> <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-text="I support the #kaiserstrike @aboutKP" data-url="https://kaiserstrike.org" data-size="large">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <p>This website is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
     <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
 </footer>
