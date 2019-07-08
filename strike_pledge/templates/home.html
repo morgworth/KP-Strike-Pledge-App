@@ -15,6 +15,30 @@
 {% load static %}
 </head>
 <body>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="842621092777234"
+  theme_color="#000000"
+  greeting_dialog_display="fade"
+  logged_in_greeting="Hi! We can answer your questions here."
+  logged_out_greeting="Hi! We can answer your questions here.">
+</div>
 <!-- Load script for Facebook share button -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -45,7 +69,7 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Contact</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Home</a>
@@ -55,7 +79,7 @@
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large">Contact</a>
   </div>
 </div>
 <!-- First Grid -->
@@ -64,20 +88,25 @@
   <p class="w3-xlarge">Kaiser employees have made a digital strike pledge</p>
   <p class=>(40,000+ have signed pledge cards)</p><br><br><br>
   <form>
-  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Count me in!</button>
+  <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Join them</button>
   </form>
 </div>
 <!-- Second Grid -->
 <div class="w3-container w3-white w3-center" style="padding:50px 16px">
-  <p>Here's what they're saying:</p><br>
-  <a class="twitter-timeline" data-lang="en" data-chrome="noheader" data-link-color="#F44336" data-width="300" data-height="100" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
+  <h4><b>Here's what they're saying:</b></h4><br>
+  <a class="twitter-timeline" data-lang="en" data-chrome="noheader,nofooter" data-width="300" data-height="100" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
   <br><br><br>
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
-    <a class="fb-like" style="line-height:0.6" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a> <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-text="I support the #kaiserstrike @aboutKP" data-url="https://kaiserstrike.org" data-size="large">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a><style media="screen" type="text/css">
+        .fb_iframe_widget span
+        {
+            vertical-align: baseline !important;
+        }
+        </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="@aboutKP I support the kaiser strike..." data-url="https://kaiserstrike.org" data-size="large">Tweet kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <p>This website is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-    <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+    <p><a href={% url 'terms' %} >Terms</a> <a href={% url 'privacy' %} >Privacy</a></p>
 </footer>
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button

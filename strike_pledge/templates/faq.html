@@ -35,9 +35,9 @@
   attribution=setup_tool
   page_id="842621092777234"
   theme_color="#000000"
-  greeting_dialog_display="fade"
-  logged_in_greeting="Can we help you with anything?"
-  logged_out_greeting="Can we help you with anything?">
+  greeting_dialog_display="hide"
+  logged_in_greeting="Have a question? Enter it here."
+  logged_out_greeting="Have a question? Enter it here.">
 </div>
 <!-- Load script for Facebook share button -->
 <div id="fb-root"></div>
@@ -52,7 +52,7 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Contact</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-black">FAQ</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Home</a>
@@ -62,32 +62,35 @@
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large">Contact</a>
   </div>
 </div>
 <!-- First Grid -->
 <div class="w3-container w3-white w3-left" style="padding:100px 16px">
   <h1 class="w3-margin w3-jumbo">FAQ</h1>
-  <h3 class="w3-margin"><b>When is the strike?</b></h3>
+  <h4 class="w3-margin"><b>When is the strike?</b></h4>
   <p class="w3-margin">The strike will take place on or after Oct 1, 2019.</p>
-  <h3 class="w3-margin"><b>Will my name or email address be made public?</b></h3>
+  <h4 class="w3-margin"><b>Will my name or email address be made public?</b></h4>
   <p class="w3-margin">No. Your pledge will be used to increment the counter on the home page and your comment will be tweeted anonymously by @kaiserstrike19.</p>
-  <h3 class="w3-margin"><b>Can I be disciplined for using this website?</b></h3>
-  <p class="w3-margin">The National Labor Relations Act <a href="https://www.nlrb.gov/sites/default/files/attachments/basic-page/node-3024/basicguide.pdf" class="w3-text-red">protects concerted activities for mutual aid or protection</a>, but we recommend against using this website on paid work time.</p>
-  <h3 class="w3-margin"><b>Who made this website</b>?</h3>
+  <h4 class="w3-margin"><b>Can I be disciplined for using this website?</b></h4>
+  <p class="w3-margin">The National Labor Relations Act <a href="https://www.nlrb.gov/sites/default/files/attachments/basic-page/node-3024/basicguide.pdf">protects concerted activities for mutual aid or protection</a>, but we recommend against using this website on paid work time.</p>
+  <h4 class="w3-margin"><b>Who made this website?</b></h4>
   <p class="w3-margin">This website was made by the Tech Workers Coalition (TWC) at the request of,
   and with input from, Kaiser employees. TWC is a coalition of tech workers, labor organizers,
   community organizers, and friends working in solidarity with existing movements towards social justice,
   workers' rights, and economic inclusion. For more info about TWC, <a href="https://techworkerscoalition.org" class="w3-text-red">click here</a>.</p>
-  <h3 class="w3-margin"><b>What if I have another question?</b></h3>
-  <p class="w3-margin">Click on the Messenger button at the bottom-right of the screen, and send us a message.</p>
-  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br>
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
-    <a class="fb-like" style="line-height:0.6" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a> <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-text="I support the #kaiserstrike @aboutKP" data-url="https://kaiserstrike.org" data-size="large">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a><style media="screen" type="text/css">
+        .fb_iframe_widget span
+        {
+            vertical-align: baseline !important;
+        }
+        </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="@aboutKP I support the kaiser strike..." data-url="https://kaiserstrike.org" data-size="large">Tweet kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <p>This website is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-    <p><a href={% url 'terms' %} class="w3-text-red">Terms</a> <a href={% url 'privacy' %} class="w3-text-red">Privacy</a></p>
+    <p><a href={% url 'terms' %} >Terms</a> <a href={% url 'privacy' %} >Privacy</a></p>
 </footer>
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
