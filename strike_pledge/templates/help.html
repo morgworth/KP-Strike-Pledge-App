@@ -10,7 +10,7 @@
 <meta property="og:type"          content="website">
 <meta property="og:title"         content="kaiserstrike.org">
 <meta property="og:description"   content="Join the Kaiser strike">
-<link rel="stylesheet" href="/static/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% load static %}
 </head>
@@ -72,9 +72,9 @@
   <p class="w3-margin">(For a faster response, try the chat window at the bottom-right of the screen)</p>
   <form class="w3-margin" method="post">
     {% csrf_token %}
-    <div class="w3-margin">{{ form.question }}</div><br>
-    <div class="w3-margin">{{ form.home_email }}</div>
-    <div class="form-actions w3-margin"></div><br>
+    <div>{{ form.question }}</div><br>
+    <div>{{ form.home_email }}</div>
+    <div class="form-actions"></div><br>
     The help form is down temporarily. Come back soon.
   </form>
   <br><br><br><br><br><br><br><br><br><br><br><br>
