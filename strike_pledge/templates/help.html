@@ -68,13 +68,14 @@
 <!-- First Grid -->
 <div class="w3-container w3-white w3-left" style="padding:100px 16px">
   <h1 class="w3-margin w3-jumbo">Help</h1>
-  <h3 class="w3-margin"><b>Submit a question here</b></h3>
-  <p class="w3-margin">(For a faster response, use the chat button at the bottom-right of the screen)</p>
+  <h3 class="w3-margin"><b>For a faster response, use the chat button at the bottom-right of the screen</b></h3>
   <form class="w3-margin" method="post">
     {% csrf_token %}
     <br>
-    <tr><th></th><td><textarea name="question" cols="38" rows="7" maxlength="300" id="id_question"></textarea></td></tr><br><br>
-    <div>{{ form.home_email }}</div>
+    <label for="question">Enter your question here:</label><br>
+    <tr><th></th><td><textarea name="question" cols="36" rows="7" maxlength="300" id="id_question"></textarea></td></tr><br><br>
+    <label for="home_email">Your email address:</label><br>
+    <tr><th></th><td><input type="text" size="30" maxlength="40" name="home_email" placeholder="(Optional) Personal email" id="id_home_email"></td>
     <br>
     <div class="form-actions"></div>
   </form>
