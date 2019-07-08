@@ -109,11 +109,11 @@ def confirmView(request):
     else:
         form = ReferralForm(request.POST)
         if form.is_valid():
-            email1 = form.cleaned_data['email1']
-            email2 = form.cleaned_data['email2']
-            email3 = form.cleaned_data['email3']
-            email4 = form.cleaned_data['email4']
-            email5 = form.cleaned_data['email5']
+            email1 = form.cleaned_data['email1'] + '@kp.org'
+            email2 = form.cleaned_data['email2'] + '@kp.org'
+            email3 = form.cleaned_data['email3'] + '@kp.org'
+            email4 = form.cleaned_data['email4'] + '@kp.org'
+            email5 = form.cleaned_data['email5'] + '@kp.org'
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
@@ -164,11 +164,11 @@ def confirm2View(request):
     else:
         form = ReferralForm(request.POST)
         if form.is_valid():
-            email1 = form.cleaned_data['email1']
-            email2 = form.cleaned_data['email2']
-            email3 = form.cleaned_data['email3']
-            email4 = form.cleaned_data['email4']
-            email5 = form.cleaned_data['email5']
+            email1 = form.cleaned_data['email1'] + '@kp.org'
+            email2 = form.cleaned_data['email2'] + '@kp.org'
+            email3 = form.cleaned_data['email3'] + '@kp.org'
+            email4 = form.cleaned_data['email4'] + '@kp.org'
+            email5 = form.cleaned_data['email5'] + '@kp.org'
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
