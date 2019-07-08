@@ -32,9 +32,9 @@ class ValidateForm(forms.Form):
 
 class ReferralForm(forms.Form):
     email1 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
-    email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
     email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
-    email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
     email5 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janedoe@email.com','size':22}))
 
 class HelpForm(forms.Form):
