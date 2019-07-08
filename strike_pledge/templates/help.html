@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>kaiserstrike.org - Help</title>
+<title>kaiserstrike.org - Contact</title>
 <meta charset="UTF-8">
-<meta name="description" content="Help">
+<meta name="description" content="Contact">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url"           content="https://kaiserstrike.org">
@@ -52,7 +52,7 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card w3-right-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-black">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-black">Conact</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-black">Home</a>
@@ -62,12 +62,12 @@
     <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large">Help</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large">Contact</a>
   </div>
 </div>
 <!-- First Grid -->
-<div class="w3-container w3-white w3-left" style="padding:100px 16px">
-  <h1 class="w3-margin w3-jumbo">Help</h1>
+<div class="w3-container w3-white w3-left" style="padding:80px 16px">
+  <h1 class="w3-margin w3-jumbo">Contact</h1>
   <p class="w3-margin">**For a faster response, use the chat button at the bottom-right of the screen**</p>
   <form class="w3-margin" method="post">
     {% csrf_token %}
