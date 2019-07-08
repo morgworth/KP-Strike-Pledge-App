@@ -137,7 +137,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'postmaster@mail.kaiserstrike.org'
-EMAIL_HOST_PASSWORD = '74b8c76767a5ec0c5e01ca275daba058-39bc661a-1157a5d3'
+EMAIL_HOST_PASSWORD = '1b90228d11065d60f970e0f26ca8ec48-afab6073-f6263556'
+
 EMAIL_USE_TLS = True
 
 #twitter credentials
