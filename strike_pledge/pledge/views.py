@@ -222,12 +222,7 @@ def helpView(request):
     else:
         form = HelpForm(request.POST)
         if form.is_valid():
-            subject = 'Question from kaiserstrike.org Help page'
-            body = form.cleaned_data['question']
-            from_email = 'noreply@kaiserstrike.org'
-            to = ('inquiries.kaiserstrike@protonmail.com')
-            home_email = (form.cleaned_data['home_email'])
-            email = EmailMessage(subject, body, from_email, to, reply_to=home_email)
+            email = EmailMessage('Question from Contact page', form.cleaned_data['question'], 'noreply@kaiserstrike.org', ['inquiries.kaiserstrike@protonmail.com'], reply_to=[form.cleaned_data['home_email']])
             try:
                 email.send(fail_silently=True)
             except BadHeaderError:
