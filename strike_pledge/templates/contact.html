@@ -65,13 +65,13 @@
   </div>
 </div>
 <!-- First Grid -->
-<div class="w3-container w3-white w3-center" style="padding:100px 16px">
-  <h1 class="w3-margin w3-jumbo">Step 2 of 2:</h1>
-  <p class="w3-xlarge">Complete the following fields:</p>
+<div class="w3-container w3-white" style="padding:100px 16px">
+  <h1 class="w3-margin w3-jumbo w3-center">Step 2</h1>
+  <h4 class="w3-left w3-margin"><b>Complete the following fields:</b></h4>
   <br><br>
   <form action={% url "validate" %} method="post">
       {% csrf_token %} <br><br>
-   	<div class="w3-center">
+    <div class="w3-left w3-margin">
   	<!--{{ form.as_p }}-->
 	<!--<p>
 		{{form.email_hash.errors}}
@@ -87,9 +87,9 @@
 		{{form.personal_email.errors}}
 		{{form.personal_email}}<br><br>
 	</p> -->
-
+  <label for="kaiser_region">1.) REQUIRED - Your Kaiser region:</label><br>
 	<tr><th></th><td><select name="kaiser_region" id="id_kaiser_region">
-  <option value="none" selected>Kaiser Region</option>
+  <option value="none" selected>-----</option>
 
   <option value="norcal">California - Northern</option>
 
@@ -112,24 +112,26 @@
   <option value="washington">Washington State</option>
 
 </select></td></tr><br><br>
+<label for="union_member">2.) REQUIRED - Are you a member of a Coalition union? (<a href={% url 'union' %} class="w3-text-red">I'm not sure</a>)</label><br>
 <tr><th></th><td><select name="union_member" id="id_union_member"> <br><br>
-  <option value="none" selected>Member of a Coalition union?</option>
+  <option value="none" selected>-----</option>
 
   <option value="yes">Yes</option>
 
   <option value="no">No (sympathy striker)</option>
 
-</select>(<a href={% url 'union' %} class="w3-text-red">Not sure?</a>)</td></tr><br><br>
-<tr><th></th><td><textarea name="tweet" cols="40" rows="7" placeholder="(Optional) Why are you joining the strike? What do you want to say to Kaiser, and to the public?" maxlength="235" id="id_tweet">
+</select></td></tr><br><br>
+<label for="tweet">3.) OPTIONAL - What do you want to say to Kaiser exeucutives and/or to the public? For example, you could say why you're pledging to go on strike.</label><br><br>
+<tr><th></th><td><textarea name="tweet" cols="40" rows="7" placeholder="Your comment will be tweeted (anonymously)" maxlength="235" id="id_tweet">
 </textarea></td></tr><br><br>
-<tr><th></th><td><input type="text" size="30" name="personal_email" placeholder="(Optional) Personal email" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr><br><br>
+<label for="personal_email">4.) OPTIONAL - What is your personal email address?</label><br><br>
+<tr><th></th><td><input type="text" size="30" name="personal_email" placeholder="janemdoe@email.com" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr><br><br>
 
       <div class="form-actions">
-        <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Count my pledge!</button>
+        <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Count my pledge</button>
       </div>
   	</div>
   </form><br><br><br>
-  Your comment will be tweeted <b>anonymously</b> from @kaiserstrike19, along with "...#kaiserstrike #wearekaiserworkers @aboutKP".
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
