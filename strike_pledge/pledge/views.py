@@ -24,8 +24,8 @@ def emailView(request):
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'Hello!\n\nYou or your co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Click on this link to make a digital strike pledge and to tweet using our handle (@kaiserstrike19):\n\n'
+            message = 'Hello!\n\nYou or your co-worker indicated you want to make an anonymous strike pledge.\n\n'
+            message += 'Open this webpage to confirm your pledge and to post your own tweet to @kaiserstrike19:\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -109,14 +109,17 @@ def confirmView(request):
     else:
         form = ReferralForm(request.POST)
         if form.is_valid():
+            referrer = form.cleaned_data['referrer']
             email1 = form.cleaned_data['email1']
             email2 = form.cleaned_data['email2']
             email3 = form.cleaned_data['email3']
             email4 = form.cleaned_data['email4']
             email5 = form.cleaned_data['email5']
-            subject = 'Make a digital strike pledge'
-            message = 'Hello!\n\nYour co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Visit this website to make a digital strike pledge and to post a public tweet. Anonymously.\n\n'
+            subject = 'Make an anonymous strike pledge'
+            message = 'Hello!\n\nYour co-worker, '
+            message += referrer
+            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Visit this webpage to make an anonymous strike pledge and to post an anonymous tweet to @kaiserstrike19:\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -127,6 +130,7 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -134,6 +138,7 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -141,16 +146,18 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email4 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email5 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
@@ -164,14 +171,17 @@ def confirm2View(request):
     else:
         form = ReferralForm(request.POST)
         if form.is_valid():
+            referrer = form.cleaned_data['referrer']
             email1 = form.cleaned_data['email1']
             email2 = form.cleaned_data['email2']
             email3 = form.cleaned_data['email3']
             email4 = form.cleaned_data['email4']
             email5 = form.cleaned_data['email5']
-            subject = 'Make a digital strike pledge'
-            message = 'Hello!\n\nYour co-worker indicated you want to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Visit this website to make a digital strike pledge and to post a public tweet. Anonymously.\n\n'
+            subject = 'Make an anonymous strike pledge'
+            message = 'Hello!\n\nYour co-worker, '
+            message += referrer
+            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Visit this webpage to make an anonymous strike pledge and to post an anonymous tweet to @kaiserstrike19:\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -182,6 +192,7 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -189,6 +200,7 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -196,16 +208,18 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email4 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
+                return redirect('confirm2')
             if email5 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:

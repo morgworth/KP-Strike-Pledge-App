@@ -31,6 +31,7 @@ class ValidateForm(forms.Form):
     personal_email=forms.EmailField(required=False, label='', initial='', widget=forms.TextInput(attrs={'placeholder':'Personal email (optional)'}))
 
 class ReferralForm(forms.Form):
+    referrer = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'Your name (or nickname)','size':22}))
     email1 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
     email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
     email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
