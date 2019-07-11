@@ -27,7 +27,7 @@ class ValidateForm(forms.Form):
         ('no', 'No (sympathy striker)')
     )
     union_member = forms.ChoiceField(choices=union_list, required=True, label='')
-    tweet = forms.CharField(max_length=235, required=False, initial='', label='', widget=forms.Textarea(attrs={'placeholder':'Your comment will be tweeted (anonymously)'}))
+    tweet = forms.CharField(max_length=238, required=False, initial='', label='', widget=forms.Textarea(attrs={'placeholder':'Your comment will be tweeted anonymously, along with "#kaiserstrike #wearekaiserworkers @aboutKP'}))
     personal_email=forms.EmailField(required=False, label='', initial='', widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com'}))
 
 class ReferralForm(forms.Form):
