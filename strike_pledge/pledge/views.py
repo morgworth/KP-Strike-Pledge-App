@@ -21,8 +21,7 @@ def emailView(request):
         if form.is_valid():
             subject = 'Confirm your strike pledge'
             username = form.cleaned_data['email']
-            sep = '@'
-            email = username.split(sep, 1)[0]
+            email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want to make an anonymous strike pledge.\n\n'
