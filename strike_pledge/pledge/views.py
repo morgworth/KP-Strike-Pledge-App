@@ -117,11 +117,11 @@ def confirmView(request):
             email3 = form.cleaned_data['email3']
             email4 = form.cleaned_data['email4']
             email5 = form.cleaned_data['email5']
-            subject = 'Make an anonymous strike pledge'
+            subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker, '
             message += referrer
             message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Visit this webpage to make an anonymous strike pledge and to post an anonymous tweet to @kaiserstrike19:\n\n'
+            message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -179,11 +179,11 @@ def confirm2View(request):
             email3 = form.cleaned_data['email3']
             email4 = form.cleaned_data['email4']
             email5 = form.cleaned_data['email5']
-            subject = 'Make an anonymous strike pledge'
+            subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker, '
             message += referrer
             message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
-            message += 'Visit this webpage to make an anonymous strike pledge and to post an anonymous tweet to @kaiserstrike19:\n\n'
+            message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
