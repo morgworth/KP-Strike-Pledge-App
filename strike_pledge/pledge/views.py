@@ -103,7 +103,7 @@ def successView(request):
                 except Exception:
                     print('')
                 return redirect('success2')
-	return render(request,"success.html", {'form':form})
+	return render(request, "success.html", {'form':form})
 
 def success2View(request):
     if request.method == 'GET':
@@ -165,7 +165,7 @@ def success2View(request):
                 except Exception:
                     print('')
                 return redirect('success2')
-	return render(request,"success2.html", {'form':form})
+	return render(request, "success2.html", {'form':form})
 
 def validateView(request):
     if request.method == 'GET':
