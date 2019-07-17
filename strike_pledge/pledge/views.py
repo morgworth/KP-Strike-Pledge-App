@@ -72,11 +72,12 @@ def validateView(request):
                         print('')
                 try:
                     pledge = Pledge.objects.get(email_hash=email_hash)
-                    pledge.union_member = union_member
-                    pledge.region = region
-                    pledge.pers_email = pers_email
-                    pledge.message = tweet
-                    pledge.save()
+                    #pledge.union_member = union_member
+                    #pledge.region = region
+                    #pledge.pers_email = pers_email
+                    #pledge.message = tweet
+                    #pledge.save()
+                    return redirect('alreadysubmitted')
                 except Pledge.DoesNotExist:
                     Pledge.objects.create(email_hash = email_hash,
                                       work_email = work_email,
@@ -250,3 +251,6 @@ def helpView(request):
 
 def helpsuccessView(request):
     return render(request, "helpsuccess.html")
+
+def alreadySubmittedView(request):
+    return render(request, "alreadysubmitted.html")
