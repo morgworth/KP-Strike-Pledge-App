@@ -198,7 +198,7 @@ def validateView(request):
                     #pledge.pers_email = pers_email
                     #pledge.message = tweet
                     #pledge.save()
-                    return redirect('alreadysubmitted')
+                    return redirect('home')
                 except Pledge.DoesNotExist:
                     Pledge.objects.create(email_hash = email_hash,
                                       work_email = work_email,
