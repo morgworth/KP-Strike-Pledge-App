@@ -44,7 +44,128 @@ def emailView(request):
     return render(request, "email.html", {'form': form})
 
 def successView(request):
-	return render(request,"success.html")
+    if request.method == 'GET':
+        form = ReferralForm()
+    else:
+        form = ReferralForm(request.POST)
+        if form.is_valid():
+            referrer = form.cleaned_data['referrer']
+            email1 = form.cleaned_data['email1']
+            email2 = form.cleaned_data['email2']
+            email3 = form.cleaned_data['email3']
+            email4 = form.cleaned_data['email4']
+            email5 = form.cleaned_data['email5']
+            subject = 'Make a digital strike pledge'
+            message = 'Hello!\n\nYour co-worker, '
+            message += referrer
+            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
+            message += 'https://kaiserstrike.org'
+            message += '\n\n\n\n\nFrom,\n\n'
+            message += 'Your co-workers and friends at kaiserstrike(dot)org'
+            if email1 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email1], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email2 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email3 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email4 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email5 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+    return render(request, "success.html", {'form':form})
+
+def success2View(request):
+    if request.method == 'GET':
+        form = ReferralForm()
+    else:
+        form = ReferralForm(request.POST)
+        if form.is_valid():
+            referrer = form.cleaned_data['referrer']
+            email1 = form.cleaned_data['email1']
+            email2 = form.cleaned_data['email2']
+            email3 = form.cleaned_data['email3']
+            email4 = form.cleaned_data['email4']
+            email5 = form.cleaned_data['email5']
+            subject = 'Make a digital strike pledge'
+            message = 'Hello!\n\nYour co-worker, '
+            message += referrer
+            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
+            message += 'https://kaiserstrike.org'
+            message += '\n\n\n\n\nFrom,\n\n'
+            message += 'Your co-workers and friends at kaiserstrike(dot)org'
+            if email1 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email1], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email2 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email3 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email4 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+            if email5 != '':
+                try:
+                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                except Exception:
+                    print('')
+                return redirect('success2')
+    return render(request, "success2.html", {'form':form})
 
 def validateView(request):
     if request.method == 'GET':
