@@ -68,6 +68,7 @@
 <div class="w3-container w3-white w3-left" style="padding:90px 16px">
   <h1 class="w3-margin xxlarge">Almost done!</h1>
   <p class="w3-margin w3-xlarge">Complete the following fields:</p>
+  <p class="w3-margin w3-large">NOTE: If you have privacy concerns, forward your email to a personal address and access this link on a personal phone or computer.</p>
   <form action={% url "validate" %} method="post">
       {% csrf_token %} <br><br>
     <div class="w3-left w3-margin">
@@ -123,7 +124,7 @@
 <label for="tweet">3.) OPTIONAL - What do you want to say to Kaiser executives, and/or to the public? For example, why are you making this strike pledge? <b>YOUR VOICE MATTERS</b></label><br><br>
 <tr><th></th><td><textarea name="tweet" cols="40" rows="7" placeholder='Your comment will be tweeted anonymously, along with "#kaiserstrike #wearekaiserworkers @aboutKP"' maxlength="237" id="id_tweet">
 </textarea></td></tr><br><br>
-<label for="personal_email">4.) OPTIONAL - What is your personal email address?</label><br><br>
+<label for="personal_email">4.) OPTIONAL - What is your personal email address (for updates)?</label><br><br>
 <tr><th></th><td><input type="text" size="30" name="personal_email" placeholder="janemdoe@email.com" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr>
       <br><br>
       <div class="form-actions">
