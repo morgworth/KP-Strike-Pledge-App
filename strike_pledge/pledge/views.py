@@ -19,15 +19,15 @@ def emailView(request):
     else:
         form = PledgeForm(request.POST)
         if form.is_valid():
-            subject = 'Confirm your strike pledge'
+            subject = 'Confirm your digital strike pledge'
             username = form.cleaned_data['email']
             sep = '@'
             emailprefix = username.split(sep, 1)[0]
             email = emailprefix + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'Hello!\n\nYou or your co-worker indicated you want to make an anonymous strike pledge.\n\n'
-            message += 'Open this webpage to confirm your pledge and to post your own tweet to @kaiserstrike19:\n\n'
+            message = 'Hello!\n\nYou or your co-worker indicated you want to make a digital strike pledge.\n\n'
+            message += 'Open this webpage to complete your pledge and post a tweet. IF YOU CAN\'T OPEN THE PAGE, OR IF YOU HAVE PRIVACY CONCERNS, FORWARD THIS TO A PERSONAL EMAIL AND OPEN THE LINK ON A PERSONAL PHONE OR COMPUTER.\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -58,7 +58,7 @@ def successView(request):
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker, '
             message += referrer
-            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += ', thought you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
@@ -120,7 +120,7 @@ def success2View(request):
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker, '
             message += referrer
-            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += ', thought you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
