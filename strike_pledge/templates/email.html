@@ -9,7 +9,7 @@
 <meta property="og:type"          content="website">
 <meta property="og:title"         content="kaiserstrike.org">
 <meta property="og:description"   content="Join the Kaiser strike">
-<link rel="stylesheet" href="/static/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% load static %}
 </head>
@@ -42,13 +42,13 @@
 </div>
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:90px 16px">
-  <h1 class="w3-xxlarge">Step 1 (of 2)</h1><br>
-  <h4><b>Enter your Kaiser email</b></h4><br>
+  <h1 class="w3-xxlarge">Step 1 (of 2):</h1><br>
+  <p class="w3-xlarge">Enter your Kaiser email</hp><br>
     <form method="post" align="center">
       {% csrf_token %}
       <div align="center">{{ form.email }}  @kp.org</div>
       <div class="form-actions" align="center">
-  	  <br>
+  	  <br><br><br>
       </div>
       <p>We'll e-mail you a link to make your pledge and post a tweet.</p>
 	    <button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">E-mail me</button>
