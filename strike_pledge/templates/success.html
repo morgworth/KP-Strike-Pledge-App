@@ -44,18 +44,18 @@
 <div class="w3-container w3-white w3-center" style="padding:90px 16px">
   <h1 class="w3-xxlarge">Step 2 (of 2):</h1><br>
   <p class="w3-xlarge">Open the email</p>
-  <p>Now, help us get the word out. Enter 1-5 emails (personal or KP) of your co-workers, and we'll send them a link to https://kaiserstrike.org.</p><br>
+  <p>Now, help us get the word out! Enter 1-5 emails (personal or KP) of your co-workers, and we'll send them a link to https://kaiserstrike.org.</p><br>
   <br>
   <form method="post">
     {% csrf_token %}
     <label for="referrer">What is your name (or nickname)?</label><br><br>
     <tr><th></th><td><input type="text" size="20" name="referrer" placeholder="Jane" id="referrer"></td></tr><br><br>
     <label for="email1">Co-worker emails:</label><br><br>
-    <tr><th></th><td><input type="text" size="30" name="email1" placeholder="janemdoe@email.com" id="email1"></td></tr><br><br>
-    <tr><th></th><td><input type="text" size="30" name="email2" placeholder="janemdoe@email.com" id="email2"></td></tr><br><br>
-    <tr><th></th><td><input type="text" size="30" name="email3" placeholder="janemdoe@email.com" id="email3"></td></tr><br><br>
-    <tr><th></th><td><input type="text" size="30" name="email4" placeholder="janemdoe@email.com" id="email4"></td></tr><br><br>
-    <tr><th></th><td><input type="text" size="30" name="email5" placeholder="janemdoe@email.com" id="email5"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email1" placeholder="johndoe@email.com" id="email1"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email2" placeholder="johndoe@email.com" id="email2"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email3" placeholder="johndoe@email.com" id="email3"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email4" placeholder="johndoe@email.com" id="email4"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email5" placeholder="johndoe@email.com" id="email5"></td></tr><br><br>
     <div class="form-actions" align="center"></div>
   	<button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">E-mail my co-workers</button>
   </form>
