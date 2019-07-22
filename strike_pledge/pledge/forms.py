@@ -28,15 +28,15 @@ class ValidateForm(forms.Form):
     )
     union_member = forms.ChoiceField(choices=union_list, required=True, label='')
     tweet = forms.CharField(max_length=237, required=False, initial='', label='', widget=forms.Textarea(attrs={'placeholder':'Your comment will be tweeted anonymously, along with "#kaiserstrike #wearekaiserworkers @aboutKP'}))
-    personal_email=forms.EmailField(required=False, label='', initial='', widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com'}))
+    personal_email = forms.EmailField(required=False, label='', initial='', widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com'}))
 
 class ReferralForm(forms.Form):
-    referrer = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'Your name (or nickname)','size':22}))
-    email1 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
-    email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
-    email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
-    email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
-    email5 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'janemdoe@email.com','size':22}))
+    referrer = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'Jane','size':22}))
+    email1 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email3 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email4 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
+    email5 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'johndoe@email.com','size':22}))
 
 class HelpForm(forms.Form):
     question = forms.CharField(max_length=300, required=True, initial='', label='', widget=forms.Textarea())
