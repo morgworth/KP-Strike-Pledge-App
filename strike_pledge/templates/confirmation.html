@@ -71,18 +71,17 @@
   <p>Help us get the word out. Enter 1-5 emails (personal or KP) of your co-workers, and we'll send them a link to https://kaiserstrike.org.</p>
   <p></p><br><br>
   <form method="post">
-	{% csrf_token %}
-  <label for="referrer">What is your name (or nickname)?</label><br>
-  <tr><th></th><td><input type="text" size="20" name="referrer" placeholder="Jane" id="referrer"></td></tr><br><br>
-  <label for="email1">Co-worker emails:</label><br>
-  <tr><th></th><td><input type="text" size="30" name="email1" placeholder="janemdoe@email.com" id="email1"></td></tr><br><br>
-  <tr><th></th><td><input type="text" size="30" name="email2" placeholder="janemdoe@email.com" id="email2"></td></tr><br><br>
-  <tr><th></th><td><input type="text" size="30" name="email3" placeholder="janemdoe@email.com" id="email3"></td></tr><br><br>
-  <tr><th></th><td><input type="text" size="30" name="email4" placeholder="janemdoe@email.com" id="email4"></td></tr><br><br>
-  <tr><th></th><td><input type="text" size="30" name="email5" placeholder="janemdoe@email.com" id="email5"></td></tr><br><br>
-  	<br>
-    </div>
-	<button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">E-mail my co-workers</button>
+  	{% csrf_token %}
+    <label for="referrer">What is your name (or nickname)?</label><br>
+    <tr><th></th><td><input type="text" size="20" name="referrer" placeholder="Jane" id="referrer"></td></tr><br><br>
+    <label for="email1">Co-worker emails:</label><br>
+    <tr><th></th><td><input type="text" size="30" name="email1" placeholder="janemdoe@email.com" id="email1"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email2" placeholder="janemdoe@email.com" id="email2"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email3" placeholder="janemdoe@email.com" id="email3"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email4" placeholder="janemdoe@email.com" id="email4"></td></tr><br><br>
+    <tr><th></th><td><input type="text" size="30" name="email5" placeholder="janemdoe@email.com" id="email5"></td></tr><br><br>
+    <div class="form-actions" align="center"></div>
+    <button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">E-mail my co-workers</button>
   </form>
   <br><br><br>
 </div>
