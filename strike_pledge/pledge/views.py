@@ -27,7 +27,7 @@ def emailView(request):
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want to make a digital strike pledge.\n\n'
-            message += 'Open this webpage to complete your pledge and post a tweet. IF YOU CAN\'T OPEN THE PAGE, OR IF YOU HAVE PRIVACY CONCERNS, FORWARD THIS TO A PERSONAL EMAIL AND OPEN THE LINK ON A PERSONAL PHONE OR COMPUTER.\n\n'
+            message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this to a personal email and open the link on a personal phone or computer.\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
