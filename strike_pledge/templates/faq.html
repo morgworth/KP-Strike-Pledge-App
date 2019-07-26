@@ -10,7 +10,7 @@
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
 <meta property="og:description"   content="Make a digital strike pledge"/>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/static/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% load static %}
 </head>
@@ -56,7 +56,11 @@
   <p class="w3-margin">This website was made by the Tech Workers Coalition (TWC) at the request of,
   and with input from, Kaiser employees. TWC is a coalition of tech workers, labor organizers,
   community organizers, and friends working in solidarity with existing movements towards social justice,
-  workers' rights, and economic inclusion. For more info about TWC, <a href="https://techworkerscoalition.org" class="w3-text-red">click here</a>.</p><br>
+  workers' rights, and economic inclusion. For more info about TWC, <a href="https://techworkerscoalition.org" class="w3-text-red">click here</a>.</p>
+  <form class="w3-center">
+    <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Make your pledge</button>
+  </form>
+  <br><br>
   <blockquote class="twitter-tweet" align="center" data-cards="hidden" data-lang="en" width="300" dnt="true"><p lang="en" dir="ltr">TWC stands with the 85,000 Kaiser employees standing up to <a href="https://twitter.com/hashtag/kaisergreed?src=hash&amp;ref_src=twsrc%5Etfw">#kaisergreed</a> for <a href="https://twitter.com/hashtag/healthcarejustice?src=hash&amp;ref_src=twsrc%5Etfw">#healthcarejustice</a>. We worked with Kaiser workers and built <a href="https://t.co/YKewb8veBy">https://t.co/YKewb8veBy</a> to help them prepare for a national strike in the fall. <a href="https://twitter.com/hashtag/kaiserstrike?src=hash&amp;ref_src=twsrc%5Etfw">#kaiserstrike</a> <a href="https://twitter.com/UnionCoalition?ref_src=twsrc%5Etfw">@UnionCoalition</a> <a href="https://twitter.com/KeepThriveAlive?ref_src=twsrc%5Etfw">@KeepThriveAlive</a></p>&mdash; Tech Workers Coalition (@techworkersco) <a href="https://twitter.com/techworkersco/status/1149039361393958913?ref_src=twsrc%5Etfw">July 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 <!-- Footer -->
