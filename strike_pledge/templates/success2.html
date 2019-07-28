@@ -43,9 +43,10 @@
 <!-- First Grid -->
 <div class="w3-container w3-white w3-center" style="padding:90px 8px">
   <h4 class="w3-xxlarge">We e-mailed your co-workers</h4><br>
-  <p>Please invite more co-workers below!</p><br><br><br><br><br><br><br>
+  <p>Please invite more below. The more pledges, the stronger the message.</p><br><br><br><br><br><br><br>
   <form method="post">
     {% csrf_token %}
+    <p><b>Your co-workers:</b></p>
     <label for="email1">1. </label><tr><th></th><td><input type="text" size="25" name="email1" placeholder="johndoe@email.com" id="email1"></td></tr><br><br>
     <label for="email1">2. </label><tr><th></th><td><input type="text" size="25" name="email2" placeholder="johndoe@email.com" id="email2"></td></tr><br><br>
     <label for="email1">3. </label><tr><th></th><td><input type="text" size="25" name="email3" placeholder="johndoe@email.com" id="email3"></td></tr><br><br>

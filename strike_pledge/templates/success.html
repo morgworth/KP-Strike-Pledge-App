@@ -9,7 +9,7 @@
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
 <meta property="og:description"   content="Make a digital strike pledge"/>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/static/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% load static %}
 </head>
@@ -45,9 +45,10 @@
   <h1 class="w3-xxlarge">Step 2 (of 2):</h1><br>
   <p class="w3-xlarge">Open the email</p>
   <br>
-  <p>Want to maintain your wages, benefits, and job security? Invite your co-workers to make a digital strike pledge:</p><br><br>
+  <p>Invite your co-workers to make a digital strike pledge. We'll e-mail them a link to kaiserstrike.org.</p><br><br>
   <form method="post">
     {% csrf_token %}
+    <p><b>Your co-workers:</b></p>
     <label for="email1">1. </label><tr><th></th><td><input type="text" size="25" name="email1" placeholder="johndoe@email.com" id="email1"></td></tr><br><br>
     <label for="email1">2. </label><tr><th></th><td><input type="text" size="25" name="email2" placeholder="johndoe@email.com" id="email2"></td></tr><br><br>
     <label for="email1">3. </label><tr><th></th><td><input type="text" size="25" name="email3" placeholder="johndoe@email.com" id="email3"></td></tr><br><br>
