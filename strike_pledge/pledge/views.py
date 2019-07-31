@@ -242,7 +242,7 @@ def confirmView(request):
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker, '
             message += referrer
-            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += ', thought you might want to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
@@ -304,7 +304,7 @@ def confirm2View(request):
             subject = 'Make a digital strike pledge'
             message = 'Hello!\n\nYour co-worker, '
             message += referrer
-            message += ', indicated you might want to pledge to join the Oct/Nov 2019 Kaiser strike.\n\n'
+            message += ', thought you might want to join the Oct/Nov 2019 Kaiser strike.\n\n'
             message += 'Visit the webpage below to make a strike pledge and post a tweet, anonymously. Together, we\'ll make sure Kaiser remains a best place to work, and to receive care!\n\n'
             message += 'https://kaiserstrike.org'
             message += '\n\n\n\n\nFrom,\n\n'
