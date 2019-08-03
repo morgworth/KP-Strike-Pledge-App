@@ -199,7 +199,7 @@ def validateView(request):
 									  pers_email = pers_email,
                                       message = tweet)
                 return redirect('confirm')
-    return render(request, "contact.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email })
+    return render(request, "pledge.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email })
 
 def aboutView(request):
     return render(request, "about.html")
@@ -338,7 +338,7 @@ def confirm2View(request):
 def unionView(request):
     return render(request, "unions.html")
 
-def helpView(request):
+def contactView(request):
     if request.method == 'GET':
         form = HelpForm()
     else:
@@ -351,11 +351,11 @@ def helpView(request):
                 return HttpResponse('Invalid header found.')
             except Exception:
                 print('')
-            return redirect('helpsuccess')
-    return render(request, "help.html", {'form': form})
+            return redirect('contactsuccess')
+    return render(request, "contact.html", {'form': form})
 
-def helpsuccessView(request):
-    return render(request, "helpsuccess.html")
+def contactsuccessView(request):
+    return render(request, "contactsuccess.html")
 
 def alreadySubmittedView(request):
     return render(request, "alreadysubmitted.html")

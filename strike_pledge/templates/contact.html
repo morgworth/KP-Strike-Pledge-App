@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>kaisestrike.org</title>
+<title>kaiserstrike.org - Contact</title>
 <meta charset="UTF-8">
+<meta name="description" content="Contact">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url"           content="https://kaiserstrike.org"/>
@@ -55,7 +56,7 @@
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">About</a>
     <a href={% url 'invite' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Invite</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Contact</a>
+    <a href={% url 'help' %} class="w3-bar-item w3-button w3-left w3-padding-large w3-white">Contact</a>
   </div>
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-light-grey w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -63,80 +64,23 @@
     <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">About</a>
     <a href={% url 'invite' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Invite</a>
     <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Contact</a>
   </div>
 </div>
 <!-- First Grid -->
 <div class="w3-container w3-white w3-left" style="padding:90px 8px">
-  <h1 class="w3-margin xxlarge">Almost done!</h1>
-  <p class="w3-margin w3-xlarge">Complete the following fields:</p>
-  <p class="w3-margin w3-large">NOTE: If you have privacy concerns, forward your email to a personal address complete this form on a personal phone or computer.</p>
-  <form action={% url "validate" %} method="post">
-      {% csrf_token %} <br><br>
-    <div class="w3-left w3-margin">
-  	<!--{{ form.as_p }}-->
-	<!--<p>
-		{{form.email_hash.errors}}
-		{{form.email_hash}}
-		{{form.work_email.errors}}
-		{{form.work_email}}
-		{{form.kaiser_region.errors}}
-		{{form.kaiser_region}}<br><br>
-		{{form.union_member.errors}}
-		{{form.union_member}} <a href={% url 'union' %} class="w3-text-red">(Not sure?)</a><br><br>
-		{{form.tweet.errors}}
-		{{form.tweet}}<br><br>
-		{{form.personal_email.errors}}
-		{{form.personal_email}}<br><br>
-	</p> -->
-  <label for="kaiser_region">1.) REQUIRED - Your Kaiser region:</label><br>
-	<tr><th></th><td><select name="kaiser_region" id="id_kaiser_region">
-  <option value="none" selected>-----</option>
-
-  <option value="norcal">California - Northern</option>
-
-  <option value="socal">California - Southern</option>
-
-  <option value="colorado">Colorado</option>
-
-  <option value="georgia">Georgia</option>
-
-  <option value="hawaii">Hawaii</option>
-
-  <option value="maryland">Maryland</option>
-
-  <option value="oregon">Oregon</option>
-
-  <option value="virginia">Virginia</option>
-
-  <option value="dc">Washington DC</option>
-
-  <option value="washington">Washington State</option>
-
-</select></td></tr><br><br>
-<label for="union_member">2.) REQUIRED - Are you a member of a Coalition union? (<a href={% url 'union' %} class="w3-text-red">I'm not sure</a>)</label><br>
-<tr><th></th><td><select name="union_member" id="id_union_member"> <br><br>
-  <option value="none" selected>-----</option>
-
-  <option value="yes">Yes</option>
-
-  <option value="no">No (sympathy striker)</option>
-
-</select></td></tr><br><br>
-<label for="tweet">3.) OPTIONAL - What do you want to say to Kaiser executives, and/or to the public? For example, why are you making this strike pledge? <b>YOUR VOICE MATTERS</b></label><br><br>
-<tr><th></th><td><textarea name="tweet" cols="40" rows="7" placeholder='Your comment will be tweeted anonymously, along with "#kaiserstrike #wearekaiserworkers @aboutKP"' maxlength="237" id="id_tweet">
-</textarea></td></tr><br><br>
-<label for="personal_email">4.) OPTIONAL - What is your personal email address (for updates)?</label><br><br>
-<tr><th></th><td><input type="text" size="30" name="personal_email" placeholder="janemdoe@email.com" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr>
-      <br><br>
-      <div class="form-actions">
-        <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Count my pledge</button>
-        <br><br><br><br><br><br><br><br>
-      </div>
-  	</div>
+  <p class="w3-margin">NOTE: for a faster response, use the chat button at the bottom-right of the screen.</p>
+  <form class="w3-margin" method="post">
+    {% csrf_token %}
+    <label for="question">Enter your question here:</label><br><br>
+    <tr><th></th><td><textarea name="question" cols="36" rows="7" maxlength="300" id="id_question"></textarea></td></tr><br><br>
+    <label for="home_email">Your email address:</label><br><br>
+    <tr><th></th><td><input type="text" size="30" maxlength="40" name="home_email" placeholder="janemdoe@email.com" id="id_home_email"></td>
+    <br><br>
+    <div class="form-actions"></div>
+    <button type="submit" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Submit</button>
   </form>
+  <br><br><br><br>
 </div>
-
 <!-- Footer -->
 <footer class="w3-container w3-center w3-padding-12">
   <p>Spread the word or show your support:</p>

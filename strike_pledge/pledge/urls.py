@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import emailView, successView, validateView, aboutView, termsView, privacyView, faqView, homeView, confirmView, confirm2View, unionView, helpView, helpsuccessView, alreadySubmittedView, success2View, inviteView, invite2View
+from .views import emailView, successView, validateView, aboutView, termsView, privacyView, faqView, homeView, confirmView, confirm2View, unionView, contactView, contactsuccessView, alreadySubmittedView, success2View, inviteView, invite2View
 
 
 urlpatterns = [
@@ -17,8 +17,8 @@ urlpatterns = [
 	path('confirm/', confirmView, name='confirm'),
     path('confirm2/', confirm2View, name='confirm2'),
 	path('union/', unionView, name='union'),
-    path('help/', helpView, name='help'),
-    path('helpsuccess/', helpsuccessView, name='helpsuccess'),
+    path('contact/', contactView, name='contact'),
+    path('contactsuccess/', contactsuccessView, name='contactsuccess'),
 	path('alreadysubmitted/', alreadySubmittedView, name='alreadysubmitted'),
     path('invite/', inviteView, name='invite'),
     path('invite2/', invite2View, name='invite2'),
