@@ -70,7 +70,6 @@ def successView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -78,7 +77,6 @@ def successView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -86,7 +84,6 @@ def successView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email4 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
@@ -94,7 +91,6 @@ def successView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email5 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
@@ -102,7 +98,7 @@ def successView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
+            return redirect('success2')
     return render(request, "success.html", {'form':form})
 
 def success2View(request):
@@ -132,7 +128,6 @@ def success2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -140,7 +135,6 @@ def success2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -148,7 +142,6 @@ def success2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email4 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
@@ -156,7 +149,6 @@ def success2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
             if email5 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
@@ -164,7 +156,7 @@ def success2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('success2')
+            return redirect('success2')
     return render(request, "success2.html", {'form':form})
 
 def validateView(request):
@@ -254,7 +246,6 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -262,7 +253,6 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -270,7 +260,6 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email4 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
@@ -278,7 +267,6 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email5 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
@@ -286,7 +274,7 @@ def confirmView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
+            return redirect('confirm2')
     return render(request, "confirmation.html", {'form':form})
 
 def confirm2View(request):
@@ -316,7 +304,6 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -324,7 +311,6 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -332,7 +318,6 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email4 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
@@ -340,7 +325,6 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
             if email5 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
@@ -348,7 +332,7 @@ def confirm2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('confirm2')
+            return redirect('confirm2')
     return render(request, "confirmation2.html", {'form':form})
 
 def unionView(request):
