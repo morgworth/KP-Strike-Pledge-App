@@ -20,6 +20,6 @@ urlpatterns = [
     path('help/', helpView, name='help'),
     path('helpsuccess/', helpsuccessView, name='helpsuccess'),
 	path('alreadysubmitted/', alreadySubmittedView, name='alreadysubmitted'),
-    path('invite/', inviteView, name='invite')
-    path('invite2/', invite2View, name='invite2')
+    path('invite/', inviteView, name='invite'),
+    path('invite2/', invite2View, name='invite2'),
 ]
