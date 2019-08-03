@@ -403,7 +403,6 @@ def inviteView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -411,7 +410,6 @@ def inviteView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -419,7 +417,6 @@ def inviteView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email4 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
@@ -427,7 +424,6 @@ def inviteView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email5 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
@@ -435,7 +431,7 @@ def inviteView(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
+            return redirect('invite2')
     return render(request, "invite.html", {'form':form})
 
 def invite2View(request):
@@ -465,7 +461,6 @@ def invite2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email2 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email2], fail_silently=True)
@@ -473,7 +468,6 @@ def invite2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email3 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email3], fail_silently=True)
@@ -481,7 +475,6 @@ def invite2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email4 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email4], fail_silently=True)
@@ -489,7 +482,6 @@ def invite2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
             if email5 != '':
                 try:
                     send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email5], fail_silently=True)
@@ -497,5 +489,5 @@ def invite2View(request):
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
-                return redirect('invite2')
+            return redirect('invite2')
     return render(request, "invite2.html", {'form':form})
