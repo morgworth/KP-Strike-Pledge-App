@@ -1,11 +1,10 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import emailView, successView, validateView, aboutView, termsView, privacyView, faqView, homeView, confirmView, confirm2View, unionView, helpView, helpsuccessView, alreadySubmittedView, success2View, inviteView, invite2View
+from .views import successView, validateView, aboutView, termsView, privacyView, faqView, homeView, confirmView, confirm2View, unionView, helpView, helpsuccessView, alreadySubmittedView, success2View, inviteView, invite2View
 
 
 urlpatterns = [
-    path('email/', emailView, name='email'),
     path('success/', successView, name='success'),
     path('success2/', success2View, name='success2'),
     path('validate/', validateView, name='validate'),
