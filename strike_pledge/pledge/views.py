@@ -45,7 +45,7 @@ def homeView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "home.html", {'form': form}, {'count': count})
+    return render(request, "home.html", {'form': form, 'count': count})
 
 def successView(request):
     if request.method == 'GET':
