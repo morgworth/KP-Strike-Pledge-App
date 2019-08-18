@@ -58,11 +58,12 @@ p b {font-size: 25px}
       <p class="w3-text-grey">In Fall 2019, as many as 100,000 of us (Kaiser employees) are going on strike to protest Kaiser's unfair labor practices. Use this website to make a strike pledge or share <i>why</i> you're going on strike.<br><br>Leaving a comment, which will be uploaded to twitter (@kaiserstrike19), might be the single most powerful thing you can do short of going on strike.</p>
     </div>
     <div class="w3-half" style='padding:0px 10px'>
-      <h1 class="w3-center">{{ count }}</h1>
+      <h1>{{ count }}</h1>
       <p class="w3-text-grey">Kaiser employees have made a strike pledge (on kaiserstrike.org).</p>
       <form method="post" align="left">
         {% csrf_token %}
-        <h1>JOIN US: </h1><div align="center">{{ form.email }} <b>@kp.org</b></div>
+        <h1>JOIN US</h1>
+        <div align="center">{{ form.email }} <b>@kp.org</b></div>
         <div class="form-actions" align="center"><br><br></div>
         <p class="w3-text-grey" style='font-size:14px'>(We ask for your Kaiser email to ensure you're Kaiser employee.)</p>
   	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">E-mail me</button>
