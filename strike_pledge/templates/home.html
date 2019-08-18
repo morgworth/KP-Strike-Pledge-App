@@ -55,16 +55,16 @@ p b {font-size: 25px}
   <div class="w3-content">
     <div class="w3-half" style='padding:0px 10px'>
       <h1 class="w3-text-grey">WHY?</h1>
-      <p class="w3-text-grey">In Fall 2019, as many as 100,000 of us (Kaiser employees) are going on strike to protest Kaiser's unfair labor practices. Use this website to make a strike pledge or share <i>why</i> you're going on strike.<br><br>Leaving a comment, which will be uploaded to twitter, might be the single most powerful thing you can do short of going on strike.</p>
+      <p class="w3-text-grey">In Fall 2019, as many as 100,000 of us (Kaiser employees) are going on strike to protest Kaiser's unfair labor practices. Use this website to make a strike pledge or share <i>why</i> you're going on strike.<br><br>Leaving a comment, which will be uploaded to twitter (@kaiserstrike19), might be the single most powerful thing you can do short of going on strike.</p>
     </div>
     <div class="w3-half" style='padding:0px 10px'>
-      <p class="w3-xxxlarge">{{ count }}</p>
+      <h1 class="w3-center">{{ count }}</h1>
       <p class="w3-text-grey">Kaiser employees have made a strike pledge (on kaiserstrike.org).</p>
-      <form method="post" align="center">
+      <form method="post" align="left">
         {% csrf_token %}
-        <p class="w3-xxxlarge">JOIN US:</p> <div align="center">{{ form.email }}<b> @kp.org</b></div>
+        <h1>JOIN US: </h1><div align="center">{{ form.email }} <b>@kp.org</b></div>
         <div class="form-actions" align="center"><br><br></div>
-        <p class="w3-text-grey">(We ask for your Kaiser email to ensure you're Kaiser employee.)</p>
+        <p class="w3-text-grey" style='font-size:14px'>(We ask for your Kaiser email to ensure you're Kaiser employee.)</p>
   	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">E-mail me</button>
       </form>
     </div>
@@ -91,15 +91,15 @@ p b {font-size: 25px}
   <div class="w3-content">
     <h1 class="w3-text-grey w3-center">Common Questions</h1>
     <div class="w3-half w3-text-grey" style='padding:0px 10px'>
-      <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1, at the earliest.</p><br>
-      <p><b>Will the strike work?</b><br>It's worked before and it will work again if we stand together!</p><br>
-      <p><b>Can I join the strike?</b><br>All Kaiser employees including doctors, nurses, and non-union staff can join. If you don't belong to a Coalition Union, you must notify your supervisor at least 10 days before the strike.</p><br>
-      <p><b>Can I be discipline for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a Coalition Union). If you belong to a Coalition Union, you don't have to notify your manager.</p><br>
+      <p><b class="w3-text-black">When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1, at the earliest.</p><br>
+      <p><b class="w3-text-black">Will the strike work?</b><br>It's worked before and it will work again if we stand together!</p><br>
+      <p><b class="w3-text-black">Can I join the strike?</b><br>All Kaiser employees including doctors, nurses, and non-union staff can join. If you don't belong to a Coalition Union, you must notify your supervisor at least 10 days before the strike.</p><br>
+      <p><b class="w3-text-black">Can I be discipline for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a Coalition Union). If you belong to a Coalition Union, you don't have to notify your manager.</p><br>
     </div>
     <div class="w3-half w3-text-grey" style='padding:0px 10px'>
-      <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
-      <p><b>Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the pledge counter above, and your comment will be tweeted anonymously by @kaiserstrike19.</p><br>
-      <p><b>Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. Find out about TWC.</p><br>
+      <p><b class="w3-text-black">Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
+      <p><b class="w3-text-black">Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the pledge counter above, and your comment will be tweeted anonymously by @kaiserstrike19.</p><br>
+      <p><b class="w3-text-black">Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. Find out about TWC.</p><br>
     </div>
   </div>
 </div>
