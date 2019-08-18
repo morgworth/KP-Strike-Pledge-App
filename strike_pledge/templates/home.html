@@ -10,10 +10,11 @@
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
 <meta property="og:description"   content="Make a strike pledge"/>
-<link rel="stylesheet" href="/static/w3.css">
-<link rel="stylesheet" href="/static/lato.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+h1 {font-size: 56px}
 p {font-size: 20px}
 p b {font-size: 25px}
 </style>
@@ -59,10 +60,9 @@ p b {font-size: 25px}
     <div class="w3-half" style='padding:0px 10px'>
       <p class="w3-xxxlarge">{{ count }}</p>
       <p class="w3-text-grey">Kaiser employees have made a strike pledge (on kaiserstrike.org).</p>
-      <p class="w3-text-black w3-xxxlarge"><b>JOIN US</b></p>
       <form method="post" align="center">
         {% csrf_token %}
-        <div align="center">{{ form.email }}<b> @kp.org</b></div>
+        <p class="w3-xxxlarge">JOIN US:</p> <div align="center">{{ form.email }}<b> @kp.org</b></div>
         <div class="form-actions" align="center"><br><br></div>
         <p class="w3-text-grey">(We ask for your Kaiser email to ensure you're Kaiser employee.)</p>
   	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">E-mail me</button>
@@ -91,22 +91,22 @@ p b {font-size: 25px}
   <div class="w3-content">
     <h1 class="w3-text-grey w3-center">Common Questions</h1>
     <div class="w3-half w3-text-grey" style='padding:0px 10px'>
-      <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1, at the earliest.</p>
-      <p><b>Will the strike work?</b><br>It's worked before and it will work again if we stand together!</p>
-      <p><b>Can I join the strike?</b><br>All Kaiser employees including doctors, nurses, and non-union staff can join. If you don't belong to a Coalition Union, you must notify your supervisor at least 10 days before the strike.</p>
-      <p><b>Can I be discipline for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a Coalition Union). If you belong to a Coalition Union, you don't have to notify your manager.</p>
+      <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1, at the earliest.</p><br>
+      <p><b>Will the strike work?</b><br>It's worked before and it will work again if we stand together!</p><br>
+      <p><b>Can I join the strike?</b><br>All Kaiser employees including doctors, nurses, and non-union staff can join. If you don't belong to a Coalition Union, you must notify your supervisor at least 10 days before the strike.</p><br>
+      <p><b>Can I be discipline for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a Coalition Union). If you belong to a Coalition Union, you don't have to notify your manager.</p><br>
     </div>
     <div class="w3-half w3-text-grey" style='padding:0px 10px'>
-      <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p>
-      <p><b>Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the pledge counter above, and your comment will be tweeted anonymously by @kaiserstrike19.</p>
-      <p><b>Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. Find out about TWC.</p>
+      <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
+      <p><b>Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the pledge counter above, and your comment will be tweeted anonymously by @kaiserstrike19.</p><br>
+      <p><b>Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. Find out about TWC.</p><br>
     </div>
   </div>
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-center" style='background-color: #f1f1f1'>
   <div class="w3-xlarge w3-padding-32">
-    <h1 class="w3-text-black w3-xxlarge">Spread the Word</h1>
+    <h1 class="w3-text-black w3-xxlarge">Spread the Word</h1><br>
     <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
     </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  </div>
