@@ -1,96 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>kaiserstrike.org - Home</title>
+<title>kaiserstrike.org. Join the strike.</title>
 <meta charset="UTF-8">
-<meta name="description" content="Join the Kaiser strike">
+<meta name="description" content="Make a strike pledge">
 <meta name="robots" content="index,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url"           content="https://kaiserstrike.org"/>
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
-<meta property="og:description"   content="Make a digital strike pledge"/>
-<link rel="stylesheet" href="/static/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta property="og:description"   content="Make a strike pledge"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+</style>
 {% load static %}
 </head>
 <body>
-<!-- Load script for Facebook share button -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Load script for Twitter timeline -->
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-light-grey w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'home' %} class="w3-bar-item w3-button w3-left w3-padding-large w3-white">Home</a>
-    <a href={% url 'about' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'invite' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Invite</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Contact</a>
-  </div>
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-light-grey w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'invite' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Invite</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Contact</a>
-  </div>
-</div>
+  <!-- Load script for Facebook share button -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Load script for Twitter timeline -->
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+<!-- Header -->
+<header class="w3-container w3-light-green w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo w3-text-white">MAKE A STRIKE PLEDGE</h1>
+  <p class="w3-xlarge w3-text-white">or share why you're going on strike</p>
+</header>
 <!-- First Grid -->
-<div class="w3-container w3-white w3-center" style="padding:90px 20px">
-  <h2 class="w3-margin w3-jumbo">{{ count }}</h2>
-  <p class="w3-xlarge">Kaiser employees have made a digital strike pledge</p><br><br><br>
-  <form>
-    <button class="w3-button w3-red w3-padding-large w3-large w3-margin-top" formaction={% url 'email' %}>Make your pledge</button>
-  </form>
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-half" style='padding:0px 40px'>
+      <h1 class="w3-text-grey">WHY?</h1>
+      <p class="w3-text-grey">In Fall 2019, as many as 100,000 of us (Kaiser employees) are going on strike to protest Kaiser's unfair labor practices. Use this website to make a strike pledge or share <i>why</i> you're going on strike.<br><br>Leaving a comment, which will be uploaded to twitter, might be the single most powerful thing you can do short of going on strike.</p>
+    </div>
+    <div class="w3-half" style='padding:0px 40px'>
+      {{ count }}
+      <p class="w3-text-grey">Kaiser employees have made a strike pledge (on kaiserstrike.org).</p>
+      <p class="w3-text-black w3-xxlarge"><b>JOIN US</b></p>
+      <form method="post" align="center">
+        {% csrf_token %}
+        <div align="center">{{ form.email }}<b>@kp.org</b></div>
+        <div class="form-actions" align="center"><br><br></div>
+        <p class="w3-text-grey">(We ask for your Kaiser email to ensure you're Kaiser employee.)</p>
+  	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">E-mail me</button>
+      </form>
+    </div>
+  </div>
 </div>
 <!-- Second Grid -->
-<div class="w3-container w3-white w3-center" style="padding:0px 20px">
-  <a class="twitter-timeline" data-lang="en" data-chrome="nofooter" data-width="300" data-height="100" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
-  <br><br><br><br><br>
+<div class="w3-row-padding w3-padding-64 w3-container w3-center" style='background-color: #f1f1f1'>
+  <div class="w3-content">
+    <h1 class="w3-text-grey">Here's what we're saying</h1><br><br>
+    <div class="w3-half">
+      <blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-width="400"><p lang="en" dir="ltr">I have 10 years left to retire, Kaiser is not the same organization it was, they have turned their values away from the Partnership and the value campus. Our patients are no longer patients they are customers. Shame on you Kaiser! <a href="https://twitter.com/hashtag/kaiserstrike?src=hash&amp;ref_src=twsrc%5Etfw">#kaiserstrike</a> <a href="https://twitter.com/hashtag/wearekaiserworkers?src=hash&amp;ref_src=twsrc%5Etfw">#wearekaiserworkers</a> <a href="https://twitter.com/aboutKP?ref_src=twsrc%5Etfw">@aboutKP</a></p>&mdash; Kaiser Employees (@kaiserstrike19) <a href="https://twitter.com/kaiserstrike19/status/1151877596558307328?ref_src=twsrc%5Etfw">July 18, 2019</a></blockquote>
+
+      <blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-width="400"><p lang="en" dir="ltr">I stand with my fellow co-workers to get the high-quality health care and benefits we deserve. Without the threat of strike action our working conditions will get worse. <a href="https://twitter.com/hashtag/kaiserstrike?src=hash&amp;ref_src=twsrc%5Etfw">#kaiserstrike</a> <a href="https://twitter.com/hashtag/wearekaiserworkers?src=hash&amp;ref_src=twsrc%5Etfw">#wearekaiserworkers</a> <a href="https://twitter.com/aboutKP?ref_src=twsrc%5Etfw">@aboutKP</a></p>&mdash; Kaiser Employees (@kaiserstrike19) <a href="https://twitter.com/kaiserstrike19/status/1151231774803910656?ref_src=twsrc%5Etfw">July 16, 2019</a></blockquote>
+
+      <blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-width="400"><p lang="en" dir="ltr">We will not give in to Kaiser&#39;s greed. We will fight for each other and the community to get Kaiser back to collaboration and decency! <a href="https://twitter.com/hashtag/kaiserstrike?src=hash&amp;ref_src=twsrc%5Etfw">#kaiserstrike</a> <a href="https://twitter.com/hashtag/wearekaiserworkers?src=hash&amp;ref_src=twsrc%5Etfw">#wearekaiserworkers</a> <a href="https://twitter.com/aboutKP?ref_src=twsrc%5Etfw">@aboutKP</a></p>&mdash; Kaiser Employees (@kaiserstrike19) <a href="https://twitter.com/kaiserstrike19/status/1150782994673573890?ref_src=twsrc%5Etfw">July 15, 2019</a></blockquote>
+    </div>
+    <div class="w3-half">
+      <a class="twitter-timeline" data-lang="en" data-chrome="nofooter" data-tweet-limit="4" data-width="400" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
+    </div>
+  </div>
+</div>
+<!-- Third Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <h1 class="w3-text-grey w3-center">Common Questions</h1>
+    <div class="w3-half w3-text-grey" style='padding:0px 40px'>
+      <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1, at the earliest.</p>
+      <p><b>Will the strike work?</b><br>It's worked before and it will work again if we stand together!</p>
+      <p><b>Can I join the strike?</b><br>All Kaiser employees including doctors, nurses, and non-union staff can join. If you don't belong to a Coalition Union, you must notify your supervisor at least 10 days before the strike.</p>
+      <p><b>Can I be discipline for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a Coalition Union). If you belong to a Coalition Union, you don't have to notify your manager.</p>
+    </div>
+    <div class="w3-half w3-text-grey" style='padding:0px 40px'>
+      <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p>
+      <p><b>Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the pledge counter above, and your comment will be tweeted anonymously by @kaiserstrike19.</p>
+      <p><b>Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. Find out about TWC.</p>
+    </div>
+  </div>
 </div>
 <!-- Footer -->
-<footer class="w3-container w3-center w3-padding-12">
-  <p>Spread the word or show your support:</p>
-  <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
-  </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <br><br>
-  <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-  <p><a href={% url 'terms' %} >Terms</a> <a href={% url 'privacy' %} >Privacy</a></p>
+<footer class="w3-container w3-padding-32 w3-center" style='background-color: #f1f1f1'>
+  <div class="w3-xlarge w3-padding-32">
+    <h1 class="w3-text-black w3-xxlarge">Spread the Word</h1>
+    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
+    </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+ </div>
+ <div class="w3-text-grey">
+    <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+    <p><a style='text-decoration: none' href={% url 'terms' %}>Terms</a> | <a style='text-decoration: none' href={% url 'privacy' %}>Privacy</a> | <a style='text-decoration: none' href="mailto:inquiries@kaiserstrike.org">Contact</a></p>
+  </div>
 </footer>
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 </body>
 </html>

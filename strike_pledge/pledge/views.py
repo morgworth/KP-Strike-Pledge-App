@@ -13,21 +13,25 @@ import twitter
 import urllib
 import os
 
-def emailView(request):
+def homeView(request):
+    count = Pledge.objects.all().count()
+    #if count < 1000:
+    #    count = '< 1,000'
+
     if request.method == 'GET':
         form = PledgeForm()
     else:
         form = PledgeForm(request.POST)
         if form.is_valid():
-            subject = 'Confirm your digital strike pledge'
+            subject = 'Confirm your strike pledge'
             username = form.cleaned_data['email']
             sep = '@'
             emailprefix = username.split(sep, 1)[0]
             email = emailprefix + '@kp.org'
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'Hello!\n\nYou or your co-worker indicated you want to make a digital strike pledge.\n\n'
-            message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this to a personal email and open the link on a personal phone or computer.\n\n'
+            message = 'Hello!\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
+            message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
@@ -41,7 +45,7 @@ def emailView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "email.html", {'form': form})
+    return render(request, "home.html", {'form': form}, {'count': count})
 
 def successView(request):
     if request.method == 'GET':
@@ -212,12 +216,6 @@ def termsView(request):
 
 def privacyView(request):
     return render(request, "privacy.html")
-
-def homeView(request):
-    count = Pledge.objects.all().count()
-    #if count < 1000:
-    #    count = '< 1,000'
-    return render(request, "home.html", {'count': count})
 
 def confirmView(request):
     if request.method == 'GET':
