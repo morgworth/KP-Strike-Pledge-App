@@ -1,88 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>kaiserstrike.org</title>
+<title>kaiserstrike.org. Join the strike.</title>
 <meta charset="UTF-8">
+<meta name="description" content="Make a strike pledge">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url"           content="https://kaiserstrike.org"/>
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
-<meta property="og:description"   content="Make a digital strike pledge"/>
-<link rel="stylesheet" href="/static/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta property="og:description"   content="Make a strike pledge"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+h1 {font-size: 56px}
+p {font-size: 20px}
+p b {font-size: 25px}
+</style>
 {% load static %}
 </head>
 <body>
-<!-- Load script for Facebook share button -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-light-grey w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href={% url 'home' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Home</a>
-    <a href={% url 'about' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'invite' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Invite</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-left w3-hide-small w3-padding-large w3-hover-black">Contact</a>
-  </div>
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-light-grey w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href={% url 'home' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
-    <a href={% url 'about' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">About</a>
-    <a href={% url 'invite' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Invite</a>
-    <a href={% url 'faq' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">FAQ</a>
-    <a href={% url 'help' %} class="w3-bar-item w3-button w3-padding-large w3-hover-black">Contact</a>
-  </div>
-</div>
+  <!-- Load script for Facebook share button -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Load script for Twitter timeline -->
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+<!-- Header -->
+<header class="w3-container w3-light-green w3-center" style="padding:128px 16px"></header>
 <!-- First Grid -->
-<div class="w3-container w3-white w3-center" style="padding:90px 8px">
-  <h1 class="w3-xxlarge">Step 2 (of 2):</h1><br>
-  <p class="w3-xlarge">Open the email</p>
-  <br>
-  <p>Now, invite your co-workers to make a digital strike pledge, below (we'll e-mail them a link to kaiserstrike.org).</p><br><br>
+<div class="w3-container w3-white w3-margin" style="padding:90px 8px">
+  <h1 class="w3-margin">Great</h1>
+  <p class="w3-text-grey w3-margin">Open the email from 'noreply@kaiserstrike.org' to complete your pledge.</p>
+  <p class="w3-text-grey w3-margin">Before you go...invite your co-workers to make a strike pledge. We'll e-mail them a link to kaiserstrike.org.</p><br>
   <form method="post">
     {% csrf_token %}
-    <p><b>Your co-workers:</b></p>
+    <h3 class="w3-text-grey w3-margin">Your co-workers:</h3>
     <br>
-    <label for="email1">1. </label><tr><th></th><td><input type="text" size="25" name="email1" placeholder="johndoe@email.com" id="email1"></td></tr><br><br>
-    <label for="email2">2. </label><tr><th></th><td><input type="text" size="25" name="email2" placeholder="johndoe@email.com" id="email2"></td></tr><br><br>
-    <label for="email3">3. </label><tr><th></th><td><input type="text" size="25" name="email3" placeholder="johndoe@email.com" id="email3"></td></tr><br><br>
-    <label for="email4">4. </label><tr><th></th><td><input type="text" size="25" name="email4" placeholder="johndoe@email.com" id="email4"></td></tr><br><br>
-    <label for="email5">5. </label><tr><th></th><td><input type="text" size="25" name="email5" placeholder="johndoe@email.com" id="email5"></td></tr><br><br>
-    <label for="referrer">Your name (optional) </label><tr><th></th><td><input type="text" size="7" name="referrer" placeholder="Jane" id="referrer"></td></tr><br><br>
+    <label for="email1" class="w3-text-grey w3-margin">1. </label><tr><th></th><td><input type="text" size="25" name="email1" placeholder="johndoe@email.com" id="email1"></td></tr><br><br>
+    <label for="email2" class="w3-text-grey w3-margin">2. </label><tr><th></th><td><input type="text" size="25" name="email2" placeholder="johndoe@email.com" id="email2"></td></tr><br><br>
+    <label for="email3" class="w3-text-grey w3-margin">3. </label><tr><th></th><td><input type="text" size="25" name="email3" placeholder="johndoe@email.com" id="email3"></td></tr><br><br>
+    <label for="email4" class="w3-text-grey w3-margin">4. </label><tr><th></th><td><input type="text" size="25" name="email4" placeholder="johndoe@email.com" id="email4"></td></tr><br><br>
+    <label for="email5" class="w3-text-grey w3-margin">5. </label><tr><th></th><td><input type="text" size="25" name="email5" placeholder="johndoe@email.com" id="email5"></td></tr><br><br>
+    <label for="referrer" class="w3-text-grey w3-margin">Your name (optional): </label><tr><th></th><td><input type="text" size="9" name="referrer" placeholder="Jane" id="referrer"></td></tr><br><br>
     <div class="form-actions" align="center"></div>
-  	<button type="submit" class="w3-button w3-center w3-red w3-padding-large w3-large w3-margin-top">E-mail my co-workers</button>
+  	<button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin w3-margin-top">E-mail my co-workers</button>
   </form>
   <br><br><br>
 </div>
 <!-- Footer -->
-<footer class="w3-container w3-center w3-padding-12">
-  <p>Spread the word or show your support:</p>
-  <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
-  </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <br><br>
-  <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
-  <p><a href={% url 'terms' %} >Terms</a> <a href={% url 'privacy' %} >Privacy</a></p>
+<footer class="w3-container w3-padding-32 w3-center" style='background-color: #f1f1f1'>
+  <div class="w3-xlarge w3-padding-32">
+    <h1 class="w3-text-black w3-xxlarge">Spread the Word</h1><br>
+    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
+    </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+ </div>
+ <div class="w3-text-grey">
+    <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
+    <p><a style='text-decoration: none' href={% url 'terms' %}>Terms</a> | <a style='text-decoration: none' href={% url 'privacy' %}>Privacy</a> | <a style='text-decoration: none' href="mailto:inquiries@kaiserstrike.org">Contact</a></p>
+  </div>
 </footer>
-<script>
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 </body>
 </html>
