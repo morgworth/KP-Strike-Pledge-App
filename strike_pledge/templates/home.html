@@ -63,7 +63,7 @@ p b {font-size: 25px}
       <form method="post" align="left">
         {% csrf_token %}
         <h1>JOIN US</h1>
-        <div align="left"><p><b>-></b></p>{{ form.email }}<p><b>@kp.org</b></p></div>
+        <div align="left"><p><b>-></b>{{ form.email }}<b>@kp.org</b></p></div>
         <div class="form-actions" align="center"><br><br></div>
         <p class="w3-text-grey" style='font-size:14px'>(We ask for your Kaiser email to ensure you're a Kaiser employee.)</p>
   	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">Pledge</button>
@@ -114,7 +114,7 @@ p b {font-size: 25px}
  <div class="w3-text-grey">
     <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
     <p><a style='text-decoration: none' href={% url 'terms' %}>Terms</a> | <a style='text-decoration: none' href={% url 'privacy' %}>Privacy</a> | <a style='text-decoration: none' href="mailto:inquiries@kaiserstrike.org">Contact</a></p>
-    <img src="/static/twclogo.jpg" alt="TWC logo">
+    <img src="/static/twclogo.png" alt="TWC logo" height="20" width="20">
   </div>
 </footer>
 </body>
