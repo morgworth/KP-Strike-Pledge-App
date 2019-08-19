@@ -63,8 +63,8 @@ p b {font-size: 25px}
       <form method="post" align="left">
         {% csrf_token %}
         <h1>JOIN US</h1>
-        <div align="left"><p><b>-></b>{{ form.email }}<b>@kp.org</b></p></div>
-        <div class="form-actions" align="center"><br><br></div>
+        <div align="left"><p><b>-></b> {{ form.email }} <b>@kp.org</b></p></div>
+        <div class="form-actions" align="center"></div>
         <p class="w3-text-grey" style='font-size:14px'>(We ask for your Kaiser email to ensure you're a Kaiser employee.)</p>
   	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">Pledge</button>
       </form>
@@ -110,11 +110,11 @@ p b {font-size: 25px}
     <h1 class="w3-text-black w3-xxlarge">Spread the Word</h1><br>
     <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
     </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
- </div>
- <div class="w3-text-grey">
+  </div>
+  <div class="w3-text-grey">
     <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
     <p><a style='text-decoration: none' href={% url 'terms' %}>Terms</a> | <a style='text-decoration: none' href={% url 'privacy' %}>Privacy</a> | <a style='text-decoration: none' href="mailto:inquiries@kaiserstrike.org">Contact</a></p>
-    <img src="/static/twclogo.png" alt="TWC logo" height="20" width="20">
+    <img src="/static/twclogo.png" alt="TWC logo" height="50" width="50">
   </div>
 </footer>
 </body>
