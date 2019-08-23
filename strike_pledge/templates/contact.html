@@ -49,11 +49,11 @@ p b {font-size: 25px}
 <header class="w3-container w3-light-green w3-center" style="padding:30px 16px"></header>
 <!-- First Grid -->
 <div class="w3-container w3-white w3-margin" style="padding:90px 8px">
-  <h1>Almost done!</h1>
-  <p class="w3-text-grey">Complete the following fields:</p><br><br>
+  <h1 class="w3-margin">Almost done!</h1>
+  <p class="w3-text-grey w3-margin">Complete the following fields:</p><br>
   <form action={% url "validate" %} method="post">
-      {% csrf_token %} <br><br>
-    <div class="w3-left">
+      {% csrf_token %}
+    <div class="w3-left w3-margin">
   	<!--{{ form.as_p }}-->
 	<!--<p>
 		{{form.email_hash.errors}}
@@ -69,7 +69,7 @@ p b {font-size: 25px}
 		{{form.personal_email.errors}}
 		{{form.personal_email}}<br><br>
 	</p> -->
-  <label for="kaiser_region" class="w3-text-grey">1.) REQUIRED - Your Kaiser region:</label><br>
+  <label for="kaiser_region" class="w3-text-grey">1) Your Kaiser region*</label><br>
 	<tr><th></th><td><select name="kaiser_region" id="id_kaiser_region">
   <option value="none" selected>-----</option>
   <option value="norcal">California - Northern</option>
@@ -83,16 +83,16 @@ p b {font-size: 25px}
   <option value="dc">Washington DC</option>
   <option value="washington">Washington State</option>
 </select></td></tr><br><br>
-<label for="union_member" class="w3-text-grey">2.) REQUIRED - Are you a member of a Coalition union? (<a href={% url 'union' %} class="w3-text-blue" style='text-decoration: none'>I'm not sure</a>)</label><br>
+<label for="union_member" class="w3-text-grey">2) Are you a member of a Coalition union?* (<a href={% url 'union' %} class="w3-text-blue" style='text-decoration: none'>I'm not sure</a>)</label><br>
 <tr><th></th><td><select name="union_member" id="id_union_member"> <br><br>
   <option value="none" selected>-----</option>
   <option value="yes">Yes</option>
   <option value="no">No (sympathy striker)</option>
 </select></td></tr><br><br>
-<label for="tweet" class="w3-text-grey">3.) OPTIONAL - What do you want to say to Kaiser executives, your co-workers, and/or the public? For example, why are you making this strike pledge?</label><br><br>
-<tr><th></th><td><textarea name="tweet" cols="40" rows="7" placeholder='Your comment will be tweeted anonymously, along with "#kaiserstrike #wearekaiserworkers @aboutKP"' maxlength="237" id="id_tweet">
+<label for="tweet" class="w3-text-grey">3) What do you want to say to Kaiser executives, your co-workers, and/or the public? For example, why are you making this strike pledge? (optional)</label><br><br>
+<tr><th></th><td><textarea name="tweet" cols="60" rows="5" placeholder='Your comment will be tweeted anonymously, along with "#kaiserstrike #wearekaiserworkers @aboutKP"' maxlength="237" id="id_tweet">
 </textarea></td></tr><br><br>
-<label for="personal_email" class="w3-text-grey">4.) OPTIONAL - What is your personal email address (for updates)?</label><br><br>
+<label for="personal_email" class="w3-text-grey">4) What is your personal email address, for updates? (optional)</label><br><br>
 <tr><th></th><td><input type="text" size="30" name="personal_email" placeholder="janemdoe@email.com" id="id_personal_email"><input type="hidden" name="email_hash" value={{email_hash}} id="id_email_hash"><input type="hidden" name="work_email" value={{work_email}} id="id_work_email"></td></tr>
       <br><br>
       <div class="form-actions">
