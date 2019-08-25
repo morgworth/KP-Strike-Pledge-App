@@ -39,7 +39,7 @@ def homeView(request):
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
@@ -69,35 +69,35 @@ def successView(request):
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
             if email1 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email1], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email1], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email2 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email2], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email3 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email3], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email3], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email4 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email4], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email4], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email5 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email5], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email5], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
@@ -127,35 +127,35 @@ def success2View(request):
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
             if email1 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email1], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email1], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email2 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email2], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email3 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email3], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email3], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email4 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email4], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email4], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email5 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email5], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email5], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
@@ -233,35 +233,35 @@ def confirmView(request):
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
             if email1 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email1], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email1], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email2 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email2], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email2], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email3 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email3], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email3], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email4 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email4], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email4], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
                     print('')
             if email5 != '':
                 try:
-                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email5], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email5], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
