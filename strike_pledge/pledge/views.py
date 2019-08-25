@@ -39,8 +39,7 @@ def homeView(request):
             		data={"from": "Mailgun Sandbox <postmaster@mail.kaiserstrike.org>",
             			"to": username,
             			"template": "complete_pledge",
-            			"v:link": validate_link,
-            			"h:X-Mailgun-Variables": "{"test": "test"}"})
+            			"v:link": validate_link})
 
             #message = 'Hello!\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
             #message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
