@@ -39,7 +39,7 @@ def homeView(request):
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
                 try:
-                    send_mail(subject, message, 'noreply <noreply@kaiserstrike.org>', [email], fail_silently=True)
+                    send_mail(subject, message, 'noreply <noreply@mail.kaiserstrike.org>', [email], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
