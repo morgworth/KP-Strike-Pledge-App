@@ -28,6 +28,7 @@ def homeView(request):
             sep = '@'
             emailprefix = username.split(sep, 1)[0]
             email = emailprefix + '@kp.org'
+            email_lower = email.lower()
             hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
@@ -39,7 +40,7 @@ def homeView(request):
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
                 try:
-                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email], fail_silently=True)
+                    send_mail(subject, message, 'noreply <pledge@mail.kaiserstrike.org>', [email_lower], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
