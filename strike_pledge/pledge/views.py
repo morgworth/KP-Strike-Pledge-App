@@ -23,24 +23,35 @@ def homeView(request):
     else:
         form = PledgeForm(request.POST)
         if form.is_valid():
-            subject = 'Confirm your strike pledge'
+            #subject = 'Confirm your strike pledge'
             username = form.cleaned_data['email']
-            sep = '@'
-            emailprefix = username.split(sep, 1)[0]
-            email = emailprefix + '@kp.org'
-            email_lower = email.lower()
-            hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
+            #sep = '@'
+            #emailprefix = username.split(sep, 1)[0]
+            #email = emailprefix + '@kp.org'
+            #email_lower = email.lower()
+            hashed_email = hashlib.sha1(username.lower().encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = 'Hello!\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
-            message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
-            message += validate_link
-            message += '\n\n\n\n\nFrom,\n\n'
-            message += 'Your co-workers and friends at kaiserstrike(dot)org'
+
+            def send_simple_message():
+            	return requests.post(
+            		"https://api.mailgun.net/v3/mail.kaiserstrike.org/messages",
+            		auth=("api", "key-07f2b930ea5cedd16324499e964f8742"),
+            		data={"from": "Mailgun Sandbox <postmaster@mail.kaiserstrike.org>",
+            			"to": username,
+            			"template": "complete_pledge",
+            			"v:link": validate_link,
+            			"h:X-Mailgun-Variables": "{"test": "test"}"})
+
+            #message = 'Hello!\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
+            #message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
+            #message += validate_link
+            #message += '\n\n\n\n\nFrom,\n\n'
+            #message += 'Your co-workers and friends at kaiserstrike(dot)org'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
                 try:
-                    send_mail(subject, message, 'pledge <pledge@mail.kaiserstrike.org>', [email_lower], fail_silently=True)
+                    send_simple_message()
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
