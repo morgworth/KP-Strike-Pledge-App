@@ -55,7 +55,7 @@ p b {font-size: 25px}
   <div class="w3-content">
     <div class="w3-half" style='padding:0px 10px'>
       <h1 class="w3-text-grey">WHY?</h1>
-      <p class="w3-text-grey">In Fall 2019, as many as 100,000 of us (Kaiser employees) are going on strike to protest Kaiser's unfair labor practices. Use this website to make a strike pledge or share why you're going on strike.<br><br>Leaving a comment, which will be uploaded to twitter (@kaiserstrike19), might be the single most powerful thing you can do short of going on strike.</p>
+      <p class="w3-text-grey">In Fall 2019, as many as 100,000 of us (Kaiser employees) are going on strike to protest Kaiser's unfair labor practices. Use this website to make a strike pledge or to share why you're going on strike.<br><br>Simply enter your Kaiser email address. We'll e-mail you a custom link to complete your strike pledge, and to upload a comment to twitter.</p>
     </div>
     <div class="w3-half" style='padding:0px 10px'>
       <h1><b>{{ count }}</b></h1>
@@ -63,10 +63,9 @@ p b {font-size: 25px}
       <form method="post" align="left">
         {% csrf_token %}
         <p class="w3-text-black w3-xxlarge">JOIN US</p>
-        <div align="left" class="w3-text-grey"><p><b>--></b> {{ form.email }} <b>@kp.org</b></p></div>
+        <div align="left" class="w3-text-grey"><p><b>{{ form.email }} <b>@kp.org</b></p></div>
         <div class="form-actions" align="center"></div>
-  	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">Pledge</button>
-        <p class="w3-text-grey" style='font-size:14px'>(We ask for your Kaiser email to ensure you're a Kaiser employee.)</p>
+  	    <button type="submit" class="w3-button w3-center w3-blue w3-padding-large w3-large w3-margin-top">E-mail me</button>
       </form>
     </div>
   </div>
