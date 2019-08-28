@@ -24,12 +24,12 @@ def homeView(request):
         form = PledgeForm(request.POST)
         if form.is_valid():
             subject = 'Confirm your strike pledge'
-            username = form.cleaned_data['email']
+            proto_username = form.cleaned_data['email']
+            pre_username = proto_username.lower()
             sep = '@'
-            emailprefix = username.split(sep, 1)[0]
-            email = emailprefix + '@kp.org'
-            email_lower = email.lower()
-            hashed_email = hashlib.sha1(email.lower().encode()).hexdigest()
+            username = pre_username.split(sep, 1)[0]
+            email = username + '@kp.org'
+            hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hello!\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
             message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
