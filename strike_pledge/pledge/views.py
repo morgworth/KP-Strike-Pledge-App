@@ -39,6 +39,7 @@ def homeView(request):
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
+            message += '\n\nP.S.: Feel free to reply to this email with any questions.'
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
