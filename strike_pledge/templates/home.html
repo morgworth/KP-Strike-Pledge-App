@@ -3,14 +3,14 @@
 <head>
 <title>Join the strike. Fall 2019.</title>
 <meta charset="UTF-8">
-<meta name="description" content="RSVP for the Fall 2019 Kaiser strike">
+<meta name="description" content="Pledge to join the Fall 2019 Kaiser strike">
 <meta name="robots" content="index,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url"           content="https://kaiserstrike.org"/>
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
-<meta property="og:description"   content="RSVP for the Fall 2019 Kaiser strike"/>
-<link rel="stylesheet" href="/static/w3.css">
+<meta property="og:description"   content="Pledge to join the Fall 2019 Kaiser strike"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
@@ -45,29 +45,30 @@ h1 {font-size: 38px}
   }(document, "script", "twitter-wjs"));</script>
 <!-- Header -->
 <header class="w3-container w3-light-green w3-center" style="padding:60px 16px">
-  <h1 class="w3-margin w3-xxlarge w3-text-white">RSVP for the Fall 2019 Kaiser Strike</h1>
+  <h3 class="w3-large w3-text-white">Calling all Kaiser employees:</h3>
+  <h1 class="w3-xxlarge w3-text-white">Pledge to join the Fall 2019 strike</h1>
 </header>
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third" style='padding:0px 20px'>
       <h1 class="w3-text-grey">Why?</h1>
-      <p class="w3-text-grey">In Oct/Nov 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to RSVP and to post a comment to twitter under the handle @kaiserstrike19.<br><br>Simply enter your Kaiser email address below. We'll e-mail you a link to RSVP, and to post to twitter.</p>
+      <p class="w3-text-grey">In Oct/Nov 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and post to twitter, anonymously.<br><br>Simply enter your Kaiser email address below. We'll e-mail you a link to make your pledge, and post to twitter.</p>
       <form method="post" align="center">
         {% csrf_token %}
         <p class="w3-text-grey">{{ form.email }} @kp.org</p>
         <div class="form-actions">
-  	       <button type="submit" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">RSVP</button>
+  	       <button type="submit" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">PLEDGE</button>
         </div>
       </form>
     </div>
     <div class="w3-third w3-center" style='padding:0px 20px'>
       <br><br>
       <h1><b>{{ count }}</b></h1>
-      <p class="w3-text-black"><b>Kaiser employees attending</b></p>
+      <p class="w3-text-black"><b>STRIKE PLEDGES</b></p>
       <br><br>
       <h1><b>80+</b></h1>
-      <p class="w3-text-black"><b>Tweets</b></p>
+      <p class="w3-text-black"><b>TWEETS</b></p>
       <br><br><br><br>
     </div>
     <div class="w3-third" style='padding:0px 20px'>
@@ -89,7 +90,7 @@ h1 {font-size: 38px}
       <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
     </div>
     <div class="w3-third w3-text-grey" style='padding:0px 20px'>
-      <p><b>Will my personal information be shared, or made public?</b><br>No. Your RSVP will be used to increase the counter above, and your comment will be tweeted anonymously.</p><br>
+      <p><b>Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the counter above, and your comment will be tweeted anonymously.</p><br>
       <p><b>Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. <a href="https://techworkerscoalition.org" class="w3-text-blue" style="text-decoration: none">Learn more about TWC</a>.</p><br>
     </div>
   </div>
