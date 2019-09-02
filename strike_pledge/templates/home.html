@@ -54,9 +54,10 @@ h1 {font-size: 38px}
     <div class="w3-third" style='padding:0px 20px'>
       <h1 class="w3-text-grey">Why?</h1>
       <p class="w3-text-grey">In Oct/Nov 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and post to twitter, anonymously.<br><br>Simply enter your Kaiser email address below. We'll e-mail you a link to make your pledge, and post to twitter.</p>
+      <br><br>
       <form method="post" align="center">
         {% csrf_token %}
-        <p class="w3-text-grey">{{ form.email }} @kp.org</p>
+        <h2 class="w3-text-black">{{ form.email }} @kp.org</h2>
         <div class="form-actions">
   	       <button type="submit" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">PLEDGE</button>
         </div>
