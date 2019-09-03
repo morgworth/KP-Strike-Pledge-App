@@ -34,7 +34,7 @@ def homeView(request):
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike(dot)org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            message = pre_username + '\n\n' + validate_link
+            message = pre_username
             #message = 'Hi ' + first_name
             #message += '\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
             #message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
@@ -128,8 +128,8 @@ def secretView(request):
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hi ' + first_name
-            message += '\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
-            message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
+            message += '\n\nYou or your co-worker indicated you want to make a strike pledge and/or post to twitter, anonymously.\n\n'
+            message += 'To do so, click the link below. If you can\'t open the link, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
             message += validate_link
             message += '\n\n\n\n\nFrom,\n\n'
             message += 'Your co-workers and friends at kaiserstrike(dot)org'
