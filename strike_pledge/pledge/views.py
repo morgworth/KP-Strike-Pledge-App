@@ -126,7 +126,7 @@ def secretView(request):
             first_name = username.split(sep2, 1)[0].title()
             email = username + '@kp.org'
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
-            validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
+            validate_link = 'kaiserstrike(dot)org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
             message = 'Hi ' + first_name
             message += '\n\nYou or your co-worker indicated you want to make a strike pledge.\n\n'
             message += 'Open this webpage to complete your pledge and post a tweet. If you can\'t open the page, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
