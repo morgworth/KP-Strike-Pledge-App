@@ -10,12 +10,9 @@
 <meta property="og:type"          content="website"/>
 <meta property="og:title"         content="kaiserstrike.org"/>
 <meta property="og:description"   content="Pledge to join the Fall 2019 Kaiser strike"/>
-<link rel="stylesheet" href="/static/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-h1 {font-size: 38px}
-</style>
+<link rel="stylesheet" href="/css/custom.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 {% load static %}
 </head>
 <body>
@@ -44,33 +41,39 @@ h1 {font-size: 38px}
     return t;
   }(document, "script", "twitter-wjs"));</script>
 <!-- Header -->
-<header class="w3-container w3-light-green w3-center" style="padding:60px 16px">
-  <h2 class="w3-large w3-text-white">Calling all Kaiser employees:</h2>
-  <h1 class="w3-xxlarge w3-text-white">Pledge to join the Fall 2019 strike</h1>
-  <h2 class="w3-xlarge w3-text-white">and/or post to twitter (anonymously)</h2>
+<header class="w3-container w3-light-green w3-center">
+    <div class="w3-content down">
+      <div class="calling">Calling all Kaiser employees:</div>
+  <h1 class="w3-margin w3-xxlarge w3-text-white">Pledge to join the Fall 2019 strike</h1>
+  <div class="calling">and post to twitter. Anonymously.</div><br>
+  <div class="calling">NOTE: you will receive a confirmation email</div>
+  <form method="post" class="specialform" align="left">
+    {% csrf_token %}
+    <div class="w3-content">
+      <div class="w3-half"><p class="w3-text-grey">{{ form.email }} @kp.org</p></div>
+      <div class="w3-half">
+    <div class="form-actions">
+       <button type="submit" class="myButton">PLEDGE</button>
+    </div>
+  </div>
+  </div>
+  </form>
+</div>
 </header>
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-row-padding w3-padding-64 w3-container down">
   <div class="w3-content">
-    <div class="w3-third" style='padding:0px 20px'>
+    <div class="w3-third" style='padding:0px'>
       <h1 class="w3-text-grey">Why?</h1>
-      <p class="w3-text-grey">In Oct/Nov 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and post to twitter, anonymously.<br><br>Simply enter your Kaiser email address below. We'll e-mail you a link to make your pledge, and post to twitter.</p>
-      <br><br>
-      <form method="post" align="center">
-        {% csrf_token %}
-        <h3 class="w3-text-black">{{ form.email }} @kp.org</h3>
-        <div class="form-actions">
-  	       <button type="submit" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">PLEDGE</button>
-        </div>
-      </form>
+      <p class="w3-text-grey bodytext">In Oct/Nov 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make an anonymous strike pledge and to post a comment to twitter, anonymously.</p>
     </div>
-    <div class="w3-third w3-center" style='padding:0px 20px'>
+    <div class="w3-third w3-center centertext" style='padding:0px 20px'>
       <br><br>
-      <h1><b>{{ count }}</b></h1>
-      <p class="w3-text-black"><b>STRIKE PLEDGES</b></p>
+      <h1 class="centertext">{{ count }}</h1>
+      <p class="w3-text-black centertext"><c>Kaiser employees attending</c></p>
       <br><br>
-      <h1><b>80+</b></h1>
-      <p class="w3-text-black"><b>TWEETS</b></p>
+      <h1 class="centertext">80+</h1>
+      <p class="w3-text-black centertext"><c>Tweets</c></p>
       <br><br><br><br>
     </div>
     <div class="w3-third" style='padding:0px 20px'>
@@ -80,25 +83,43 @@ h1 {font-size: 38px}
 </div>
 <!-- Second Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container" style='background-color: #f1f1f1'>
-  <div class="w3-content">
+  <div class="w3-content down">
     <h1 class="w3-text-grey w3-center">Common Questions</h1>
-    <div class="w3-third w3-text-grey" style='padding:0px 20px'>
+    <div class="w3-col.s12 w3-text-grey" style='padding:0px'>
       <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1 at the earliest.</p><br>
       <p><b>Will the strike work?</b><br><a href="https://www.lmpartnership.org/videos/how-our-partnership-came-to-be" class="w3-text-blue" style="text-decoration: none">It's worked before</a> and it will work again if we stand together!</p><br>
       <p><b>Can I join the strike?</b><br>All Kaiser employees including doctors, nurses, and non-union staff can join. If you don't belong to a Coalition Union, you must notify your supervisor at least 10 days before the strike.</p><br>
     </div>
-    <div class="w3-third w3-text-grey" style='padding:0px 20px'>
-      <p><b>Can I be disciplined for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a Coalition Union). If you belong to a Coalition Union, you don't have to notify your manager.</p><br>
+    <div class="w3-col.s12 w3-text-grey" style='padding:0px'>
+      <p><b>Can I be disciplined for going on strike?</b><br>No, provided that you've notified your manager at least 10 days before the strike (if you don't belong to a participating Coalition Union). If you belong to a participating Coalition Union, you don't have to notify your manager.</p><br>
       <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The National Labor Relations Act protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
     </div>
-    <div class="w3-third w3-text-grey" style='padding:0px 20px'>
-      <p><b>Will my personal information be shared, or made public?</b><br>No. Your pledge will be used to increase the counter above, and your comment will be tweeted anonymously.</p><br>
-      <p><b>Who made this website?</b><br>Kaiser employees worked with the Tech Workers Coalition to build this site. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. <a href="https://techworkerscoalition.org" class="w3-text-blue" style="text-decoration: none">Learn more about TWC</a>.</p><br>
+    <div class="w3-col.s12 w3-text-grey" style='padding:0px'>
+      <p><b>Will my personal information be shared, or made public?</b><br>No. Your RSVP will be used to increase the counter above, and your comment will be tweeted anonymously.</p><br>
+      <p><b>Who made this website?</b><br>The Tech Workers Coalition (TWC) built this website at the request of, and with input from, Kaiser employees. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. <a href="https://techworkerscoalition.org" class="w3-text-blue" style="text-decoration: none">Learn more about TWC</a>.</p><br>
     </div>
   </div>
 </div>
+<!-- Third Grid -->
+<div class="w3-container w3-center">
+    <div class="w3-content down">
+    <p>NOTE: you will receive a confirmation email</p>
+  <form method="post" class="specialform" align="left">
+    {% csrf_token %}
+    <div class="w3-content">
+      <div class="w3-half"><p class="w3-text-grey">{{ form.email }} @kp.org</p></div>
+      <div class="w3-half">
+    <div class="form-actions">
+       <button type="submit" class="myButton">PLEDGE</button>
+    </div>
+  </div>
+  </div>
+  </form>
+</div>
+</div>
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-center">
+    <div class="w3-content down">
   <div class="w3-xlarge w3-padding-32">
     <h1 class="w3-text-black">Spread the Word</h1>
     <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
@@ -108,6 +129,7 @@ h1 {font-size: 38px}
     <p>This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</p>
     <p><a style='text-decoration: none' href={% url 'terms' %}>Terms</a> | <a style='text-decoration: none' href={% url 'privacy' %}>Privacy</a> | <a style='text-decoration: none' href="mailto:inquiries@kaiserstrike.org">Contact</a></p>
   </div>
+    </div>
 </footer>
 </body>
 </html>
