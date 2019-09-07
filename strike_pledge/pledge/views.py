@@ -118,24 +118,16 @@ def hiddenView(request):
     else:
         form = PledgeForm(request.POST)
         if form.is_valid():
-            #subject = 'Complete your strike pledge'
             proto_username = form.cleaned_data['email']
             pre_username = proto_username.lower()
             sep1 = '@'
             username = pre_username.split(sep1, 1)[0]
             sep2 = '.'
             first_name = username.split(sep2, 1)[0].title()
-            email = username + '@kaiserstrike.org' # restore - email = username + '@kp.org'
+            email = username + '@kp.org'
             to = first_name + ' <' + email + '>'
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            #message = 'Hi ' + first_name
-            #message += '\n\nYou or your co-worker indicated you want to make a strike pledge and/or post to twitter, anonymously.\n\n'
-            #message += 'To do so, click the link below. If you can\'t open the link, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
-            #message += validate_link
-            #message += '\n\n\n\n\nFrom,\n\n'
-            #message += 'Your co-workers and friends at kaiserstrike(dot)org'
-            #message += '\n\nP.S.: Feel free to reply to this email with any questions.'
             def send_simple_message():
             	return requests.post(
             		"https://api.mailgun.net/v3/mail.kaiserstrike.org/messages",
