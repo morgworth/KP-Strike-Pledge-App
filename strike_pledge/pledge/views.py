@@ -111,7 +111,7 @@ def confirmView(request):
 def unionView(request):
     return render(request, "unions.html")
 
-def secretView(request):
+def hiddenView(request):
     if request.method == 'GET':
         form = PledgeForm()
     else:
@@ -144,4 +144,4 @@ def secretView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "secretsignuppg.html", {'form': form})
+    return render(request, "hidden.html", {'form': form})
