@@ -145,7 +145,7 @@ def hiddenView(request):
                         # delete - "to": email,
             			"subject": "Complete your strike pledge and/or post to twitter",
             			"template": "complete_pledge",
-            			"h:X-Mailgun-Variables": "{"first_name": first_name, "link": validate_link}"})
+            			"h:X-Mailgun-Variables": "{"first_name": first_name,"link": validate_link}"})
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
