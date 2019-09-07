@@ -142,10 +142,9 @@ def hiddenView(request):
             		auth=("api", "key-07f2b930ea5cedd16324499e964f8742"),
             		data={"from": "pledge <pledge@mail.kaiserstrike.org>",
                         "to": to,
-                        # delete - "to": email,
-            			"subject": "Complete your strike pledge and/or post to twitter",
-            			"template": "complete_pledge",
-            			"h:X-Mailgun-Variables": "{"first_name": first_name,"link": validate_link}"})
+                        "subject": "Complete your strike pledge and/or post to twitter",
+                        "template": "complete_pledge",
+                        "h:X-Mailgun-Variables": "{"first_name": first_name,"link": validate_link}"})
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
