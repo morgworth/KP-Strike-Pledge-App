@@ -129,6 +129,7 @@ def hiddenView(request):
             to = first_name + ' <' + email + '>'
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
+            v_dict = {"first_name": first_name, "link": validate_link}
             #message = 'Hi ' + first_name
             #message += '\n\nYou or your co-worker indicated you want to make a strike pledge and/or post to twitter, anonymously.\n\n'
             #message += 'To do so, click the link below. If you can\'t open the link, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
@@ -144,7 +145,7 @@ def hiddenView(request):
                         "to": to,
                         "subject": "Complete your strike pledge and/or post to twitter",
                         "template": "complete_pledge",
-                        "h:X-Mailgun-Variables": """{"first_name": first_name, "link": validate_link}"""})
+                        "h:X-Mailgun-Variables": v_dict})
             try:
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
