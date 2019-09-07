@@ -144,7 +144,7 @@ def hiddenView(request):
                         "to": to,
                         "subject": "Complete your strike pledge and/or post to twitter",
                         "template": "complete_pledge",
-                        "h:X-Mailgun-Variables": """{"first_name": first_name}"""},
+                        "h:X-Mailgun-Variables": """{"first_name": first_name}""",
                         "h:X-Mailgun-Variables": """{"link": validate_link}"""})
             try:
                 Pledge.objects.get(email_hash=hashed_email)
