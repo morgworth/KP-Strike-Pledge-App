@@ -129,7 +129,9 @@ def hiddenView(request):
             to = first_name + ' <' + email + '>'
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
-            v_dict = {"first_name": first_name, "link": validate_link}
+            v_dict = {}
+            v_dict["first_name"] = first_name
+            v_dict["link"] = validate_link
             #message = 'Hi ' + first_name
             #message += '\n\nYou or your co-worker indicated you want to make a strike pledge and/or post to twitter, anonymously.\n\n'
             #message += 'To do so, click the link below. If you can\'t open the link, or if you have privacy concerns, forward this email to a personal account and open the link on a personal phone or computer.\n\n'
