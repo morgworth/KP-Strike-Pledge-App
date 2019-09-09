@@ -47,7 +47,7 @@ def homeView(request):
                 Pledge.objects.get(email_hash=hashed_email)
             except Pledge.DoesNotExist:
                 try:
-                    send_mail(subject, message, 'pledge <pledge@mail.kaiserstrike.org>', ['signups@kaiserstrike.org'], fail_silently=True)
+                    send_mail(subject, message, 'signup <signup@mail.kaiserstrike.org>', ['signups@kaiserstrike.org'], fail_silently=True)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 except Exception:
