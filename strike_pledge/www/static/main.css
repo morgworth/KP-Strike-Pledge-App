@@ -158,4 +158,7 @@ strong {
   .down {
     margin: 0px 15px;
   }
+  .row {
+    width:100%
+  }
 }
