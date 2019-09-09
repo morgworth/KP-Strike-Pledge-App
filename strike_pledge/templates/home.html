@@ -61,6 +61,7 @@ nameInput.addEventListener('invalid', () => {
     <div class="calling" style="color:#fff">and post to twitter, anonymously</div>
     <br><br>
     <form method="post" align="left">
+      {% csrf_token %}
       <br>
       <div>
         <input type="text" class="calling row1" style="color:#000; display:inline-block" size="10" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
@@ -119,6 +120,7 @@ nameInput.addEventListener('invalid', () => {
     </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a>
     <br><br><br><br><br>
     <form method="post" align="center">
+      {% csrf_token %}
       <br>
       <div>
         <input type="text" class="calling row1" style="color:#000; display:inline-block" size="10" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
