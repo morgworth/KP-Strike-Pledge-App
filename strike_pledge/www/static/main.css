@@ -69,7 +69,8 @@ b {
 	color:##403519;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-	font-size:17px;
+	font-size:20px;
+  font-style:normal;
 	padding:16px 31px;
 	text-decoration:none;
 }
@@ -103,7 +104,7 @@ b {
   font-weight: bold;
   font-size: 20px;
   line-height: 30px;
-  clear: both;
+  clear: none;
   /* identical to box height */
   color: #B7EED1;
 }
