@@ -43,13 +43,6 @@
     <div class="calling">Calling all Kaiser employees:</div>
     <h1>Pledge to Join the <br>Fall 2019 Strike</h1>
     <div class="calling" style="color:#fff">and post to twitter, anonymously</div>
-    <form method="post" class="specialform" align="left">
-      {% csrf_token %}
-      <div class="calling" style="color:#000;font-size:17px">{{ form.email }} @kp.org
-        <button type="submit" class="myButton">PLEDGE</button>
-      </div>
-      <div class="calling">NOTE: You will receive an email</div>
-    </form>
   </div>
 </div>
 <div class="row">
@@ -271,14 +264,6 @@
     <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
     </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a>
     <br><br><br><br><br>
-    <form method="post" class="specialform">
-      {% csrf_token %}
-      <div class="w3-content">
-        <div class="calling" style="color:#000;font-size:17px">{{ form.email }} @kp.org
-          <button type="submit" class="myButton">PLEDGE</button>
-        </div>
-      </div>
-    </form>
     <div class="calling" style="color:#000;font-size:17px">NOTE: You will receive an email</div>
     <br><br>
   <div class="bodytext">This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</div>
