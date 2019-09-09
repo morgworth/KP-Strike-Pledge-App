@@ -9,22 +9,23 @@
   <meta property="og:url"           content="https://kaiserstrike.org"/>
   <meta property="og:type"          content="website"/>
   <meta property="og:description"   content="Pledge to join the Fall 2019 Kaiser strike"/>
-  <link rel="stylesheet" href="/static/main.css">
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 </head>
 <body>
 <!-- Load script for Facebook share button -->
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
 <!-- Load script for Twitter timeline -->
-<script>window.twttr = (function(d, s, id) {
+window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
   if (d.getElementById(id)) return t;
@@ -37,7 +38,21 @@
     t._e.push(f);
   };
   return t;
-}(document, "script", "twitter-wjs"));</script>
+}(document, "script", "twitter-wjs"));
+const nameInput = document.querySelector('input');
+const form = document.querySelector('form');
+nameInput.addEventListener('input', () => {
+  nameInput.setCustomValidity('');
+  nameInput.checkValidity();
+});
+nameInput.addEventListener('invalid', () => {
+  if(nameInput.value === '') {
+    nameInput.setCustomValidity('Enter a KP email address');
+  } else {
+    nameInput.setCustomValidity('Enter a KP email address');
+  }
+});
+</script>
 <!-- Header -->
 <div class="header w3-light-green">
   <div class="down">
@@ -46,13 +61,10 @@
     <div class="calling" style="color:#fff">and post to twitter, anonymously</div>
     <br><br>
     <form method="post" align="left">
-      {% csrf_token %}
       <br>
-      <div style="display:inline-block">
-        <input type="text" class="calling" style="color:#000; display:inline-block" size="10" name="email" placeholder="first.(m).last" id="email">
-        <div class="calling" style="color:#000; display:inline-block">@kp.org
-          <button type="submit" class="myButton" style="display:inline-block">PLEDGE</button>
-        </div>
+      <div>
+        <input type="text" class="calling row1" style="color:#000; display:inline-block" size="10" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
+        <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
         <br><br>
         <div class="calling">NOTE: You will receive an email</div>
       </div>
@@ -70,7 +82,7 @@
       <br>
       <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
       </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a>
-      <br><br><br><br>
+      <br><br><br><br><br><br><br><br>
       <h1>Common Questions</h1>
       <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1 at the earliest.</p><br>
       <p><b>Can I join the strike?</b><br>Yes. <strong>All Kaiser employees</strong> including doctors, nurses, and non-union staff can join. If you don't belong to a participating Coalition Union, you must notify your supervisor <strong>at least 10 days before the strike</strong>, preferably in writing.</p><br>
@@ -107,13 +119,10 @@
     </style> <a class="twitter-hashtag-button" href="https://twitter.com/intent/tweet?button_hashtag=kaiserstrike" data-text="I support the Fall 2019 Kaiser strike" data-url="https://kaiserstrike.org" data-size="large">Tweet #kaiserstrike</a>
     <br><br><br><br><br>
     <form method="post" align="center">
-      {% csrf_token %}
       <br>
-      <div style="display:inline-block">
-        <input type="text" class="calling" style="color:#000; display:inline-block" size="10" name="email" placeholder="first.(m).last" id="email">
-        <div class="calling" style="color:#000; display:inline-block">@kp.org
-          <button type="submit" class="myButton" style="display:inline-block">PLEDGE</button>
-        </div>
+      <div>
+        <input type="text" class="calling row1" style="color:#000; display:inline-block" size="10" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
+        <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
         <br><br>
         <div class="calling" style="color:#000">NOTE: You will receive an email</div>
       </div>
