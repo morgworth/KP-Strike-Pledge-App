@@ -115,7 +115,8 @@
 </div>
 <script>
 const emailInputs = document.getElementsByTagName("input");
-emailInputs.foreach(input =>{
+
+for(let input of emailInputs){
 	input.addEventListener('input',()=>{
 		input.setCustomValidity('');
 		input.checkValidity();
@@ -123,7 +124,7 @@ emailInputs.foreach(input =>{
 	input.addEventListener('invalid',()=>{
 		input.setCustomValidity('Must end in \"@kp.org\"');
 	});
-});
+}
 </script>
 </body>
 </html>
