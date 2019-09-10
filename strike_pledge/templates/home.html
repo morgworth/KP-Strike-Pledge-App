@@ -113,5 +113,17 @@
   <br>
   <div class="bodytext"><a style="color:#8bc34a" href={% url 'terms' %}>Terms</a> | <a style="color:#8bc34a" href={% url 'privacy' %}>Privacy</a> | <a style="color:#8bc34a" href="mailto:inquiries@kaiserstrike.org">Contact</a></div>
 </div>
+<script>
+const emailInputs = document.getElementsByTagName("input");
+emailInputs.foreach(input =>{
+	input.addEventListener('input',()=>{
+		input.setCustomValidity('');
+		input.checkValidity();
+	});
+	input.addEventListener('invalid',()=>{
+		input.setCustomValidity('Must end in \"@kp.org\"');
+	});
+});
+</script>
 </body>
 </html>
