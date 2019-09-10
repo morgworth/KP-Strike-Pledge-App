@@ -134,7 +134,7 @@ def hiddenView(request):
             		auth=("api", "key-07f2b930ea5cedd16324499e964f8742"),
             		data={"from": "pledge <pledge@mail.kaiserstrike.org>",
                         "to": to,
-                        "subject": "Complete your strike pledge and/or post to twitter",
+                        "subject": "Complete your strike pledge and post to twitter",
                         "template": "complete_pledge",
                         "v:first_name": first_name,
                         "v:link": validate_link})
