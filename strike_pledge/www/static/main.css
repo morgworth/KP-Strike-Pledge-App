@@ -60,13 +60,10 @@ b {
 
 .myButton {
   background: #80bfff;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
 	border-radius:10px;
 	border:1px solid #2b7bb9;
 	display:inline-block;
 	cursor:pointer;
-	color:;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 	font-size:20px;
