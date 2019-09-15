@@ -52,14 +52,14 @@
     <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-top:5px; margin-right:20px;">
       <h1 style="color:#000000;" class="calling">80+</h1>
     </div>
-    <div style="margin-top:10px; color:#000000" class="calling">twitter comments</div>
+    <div style="margin-top:10px; color:#000000" class="calling">tweeted comments</div>
   </div>
 </div>
 <div class="row">
 <!-- First Column -->
   <div class="column left">
     <div class="w3-content down">
-      <p>In Oct 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and to post a comment to twitter. Enter your Kaiser email below to receive a custom link to make your (anonymous) pledge and post to twitter under the handle @kaiserstrike19.</p>
+      <p>In Oct 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and to post a comment to twitter. Enter your Kaiser email below to receive a custom link to make an anonymous strike pledge and to post a comment to twitter account @kaiserstrike19.</p>
       <br>
       <form method="post" align="left">
         {% csrf_token %}
@@ -71,9 +71,9 @@
           <p>NOTE: You will receive an email</p>
         </div>
       </form>
-      <br><br><br>
+      <br><br><br><br>
       <div style="background:#9e9e9e; padding:20px; border-radius:10px">
-        <a class="twitter-timeline" data-lang="en" data-height="1000" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
+        <a class="twitter-timeline" href="https://twitter.com/kaiserstrike19/timelines/1165662594922766336?ref_src=twsrc%5Etfw" data-lang="en" data-height="1000" data-dnt="true"> Curated Tweets - Curated tweets by kaiserstrike19</a>
       </div>
     </div>
   </div>
@@ -88,6 +88,17 @@
       <p><b>Will my personal information be shared, or made public?</b><br>No. Your strike pledge is anonymous and will only increase the counter at the top of this page.</p><br>
       <p><b>Will the strike work?</b><br><a href="https://www.lmpartnership.org/videos/how-our-partnership-came-to-be">It's worked before</a> and it will work again if we stand together!</p><br>
       <p><b>When is the strike, exactly?</b><br>The exact date is still tbd.</p><br>
+      <br>
+      <form method="post" align="left">
+        {% csrf_token %}
+        <br>
+        <div>
+          <input type="text" class="calling row1" style="color:#000; display:inline-block" size="18" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
+          <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
+          <br>
+          <p>NOTE: You will receive an email</p>
+        </div>
+      </form>
     </div>
   </div>
   </div>
