@@ -40,22 +40,31 @@
 <!-- Header -->
 <div class="header w3-light-green">
   <div class="down">
-    <div class="calling">Calling all Kaiser employees:</div>
-    <h1>Pledge to Join the <br>Oct 2019 Strike</h1>
-    <div class="calling" style="color:#fff">and post to twitter, anonymously</div>
-    <form method="post" class="specialform" align="left">
-      {% csrf_token %}
-      <div class="calling" style="color:#000;font-size:17px">{{ form.email }} @kp.org
-        <button type="submit" class="myButton">PLEDGE</button>
-      </div>
-      <div class="calling">NOTE: You will receive an email</div>
-    </form>
+    <h1>Pledge to Join the Oct 2019 Strike</h1>
+    <br>
+    <div class="calling" style="color:#fff">and post a comment to Twitter</div>
+    <br><br>
+    <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-bottom:5px; margin-right:20px;">
+      <h1 style="color:#000000;" class="calling">{{count}}</h1>
+    </div>
+    <div style="margin-bottom:5px; color:#000000" class="calling">strike pledges</div>
+    <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-top:5px; margin-right:20px;">
+      <h1 style="color:#000000;" class="calling">80+</h1>
+    </div>
+    <div style="margin-top:10px; color:#000000" class="calling">tweeted comments</div>
   </div>
 </div>
 <div class="row">
 <!-- First Column -->
   <div class="column">
     <div class="down">
+      <form method="post" class="specialform" align="left">
+        {% csrf_token %}
+        <div class="calling" style="color:#000;font-size:17px">{{ form.email }} @kp.org
+          <button type="submit" class="myButton">PLEDGE</button>
+        </div>
+        <div class="calling">NOTE: You will receive an email</div>
+      </form>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </div>
