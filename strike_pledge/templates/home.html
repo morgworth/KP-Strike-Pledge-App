@@ -9,7 +9,7 @@
   <meta property="og:url"           content="https://kaiserstrike.org"/>
   <meta property="og:type"          content="website"/>
   <meta property="og:description"   content="Pledge to join the Oct 2019 Kaiser strike"/>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/static/main.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 </head>
@@ -43,57 +43,53 @@
   <div class="down">
     <h1>Pledge to Join the Oct 2019 Strike</h1>
     <br>
-    <div class="calling" style="color:#fff">and post to twitter, anonymously</div>
+    <div class="calling" style="color:#fff">and post a comment to Twitter</div>
     <br><br>
-    <form method="post" align="left">
-      {% csrf_token %}
-      <br>
-      <div>
-        <input type="text" class="calling row1" style="color:#000; display:inline-block" size="18" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
-        <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
-        <br><br>
-        <div class="calling">NOTE: You will receive an email</div>
-      </div>
-    </form>
+    <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:120px; margin-bottom:5px; margin-right:20px;">
+      <h1 style="color:#000000;">{{count}}</h1>
+    </div>
+    <h1 style="margin-bottom:5px;">strike pledges</h1>
+    <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:120px; margin-top:5px; margin-right:20px;">
+      <h1 style="color:#000000;">80+</h1>
+    </div>
+    <h1 style="margin-top:10px;">twitter comments</h1>
   </div>
 </div>
 <div class="row">
 <!-- First Column -->
   <div class="column left">
     <div class="w3-content down">
-      <div style="background:#f1f1f1; border-radius:10px; text-align:center;">
-        <h1 style="color:#000000; font-size:60px">{{count}} strike pledges</h1>
-      </div>
+      <p>In Oct 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and to post a comment to twitter. Enter your Kaiser email below to receive a custom link to make your (anonymous) pledge and post to twitter under the handle @kaiserstrike19.</p>
       <br>
-      <div style="background:#f1f1f1; border-radius:10px; text-align:center;">
-        <h1 style="color:#000000; font-size:60px">80+ tweets</h1>
+      <form method="post" align="left">
+        {% csrf_token %}
+        <br>
+        <div>
+          <input type="text" class="calling row1" style="color:#000; display:inline-block" size="18" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
+          <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
+          <br>
+          <p>NOTE: You will receive an email</p>
+        </div>
+      </form>
+      <br><br><br>
+      <div style="background:#9e9e9e; padding:20px; border-radius:10px">
+        <a class="twitter-timeline" data-lang="en" data-height="1000" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
       </div>
-      <br><br>
-      <p>In Oct/Nov 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Use this website to make a strike pledge and post to twitter, anonymously. This might be the single most powerful thing you can do short of going on strike.</p>
-      <br>
-      <div align="center" >
-
-
-      <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
-      </style> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="true" data-text= "Make a strike pledge and post to twitter, anonymously, at" data-url="https://kaiserstrike.org" data-dnt="true" data-size="large">Tweet</a>
-      </div>
-      <br><br><br><br><br>
-      <h1>Common Questions</h1>
-      <p><b>When is the strike?</b><br>The exact date is TBD, but it won't happen until Oct 1 at the earliest.</p><br>
-      <p><b>Can I join the strike?</b><br>Yes. <strong>All Kaiser employees</strong> including doctors, nurses, and non-union staff can join. If you don't belong to a participating Coalition Union, you must notify your supervisor <strong>at least 10 days before the strike</strong>, preferably in writing.</p><br>
-      <p><b>Will the strike work?</b><br><a href="https://www.lmpartnership.org/videos/how-our-partnership-came-to-be">It's worked before</a> and it will work again if we stand together!</p><br>
-      <p><b>Can I be disciplined for going on strike?</b><br>No, provided that you've notified your manager at <strong>least 10 days before the strike</strong> (if you don't belong to a participating Coalition Union). If you belong to a participating Coalition Union, you don't have to notify your manager.</p><br>
-      <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The <a href="https://www.nlrb.gov/sites/default/files/attachments/basic-page/node-3024/basicguide.pdf">National Labor Relations Act</a> (NLRA) protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
-      <p><b>Will my personal information be shared, or made public?</b><br>No. Your strike pledge and tweet will be anonymous.</p><br>
-      <p><b>Who made this website?</b><br>The Tech Workers Coalition (TWC) made this website at the request of, and with input from, Kaiser employees. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. <a href="https://techworkerscoalition.org">Learn more about TWC</a>.</p><br>
     </div>
   </div>
   <div class="column right">
     <div class="w3-content down">
-      <div style="background:#9e9e9e; padding:20px; border-radius:10px">
-        <a class="twitter-timeline" data-lang="en" data-width="" data-height="1500" data-limit="" data-dnt="true" href="https://twitter.com/kaiserstrike19?ref_src=twsrc%5Etfw">Tweets by kaiserstrike19</a>
-      </div>
+      <h1>Common Questions</h1>
+      <br>
+      <p><b>Who made this website?</b><br>The Tech Workers Coalition (TWC) made this website at the request of Kaiser employees. TWC is a coalition of tech workers, labor organizers, community organizers, and friends working in solidarity with existing movements towards social justice, workers' rights, and economic inclusion. <a href="https://techworkerscoalition.org">Learn more about TWC</a>.</p><br>
+      <p><b>Can I be disciplined for using this website, or my Kaiser email?</b><br>No. The <a href="https://www.nlrb.gov/sites/default/files/attachments/basic-page/node-3024/basicguide.pdf">National Labor Relations Act</a> (NLRA) protects concerted action for mutual aid or protection. However, we recommend against using this website on paid work time.</p><br>
+      <p><b>Can I join the strike?</b><br>Yes. <strong>All Kaiser employees</strong> can join, including doctors, nurses, and non-union employees. If you don't belong to a participating <a href="https://www.unioncoalition.org/our-coalition-unions/">Coalition Union</a>, you must notify your supervisor <strong>at least 10 days before the strike</strong>, preferably in writing.</p><br>
+      <p><b>Can I be disciplined for going on strike?</b><br>No, provided that you've notified your manager at <strong>least 10 days before the strike</strong> (if you don't belong to a participating <a href="https://www.unioncoalition.org/our-coalition-unions/">Coalition Union</a>). If you belong to a participating Coalition Union, you don't have to notify your manager.</p><br>
+      <p><b>Will the strike work?</b><br><a href="https://www.lmpartnership.org/videos/how-our-partnership-came-to-be">It's worked before</a> and it will work again if we stand together!</p><br>
+      <p><b>Will my personal information be shared, or made public?</b><br>No. Your strike pledge is anonymous and will only increase the counter at the top of this page.</p><br>
+      <p><b>When is the strike, exactly?</b><br>The exact date is still tbd.</p><br>
     </div>
+  </div>
   </div>
 </div>
 <!-- Footer -->
@@ -103,17 +99,6 @@
     <br>
     <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style media="screen" type="text/css">.fb_iframe_widget span{vertical-align: baseline !important;}
     </style> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="true" data-text= "Make a strike pledge and post to twitter, anonymously, at" data-url="https://kaiserstrike.org" data-dnt="true" data-size="large">Tweet</a>
-    <br><br><br><br><br>
-    <form method="post" align="center">
-      {% csrf_token %}
-      <br>
-      <div>
-        <input type="text" class="calling row1" style="color:#000; display:inline-block" size="18" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
-        <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
-        <br><br>
-        <div class="calling" style="color:#000">NOTE: You will receive an email</div>
-      </div>
-    </form>
     <br><br><br><br>
   <div class="bodytext">This website is the result of a collaboration between Kaiser employees and the Tech Workers Coalition. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</div>
   <br>
