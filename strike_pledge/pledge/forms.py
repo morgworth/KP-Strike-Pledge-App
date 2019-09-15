@@ -8,7 +8,7 @@ class ValidateForm(forms.Form):
     email_hash = forms.CharField(max_length=200, widget=forms.HiddenInput(), label='')
     work_email = forms.CharField(max_length=200, widget=forms.HiddenInput(), label='')
     region_list = (
-        ('none', ''),
+        ('', ''),
         ('norcal', 'California - Northern'),
         ('socal', 'California - Southern'),
         ('colorado', 'Colorado'),
@@ -22,7 +22,7 @@ class ValidateForm(forms.Form):
     )
     kaiser_region = forms.ChoiceField(choices=region_list, required=True, label='')
     union_list = (
-        ('none', ''),
+        ('', ''),
         ('yes', 'Yes'),
         ('no', 'No (sympathy striker)')
     )
