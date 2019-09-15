@@ -22,12 +22,12 @@ body {
 
 /* Left column */
 .column.left {
-  width: 60%;
+  width: 40%;
 }
 
 /* Right column */
 .column.right {
-  width: 40%;
+  width: 60%;
 }
 
 /* Clear floats after the columns */
@@ -59,14 +59,14 @@ b {
 }
 
 .myButton {
-  background: #FFD66B;
+  background: #80bfff;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
-	border:1px solid #FFD66B;
+	border:1px solid #2b7bb9;
 	display:inline-block;
 	cursor:pointer;
-	color:##403519;
+	color:;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 	font-size:20px;
@@ -76,7 +76,7 @@ b {
 }
 
 .myButton:hover {
-	background-color:#F2BF3D;
+	background-color:#4d94ff;
 }
 
 .myButton:active {
