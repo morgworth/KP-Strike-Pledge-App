@@ -16,9 +16,6 @@ import requests
 
 def homeView(request):
     count = Pledge.objects.all().count()
-    #if count < 1000:
-    #    count = '< 1,000'
-
     if request.method == 'GET':
         form = PledgeForm()
     else:
@@ -56,9 +53,11 @@ def homeView(request):
     return render(request, "home.html", {'form': form, 'count': count})
 
 def successView(request):
-    return render(request, "success.html")
+    count = Pledge.objects.all().count()
+    return render(request, "success.html", {'count': count})
 
 def validateView(request):
+    count = Pledge.objects.all().count()
     if request.method == 'GET':
         email_hash = request.GET['e']
         work_email = request.GET['u']+'@kp.org'
@@ -98,19 +97,19 @@ def validateView(request):
 									  pers_email = pers_email,
                                       message = tweet)
                 return redirect('confirm')
-    return render(request, "contact.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email })
+    return render(request, "contact.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email, {'count': count}})
 
 def termsView(request):
-    return render(request, "terms.html")
+    count = Pledge.objects.all().count()
+    return render(request, "terms.html", {'count': count})
 
 def privacyView(request):
-    return render(request, "privacy.html")
+    count = Pledge.objects.all().count()
+    return render(request, "privacy.html", {'count': count})
 
 def confirmView(request):
-    return render(request, "confirmation.html")
-
-def unionView(request):
-    return render(request, "unions.html")
+    count = Pledge.objects.all().count()
+    return render(request, "confirmation.html", {'count': count})
 
 def hiddenView(request):
     if request.method == 'GET':
