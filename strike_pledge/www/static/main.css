@@ -138,6 +138,10 @@ input {
   background: #fff;
 }
 
+select:invalid {
+  border: 2px solid red;
+}
+
 a {text-decoration: none;}
 
 span {
