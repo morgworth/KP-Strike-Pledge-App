@@ -124,7 +124,7 @@ def hiddenView(request):
             username = pre_username.split(sep1, 1)[0]
             sep2 = '.'
             first_name = username.split(sep2, 1)[0].title()
-            email = username + '@kaiserstrike.org'
+            email = username + '@kp.org'
             to = first_name + ' <' + email + '>'
             hashed_email = hashlib.sha1(email.encode()).hexdigest()
             validate_link = 'kaiserstrike.org/validate/?u={u}&e={e}'.format(u=username,e=hashed_email)
