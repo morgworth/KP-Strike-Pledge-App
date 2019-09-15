@@ -97,7 +97,7 @@ def validateView(request):
 									  pers_email = pers_email,
                                       message = tweet)
                 return redirect('confirm')
-    return render(request, "contact.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email, {'count': count}})
+    return render(request, "contact.html", {'form': form, 'email_hash':email_hash, 'work_email':work_email, 'count': count})
 
 def termsView(request):
     count = Pledge.objects.all().count()
@@ -147,4 +147,4 @@ def hiddenView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "hidden.html", {'form': form})
+    return render(request, "hidden.html", {'form': form}; {'count': count})
