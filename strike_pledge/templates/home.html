@@ -45,11 +45,11 @@
     <br>
     <div class="calling" style="color:#fff">and post a comment to Twitter</div>
     <br><br>
-    <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-bottom:5px; margin-right:20px;">
+    <div style="background:#e6e6e6; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-bottom:5px; margin-right:20px;">
       <h1 style="color:#000000;" class="calling">{{count}}</h1>
     </div>
     <div style="margin-bottom:5px; color:#000000" class="calling">strike pledges</div>
-    <div style="background:#f1f1f1; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-top:5px; margin-right:20px;">
+    <div style="background:#e6e6e6; border-radius:10px; text-align:center; clear:none; float:left; width:80px; margin-top:5px; margin-right:20px;">
       <h1 style="color:#000000;" class="calling">80+</h1>
     </div>
     <div style="margin-top:10px; color:#000000" class="calling">tweeted comments</div>
@@ -59,20 +59,22 @@
 <!-- First Column -->
   <div class="column left">
     <div class="w3-content down">
-      <p>In Oct 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Enter your Kaiser email below to receive a custom link to make an anonymous strike pledge and to post a comment to twitter account @kaiserstrike19.</p>
-      <br>
-      <form method="post">
-        {% csrf_token %}
+      <div style="background:#e6e6e6; padding:20px; border-radius:10px">
+        <p>In Oct 2019, as many as 100,000 of us (Kaiser employees) are going on strike. Enter your Kaiser email below to receive a custom link to make an anonymous strike pledge and to post a comment to twitter account @kaiserstrike19.</p>
         <br>
-        <div>
-          <input type="text" class="calling row1" style="color:#000; display:inline-block" size="18" name="email" placeholder="first.(m).last@kp.org" id="email1" required pattern=".+@kp\.org">
-          <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
+        <form method="post">
+          {% csrf_token %}
           <br>
-          <p>NOTE: You will receive an email</p>
-        </div>
-      </form>
-      <br><br><br><br>
-      <div style="background:#9e9e9e; padding:20px; border-radius:10px">
+          <div>
+            <input type="text" class="calling row1" style="color:#000; display:inline-block" size="18" name="email" placeholder="first.(m).last@kp.org" id="email1" required pattern=".+@kp\.org">
+            <button type="submit" class="myButton row2" style="display:inline-block">PLEDGE</button>
+            <br>
+            <p>NOTE: You will receive an email</p>
+          </div>
+        </form>
+      </div>
+      <br><br><br>
+      <div style="background:#e6e6e6; padding:20px; border-radius:10px">
         <a class="twitter-timeline" href="https://twitter.com/kaiserstrike19/timelines/1165662594922766336?ref_src=twsrc%5Etfw" data-lang="en" data-height="1200" data-dnt="true"> Curated Tweets - Curated tweets by kaiserstrike19</a>
       </div>
     </div>
