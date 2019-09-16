@@ -147,4 +147,4 @@ def hiddenView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "hidden.html", {'form': form, 'count': count})
+    return render(request, "hidden.html", {'form': form})
