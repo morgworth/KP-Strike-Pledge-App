@@ -112,6 +112,7 @@ def confirmView(request):
     return render(request, "confirmation.html", {'count': count})
 
 def hiddenView(request):
+    count = Pledge.objects.all().count()
     if request.method == 'GET':
         form = PledgeForm()
     else:
@@ -147,4 +148,4 @@ def hiddenView(request):
                 except Exception:
                     print('')
                 return redirect('success')
-    return render(request, "hidden.html", {'form': form})
+    return render(request, "hidden.html", {'form': form, 'count': count})
