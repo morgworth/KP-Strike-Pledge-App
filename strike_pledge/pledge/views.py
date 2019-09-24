@@ -151,3 +151,7 @@ def hiddenView(request):
                     print('')
                 return redirect('success')
     return render(request, "hidden.html", {'form': form, 'count': count})
+
+def faqView(request):
+    count = Pledge.objects.all().count()
+    return render(request, "faq.html", {'count': count})
