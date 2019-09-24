@@ -16,8 +16,6 @@ import requests
 
 def homeView(request):
     count = Pledge.objects.all().count()
-    if count < 1000:
-        count == '<1,000'
     if request.method == 'GET':
         form = PledgeForm()
     else:
