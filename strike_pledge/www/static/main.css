@@ -22,12 +22,12 @@ body {
 
 /* Left column */
 .column.left {
-  width: 40%;
+  width: 50%;
 }
 
 /* Right column */
 .column.right {
-  width: 60%;
+  width: 50%;
 }
 
 /* Clear floats after the columns */
@@ -59,10 +59,9 @@ b {
 }
 
 .myButton {
-  background: #80bfff;
+  background: #4d79ff;
 	border-radius:10px;
 	border:1px solid #2b7bb9;
-	display:inline-block;
 	cursor:pointer;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
@@ -73,7 +72,7 @@ b {
 }
 
 .myButton:hover {
-	background-color:#4d94ff;
+	background-color:#55acee;
 }
 
 .myButton:active {
@@ -121,18 +120,16 @@ h1.centertext {
   font-size: 90px;
 }
 
-input#id_email {
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  background: #fff;
-}
-
 input {
   border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 15px;
+  border:1px solid #e6e6e6;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size:20px;
+  font-style:normal;
   background: #fff;
+  width:300px;
+  padding:16px 31px;
 }
 
 select:invalid {
@@ -155,12 +152,12 @@ strong {
   font-size:20px;
 }
 
-.row1 {
-  width:100%;
+.red {
+  color:#000;
 }
 
-.row2 {
-  width:100%;
+.red:hover {
+  color:#ff0000;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -170,5 +167,11 @@ strong {
   }
   .down {
     margin: 0px 15px;
+  }
+  .row1 {
+    width:100%;
+  }
+  .row2 {
+    width:100%;
   }
 }
