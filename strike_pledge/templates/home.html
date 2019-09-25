@@ -40,50 +40,25 @@
 }(document, "script", "twitter-wjs"));</script>
 <div class="row">
 <!-- First Column -->
-  <div class="column left" style="background:#8bc34a; height:900px;">
+  <div class="column left" style="background:#8bc34a; height:800px;">
     <div class="down">
-      <div class="calling" style="color:#fff">Calling all Kaiser workers</div>
       <br>
-      <h1 style="color:#fff">Pledge to Join the Oct 2019 Strike</h1>
-      <div class="calling" style="color:#fff">And post your thoughts to twitter</div>
-      <br><br><br>
-      <form method="post">
-        {% csrf_token %}
-        <div>
-          <input type="text" class="row1" size="12" name="email" placeholder="first.(m).last@kp.org" id="email" required pattern=".+@kp\.org">
-          <button type="submit" class="myButton row2">PLEDGE</button>
-          <br><br>
-          <div class="calling" style="color:#fff">NOTE: You will receive an email</div>
-        </div>
-      </form>
-      <br><br><br><br>
-      <div style="background:#e6e6e6; border-radius:10px; text-align:right; width:180px; margin-bottom:5px; margin-right:20px; padding:15px;">
-        <h1 style="color:#000000; font-size:40px;" class="calling">55,000+</h1>
-      </div>
-      <div style="margin-bottom:5px 0px; color:#000000;" class="calling">pledge cards signed</div>
-      <div style="background:#e6e6e6; border-radius:10px; text-align:right; width:180px; margin-top:15px; margin-right:20px; padding:15px;">
-        <h1 style="color:#000000; font-size:40px;" class="calling">{{count}}</h1>
-      </div>
-      <div style="margin:5px 0px; color:#000000;" class="calling">digital strike pledges</div>
+      <h1 style="color:#fff">Negotiations successful, strike averted!</h1>
       <br><br>
     </div>
   </div>
-  <div class="column right" style="background:#e6e6e6;">
-    <div class="down">
-        <a class="twitter-timeline" href="https://twitter.com/kaiserstrike19/timelines/1165662594922766336?ref_src=twsrc%5Etfw" data-lang="en" data-dnt="true" data-height="776" data-link-color="#8bc34a"> Curated Comments - Curated tweets by kaiserstrike19</a>
+  <div class="column right" style="height:800px; position:relative;">
+    <div style="margin:-125px 0 0 -125px; auto; width:250px; height:250px; top:50%; left:50%; position:absolute;">
+      <img src="/static/twclogo.jpg" alt="TWC logo" height="250px" width="250px">
     </div>
   </div>
 </div>
 <!-- Footer -->
 <div class="footer">
   <div class="down">
+    <div class="bodytext">This website was the result of a collaboration between Kaiser workers and the <a href="https://www.techworkerscoalition.org" class="red">Tech Workers Coalition</a>. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</div>
     <br>
-    <a class="fb-like" data-href="https://kaiserstrike.org" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></a><style>.fb_iframe_widget span{vertical-align: baseline !important;}
-    </style> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="true" data-text= "Make a strike pledge and post to twitter, anonymously, at" data-url="https://kaiserstrike.org" data-dnt="true" data-size="large">Tweet</a>
-    <br><br>
-    <div class="bodytext">This website is the result of a collaboration between Kaiser workers and the <a href="https://www.techworkerscoalition.org" class="red">Tech Workers Coalition</a>. It is in no way affiliated with Kaiser Permanente. Kaiser Permanente and KP are registered trademarks of Kaiser Foundation Health Plan, Inc.</div>
-    <br>
-    <div class="bodytext"><a style="color:#8bc34a" href={% url 'faq' %}>FAQ</a> | <a style="color:#8bc34a" href={% url 'terms' %}>Terms</a> | <a style="color:#8bc34a" href={% url 'privacy' %}>Privacy</a> | <a style="color:#8bc34a" href="mailto:inquiries@kaiserstrike.org">Contact</a></div>
+    <div class="bodytext"><a style="color:#8bc34a" href="mailto:inquiries@kaiserstrike.org">Contact</a></div>
   </div>
 </div>
 <script>
